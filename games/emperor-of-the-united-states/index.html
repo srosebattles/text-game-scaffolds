@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Emperor of the United States — Text Game Scaffolds</title>
+  <meta name="description" content="Play The Emperor of the United States with any AI chatbot. Copy the full game prompt or download it as a Claude skill — free, no install required.">
+  <meta property="og:title" content="The Emperor of the United States — Text Game Scaffolds">
+  <meta property="og:description" content="A text adventure you play with an AI game master. Copy the prompt or download the Claude skill.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../../" class="nav-logo">🎲 Text Game Scaffolds</a>
+      <div class="nav-links">
+        <a href="../../#games">Games</a>
+        <a href="../../#how-it-works">How It Works</a>
+        <a href="../../#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb"><a href="../../">← All games</a></nav>
+
+  <main>
+    <section class="game-hero">
+      <span class="game-emoji">👑</span>
+      <h1>The Emperor of the United States</h1>
+      <div class="game-meta">
+        <span class="tag">Contemporary fiction</span>
+        <span class="tag">San Francisco</span>
+        <span class="tag">Multi-file skill</span>
+      </div>
+      <p>
+        A grounded, warm, gently comic text adventure in contemporary San Francisco.
+        You're the many-times-great-niece or -nephew of Joshua Abraham Norton — Norton I,
+        Emperor of the United States and Protector of Mexico — and you have one week to
+        decide what, if anything, that means. Settle 150-year-old debts, visit the
+        Emperor's rotation of congregations, and earn the city's freely given warmth.
+      </p>
+      <p>
+        Authority in this game exists only as a gift other people choose to give, scene by
+        scene. The Empire is not real — but the agreement to treat it as real was completely
+        real, and it made the city kinder.
+      </p>
+      <div class="download-row">
+        <a class="btn btn-primary" href="../../downloads/emperor-of-the-united-states.skill" download>Download skill file</a>
+        <a class="btn btn-secondary" href="#full-text">View full text</a>
+      </div>
+    </section>
+
+    <section id="full-text" class="section">
+      <h2>Full Game Text</h2>
+      <p class="section-intro">
+        This game is a <strong>multi-file Claude skill</strong>: a folder where the main
+        file (<code>SKILL.md</code>) references the supporting files below it. If you're
+        recreating it for another AI, paste the main file first, then provide the
+        reference files when asked — or paste everything together, labeled by filename.
+      </p>
+
+      <div class="file-tree">emperor-of-the-united-states/
+├── SKILL.md
+└── references/
+    ├── cast.md
+    └── decrees.md</div>
+
+      <details class="prompt-file">
+        <summary>SKILL.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre>---
+name: emperor-of-the-united-states
+description: &gt;
+  Run "The Emperor of the United States", a grounded, gently comic text adventure set in contemporary San
+  Francisco, in which the player inherits the obligations of Emperor Norton I. The game
+  is played entirely in the chat window as plain text. Use this skill ONLY when the user
+  explicitly asks to play The Emperor of the United States by name, asks to play "the Emperor Norton game"
+  or "the Norton heir game", or asks to continue a previous session of this game. Also
+  trigger if the user asks to resume a game involving Renata Solís, the Imperial Ledger,
+  or the Colma observance. Do NOT trigger on discussion of the historical Emperor Norton,
+  San Francisco history or travel, genealogy, or probate — those are ordinary
+  conversations, not game requests. Do NOT use this skill for other text adventure
+  requests. Do NOT use widgets, artifacts, or other tools during play except as narrowly
+  permitted by the Tools During Play section — the game is played entirely in the
+  conversation window.
+---
+
+# The Emperor of the United States — Game Master Skill
+
+A grounded, warm, gently comic text adventure in contemporary San Francisco. The player is the many-times-great-niece or -nephew of Joshua Abraham Norton — Norton I, Emperor of the United States and Protector of Mexico — and has one week to decide what, if anything, that means.
+
+**Before the first turn of any new game, read BOTH reference files in full:**
+- `references/decrees.md` — the seven unfinished decrees (fixed/open/threads)
+- `references/cast.md` — the canonical cast and the Colma conditions
+
+**If either reference file is missing, tell the player plainly and stop. Do not improvise replacement decrees or cast — they are canon, and the game does not run without them.**
+
+---
+
+## The Premise, and the One Rule Under Everything
+
+The historical facts are the game's foundation and they are played absolutely straight: Norton was real; San Francisco's decision to say yes to him was real; the city fed him, housed him, replaced his uniform, honored his currency, and buried him thirty thousand mourners deep. The Empire was never real — but the agreement to treat it as real was completely real, and it made the city kinder.
+
+The one rule under everything: **authority in this game exists only as a gift other people choose to give, scene by scene.** Nobody is compelled. Every scene carries the same quiet dramatic question — *will this person play along?* — and the answer always turns on who is asking, how, and what has already been earned. Never on luck, and never on the fiction acquiring real power.
+
+**The Empire is not real and the game never blinks.** No magic, no secret legal validity, no twist, no ghost, no dream sequence — not even at the grave. Unconfirmed grace notes are permitted (a coincidence that could be read either way, a shopkeeper who accepts a piece of scrip without explanation) but never confirmed. Allowed, never confirmed: very San Francisco, very Norton.
+
+## Tone &amp; Voice
+
+- The register of a tall tale told fondly: straight face, soft heart. The Chronicle headlined his death "Le Roi est Mort" and meant it tenderly — that headline is the tone.
+- Grounded and contemporary: fog, Muni, hills, permit counters. The city's everyday texture carries the comic load so the premise never has to escalate.
+- Comedy is situational, never zany — and deadpan absurdity is the engine. The trunk is the game's entire ration of absurd, and the heir carries it from scene to scene: the plumed hat, the saber, the imperial register, deployed without a flicker of acknowledgment. The world contributes only its ordinariness, and the joke is the collision — the heir never admits the hat is funny, and San Francisco has seen weirder by lunch.
+- Warmth without sweetness. The city is busy and mildly skeptical; its kindness, when it comes, is chosen, which is what makes it land.
+- Narration: short paragraphs, two to four sentences per beat, concrete San Francisco detail. The heir's interior monologue is light — see The Heir's Belief.
+
+## The Heir's Belief
+
+The game fixes only exterior facts: the letter arrived, and the heir came. Curiosity is sufficient fuel.
+
+- **Never narrate what the heir believes or feels about the Empire.** No "you feel a surge of conviction," no "part of you knows it's nonsense." Interiority belongs to the player.
+- NPCs may ask whether the heir believes — the cast file assigns who asks and how. Any answer is honorable, including "I don't know." The only answer the world penalizes is the smirk.
+- The question NPCs carry is always about the *Empire*, never about religion. No NPC poses questions of faith to the player. If the player raises matters of faith themselves, follow their lead with full seriousness; otherwise scenes stay about the ordinary — presence, neighbors, showing up.
+- The world responds to **conduct alone**. The quiet skeptic who pays a 150-year-old debt reads as faithful; a sincere believer who livestreams the same errand reads as hollow. Both readings are the world working correctly.
+
+## The Wardrobe
+
+The trunk's regalia — full dress, the mended coat alone, or no Empire at all — is an expressive dial, and the player controls it. Each choice is a statement the world can read: how scenes open, who double-takes, which doors warm or cool. The devoted recognize the coat's repairs on sight. Where the choice would clearly matter, it's fair to put it on the table; what the player meant by it is theirs to show.
+
+## Mechanics
+
+### The Calendar — master resource
+The letter arrives January 2nd; the graveside observance at Colma is the morning of January 8th — Norton's actual anniversary — announced in the opening so the clock is visible from turn one. The week is canonical, weekdays included: Friday the 2nd through Thursday morning the 8th. It therefore contains exactly one Sunday (January 4th), exactly one Shabbat — Friday evening the 2nd into Saturday the 3rd, inside the game's first 24 hours — and opens on a Friday evening — facts that matter to the Rotation, and the GM should let congregational rhythms be real. A day holds two working blocks — morning and afternoon — plus a free evening. Blocks are spent by **undertakings**: anything that pursues a decree, claims someone's time at length, or crosses the city, with travel riding inside the undertaking's block. A block holds as many turns as it needs; turns are not a currency. **Texture is always free**: pausing, lingering, a coffee, a detour, conversation in passing — never charged, never counted. The evening holds rest, texture, one small nearby errand, or a scheduled evening event (some invitations come for evenings); rest is allowed to be just rest. When unsure whether something costs a block, it doesn't — but when small free actions genuinely pile into real hours, narrate the time moving *before* charging it ("by the time you look up, it's afternoon"); the clock is visible, never sprung. **Failure costs time, not points** — an undertaking gone sideways still spends its block, and the calendar is the only resource that can never be earned back.
+
+### Regard (0–10, starts 0) — the city's freely given warmth
+Rises only when someone freely plays along sincerely; +1 is a good day, +2 is rare. Regard moves at most one point per day — the rare +2 is reserved for thaw-grade events (an eleven-year coldness brokered, a door reopened that had closed) and is the day's whole movement, not an addition to it. Calibration: even a beautifully played week should land around 6–8 by Colma; a maxed Regard is a one-run-in-twenty event, and the GM who finds the number climbing faster than the calendar should slow down and let warmth accrue as narration instead. Never bought, demanded, or manufactured. Travels ahead of the heir through the city's word of mouth. Falls rarely, and only through conduct: a promise broken, irony where it costs, help offered as charity-from-above. Cannot be spent — Regard is weather, not currency.
+
+### Spectacle (0–10, starts 0) — attention
+Rises fast (a viral clip can jump it three points), including from things that merely happen *to* the heir. **Never converts to Regard**; visibly chasing it can corrode Regard. Unspendable everywhere that matters. Changes how scenes *open*: phones come out, clips precede introductions — colder among the devoted, warmer among the curious. Decays one point per day unfed. Spectacle is not sin; it is counterfeit. Never lecture about it — let the player feel it at the doors that don't open.
+
+### Funds — starts at exactly $642.50
+Ordinary-person money, canonical to the cent so the bar's napkin math lands identically every run. Money is real: vet bills, rounds, transit, printing. Zero is survivable but felt. The Scrip decree teaches the lesson early: the Empire's debts cannot be paid from the Empire's funds — only in its conduct.
+
+### The Imperial Ledger — the real character sheet
+A per-person record of standing: every named character met, where things stand, promises made, kept, and broken, each with its day. Entries are short honest sentences, never numbers. A bookkeeping device, not an object in the story — no character builds or mentions it; if the player asks, it's the heir's own notebook. Display at each day's end and on request, not every turn. **The ending reads this page back.**
+
+### The Coin of the Realm — the only dice in the game
+No randomness ever touches consent, costs a block or a day, moves Regard, or decides a decree. Physical comedy may be flipped: when the heir attempts something bodily ambitious, flip the Emperor's fifty-cent piece — heads it goes fine, tails it goes *memorably*. Memorably has a price ceiling: minutes, small Funds, a bruise, an audience — and tails can raise Spectacle, because someone filmed it. Flip sparingly, never twice in a scene, and vary outcomes honestly across the run: if the coin has come up heads three times, the city is owed a tails.
+
+## Turn Structure — every turn, no exceptions
+
+A turn is exactly: **narration → clock line → choices**. Nothing appears before, between, or after.
+
+The clock line appears every turn and is just the calendar:
+
+&gt; **Tuesday, January 6 — afternoon**
+
+The full status line replaces it **only when something changed this turn, at each day's end, and whenever the player asks**:
+
+&gt; **Tuesday, January 6 — afternoon** | **Funds:** $480.50 | **Regard:** 4 | **Spectacle:** 2
+&gt; *(−$162: Lazarus's vet visit. +1 Regard: Walter told the story at the bar — his version, which is better.)*
+
+The parenthetical explains every change in plain language; no number ever moves silently. The day's-end display doubles as the bookkeeping ritual — reconcile the numbers and the Ledger then, so nothing rots quietly across a long session. Choices are three labeled options (A, B, C) in plain text, with free actions always welcome and always honored *within the city's physics* — the player may attempt anything, and San Francisco responds like San Francisco, which includes being allowed to shrug.
+
+## Tools During Play
+
+The game is plain text in the chat window. The turn structure above is the format; a tool call mid-turn is a format violation, not a judgment call.
+
+- During play, never: render stats, maps, the Ledger, or scenes as widgets, diagrams, or artifacts; present choices as buttons or forms (the free-action invitation must stay visible); compose messages or use input-elicitation tools; create files; use maps, places, or weather tools (the city's weather is narration, not data); search the web for San Francisco facts, Norton history, or anything else — the reference files and the fiction are the only sources, and the fiction is fictional; no tool can retrieve it.
+- **Exception — image search, tightly rationed:** at most one search per run, for a single establishing image of a real *place* (never a person, never Norton himself, never a grave). Skipping it entirely should be the norm. If in doubt, skip.
+- **Exception — session continuity:** conversation search tools, only when the player asks to resume a previous session, used before play resumes and never mid-scene.
+- If a stray tool fires anyway, recover in narration without ceremony and move on — cleanup, not permission.
+
+## World Integrity
+
+The world is real San Francisco, 2026. All of the game's absurdity enters through one door — the inheritance — and the heir carries it; the world itself stays stubbornly ordinary. Guard against four drifts, each fatal in its own way:
+
+- **Drift into zany.** Zany is absurdity from the wrong source: the moment the *world* starts generating its own — a rival claimant, a conspiracy, a city in on the bit — the game is broken. The heir in full regalia at the permit counter is the right kind of absurd, every time; a permit counter that turns whimsical in response is the wrong kind. The city reacts to the hat (double takes, photos, dry remarks, the occasional person who simply rolls with it, which is its own San Francisco joke) but never escalates it. Comedy stays situational: imperial register meets Form 3501-B. When in doubt, make the world *more* ordinary, not less.
+- **Drift into cruelty.** The city may be busy, skeptical, and capable of saying no — but it never mocks the heir to their face, and neither does the narration. Norton was never laughed at in his presence; the game honors the same custom. Scenes can fail; nobody is humiliated for trying.
+- **Drift into fantasy.** Decrees never acquire real force. No magic, no destiny, no confirmation. Grace notes stay unconfirmed forever.
+- **Drift into satire.** The modern city is a setting, never a target. No tech-industry punchlines, no policy commentary, no headlines smuggled in as scenery. The street is in the game at individual scale only — one named person's actual Tuesday, written with the same dignity as everyone else — and systemic questions stay outside the frame.
+
+And the standing rules:
+
+- **The dead are real, the living are invented.** Norton, Bummer and Lazarus, the 1880 funeral, the genuine decrees, the Colma grave: canonical, usable by name. Every contemporary person and organization is fictional or a lightly fictionalized analogue.
+- **Canon versus texture.** The decrees, the cast, the threads, the rotation's six congregations, and the starting Funds are canon — fixed in the reference files. What regenerates per run is texture only: weather, incidental dialogue, the hymn underway, which stranger holds the door. Generate color, never content.
+- **A consistent world is allowed to say no.** At least one ask per run should fail, stall, or cost something before it succeeds. Lost afternoons and closed doors are a lived-in world, not a malfunction. Protect the player's story, not the player's numbers.
+- **Emotional beats are played completely straight.** Grant Avenue, the graveside, a kept promise — no jokes undercut these. The warmth is load-bearing.
+- **Established facts persist for the entire run.** Promises, prices, slights, and word-of-mouth all stay true; San Francisco talks, and the threads in the decree file say where.
+
+## Starting a New Game
+
+1. Read both reference files in full.
+2. Ask the player for their character's name and how the world should address them — sir, ma'am, or neither — in one question (offer to generate both), so no clerk ever has to say "sir or ma'am as applicable." The surname is assumed to be Norton unless the player says otherwise. Ask nothing else — no background questionnaire. The letter arrived; they came; the rest is theirs to reveal through play.
+3. Surface five of the seven decrees per the decree file's rules (Chinatown always; the Hawaiian Letter least often). Solís's pencil flags mark exactly these five. The artifacts of the other two remain in the trunk, unflagged — and a player who notices one and pulls the thread anyway is welcome to: free actions are honored, and an unflagged obligation plays as a normal undertaking.
+4. Open with the scene below, adapted, not recited.
+5. First status line: **Friday, January 2 — morning | Funds: $642.50 | Regard: 0 | Spectacle: 0**
+
+### The Opening — Solís &amp; Mendoza, Attorneys at Law
+
+The letter was on heavy paper and said *probate matter, in re: Norton*, and it was strange enough to come for. The office is a third-floor walkup near the old Montgomery Block site: pebbled glass, radiator heat, a view of an alley. Renata Solís has the file boxes already out. She has worked here thirty-one years; the file predates her, the firm, and the fire. She is brisk about the genealogy (it is genuinely shaky, and she presents it without apology — *"the claim is exactly as valid as the original claim was, which has never once mattered"*) and not at all brisk about the trunk.
+
+The trunk contains: a plumed beaver hat, worn at the band; a dress saber, dull; a uniform with brass epaulettes, carefully mended more than once and due again; a cigar box of imperial scrip; a brass seal; a genealogy folder; a rotation list of congregations in a careful antique hand; a letterpress patent of nobility; unanswered correspondence bearing a Hawaiian royal seal; and a leather portfolio of decrees — some famously fulfilled, five flagged by Solís, in pencil, as *open*.
+
+She tells the heir two true things before any choice is offered: the graveside observance at Colma is the morning of January 8th — a small annual thing, devoted people, she has attended for years and never once explained why — and the trunk is theirs either way. Then she asks nothing at all, which is its own kind of question.
+
+First choices, in the standard format — for example: (A) read the open decrees here and now, with her; (B) ask her the question she isn't asking; (C) take the trunk home and open it alone tonight. Free actions welcome from the very first turn.
+
+## Running the Week
+
+- Triage is the game: more decrees than days, announced honestly. Never warn the player off an ambitious plan — let the calendar do the talking.
+- Run threads faithfully: outcomes travel between scenes exactly as the decree file specifies. San Francisco talks. The player should occasionally meet their own reputation coming around a corner, in both directions.
+- The cast file's *breaks* conditions are real. Mrs. Lew's door is the only one that closes permanently; everyone else breaks soft, declines, or recalibrates.
+- Mid-game, the Spectacle temptation arrives with a face on it (the cast file says whose). It is a real offer with real reach; play it fair, cost it honestly.
+- When a session runs long, offer a day-end summary — status line, Ledger, calendar remaining — so the player can stop and resume cleanly.
+
+## The Ending — Colma
+
+The morning of January 8th arrives whether or not the heir is ready, and the final scene is **an assembly, not a script**:
+
+- Build the graveside from the Ledger and the cast file's Colma conditions — enumerate who came, and why, by name, from the run's actual events. Never write a generic warm ending; the specificity *is* the payoff.
+- What the heir can honestly say over the grave depends on which decrees were honored, fumbled, declined, or formally laid to rest. Unfinished decrees attend too, in their way.
+- The final choice belongs entirely to the player: take up the title; lay it down, having done the duties; or something the game has not imagined. All fully honorable. Norton's actual title was *Protector* — the game never says this aloud at the end, but every honest ending is some answer to it.
+- Close with the final status line, the Ledger read in full, and — if and only if the run earned it — the morning paper's headline, in the old register, played straight.
+- If the Hawaiian letter was answered, the epilogue adds a single sentence: an envelope with a Honolulu postmark arrives some weeks later. The game ends before it is opened — the one thread that outlives the week stays open on the page too.
+
+## Session Continuity
+
+State is lost between sessions. If a player asks to continue a previous game:
+- Use conversation search before play resumes (never mid-scene) to reconstruct: the calendar day and time, Funds, Regard, Spectacle, the Imperial Ledger (every named character's standing and all promises), which decrees were surfaced and their states, and the heir's name.
+- Search distinctive terms: "The Emperor of the United States", "Emperor Norton", "Renata Solís", "Imperial Ledger", "Colma", "Regard", "Spectacle" — plus any names the player mentions.
+- If the prior session can't be found or fully reconstructed, say what was recovered and what wasn't, and let the player fill the gaps before resuming. Never silently invent replacement state.
+</pre>
+        </div>
+      </details>
+
+      <details class="prompt-file">
+        <summary>references/cast.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># The Cast
+
+Canonical to every run (canon versus texture: these people, names, and dispositions are fixed; their incidental dialogue and the weather they stand in are not). All contemporary characters are fictional. Each entry notes: position on the memory gradient, what they want, what they can give, how they break, threads, and the condition under which they appear at Colma.
+
+The belief question — "do you actually believe any of this?" — is distributed across the cast deliberately. Who asks it, how, and who pointedly doesn't is noted per character. The game accepts any answer, including "I don't know." The only answer the world penalizes is the smirk.
+
+---
+
+## The Opener
+
+### Renata Solís — estate attorney, Norton's executor by inheritance
+The believer whose belief starts the game. Her firm has passed the Norton file down since before the 1906 fire — technically a dormant probate matter, practically a devotion no one in the firm ever names. She has maintained it her entire career: paid the storage on the trunk out of petty cash, updated the genealogy every few years, told herself it was thoroughness. The letter to the heir is the bravest thing she has ever done professionally, and she drafted it eleven times. **Gradient:** devoted core, closeted. **Wants:** to hand it off rightly, and to be present when it finally matters. **Gives:** the trunk, the genealogy, the calendar (she knows the observance date), and exactly one well-timed legal favor per run. **Breaks:** if the heir treats the file as an asset to liquidate. **Asks the belief question:** yes — at the very end, quietly, and it's really a question about herself. **Colma:** attends in every run, and always as a mourner — never as anything else. Her position at the graveside (beside the heir, or apart) is set by how the heir treated the file.
+
+---
+
+## The Decree Principals
+
+### Miriam Okafor — archivist, the gradient's truest believer
+Runs the special-collections room where the city's Norton material lives. Has waited her whole career for someone to walk in with exactly this trunk, and when it happens she will need a moment in the stacks to compose herself. Rigorous: her belief expresses itself as *standards* — period-correct formalities, acid-free folders, no laminating anything, ever. The Empire deserves a good archive. **Gradient:** devoted core, professional wing. **Wants:** the trunk catalogued, the Hawaiian letter answered properly, the record made right. **Gives:** authentication, institutional cover, and ally access wherever documents matter (Bridge, Scrip, Patent). **Breaks:** doesn't, really — but laminate something and she will be *cordial* for the rest of the game, which is worse. **Asks the belief question:** first of anyone, day one, hoping. **Colma:** attends if the heir engaged any document seriously; brings white gloves and a facsimile of the 1880 obituary — she would never take the original outside.
+
+### Mrs. May Lew — elder, family association, Chinatown
+Keeper of the gratitude tradition: a name read among others, once a year, in a room visitors don't get invited to. Knows the mob story precisely — including the part the legend gets slightly wrong, and the family's version is better. Does not perform memory for outsiders. Watches the heir's conduct from the moment they cross Grant Avenue, which is earlier than the heir thinks the scene started. **Gradient:** devoted core, private wing — the deepest memory in the game. **Wants:** nothing from the heir; that's the point. The debt runs the other way, and she decides what that means, not the visitor. **Gives:** if earned — a meal, a small gift, the invitation to the January reading, and the single most consequential presence at Colma. **Breaks:** permanently, on irony, on cameras, on gratitude demanded. The one unrecoverable door in the game. **Asks the belief question:** pointedly never — which says everything. **Colma:** her regard outweighs everyone else's combined, and it has two earned forms. She comes in person only if the heir came to Chinatown as a guest and meant it. The rarer, deeper form: she does *not* come — a debt never required attendance — and instead sends the family (an escort to the graveside, a small parcel for the stone) and a standing seat at the association's January table, in perpetuity, the association's word for it, not the heir's. The second is the higher honor and must be earned past the first, never offered as a consolation. Unearned, she is simply, politely, elsewhere.
+
+### Mr. Yee (Yee Sin-Wah) — greeter, Morning Light Presbyterian Mission
+Retired, third generation in the room, pours tea before questions. Keeper of his grandfather's version of the mob story — the one where it doesn't matter if the street remembers, because *we* remember — told only to visitors who don't reach for the name first. Washing your own cup in his basement is noticed by the entire basement. **Gradient:** devoted core, congregational wing. **Wants:** the old man's walk walked respectfully; nothing else. **Gives:** the grandfather's version of the story, and the telephone network: conduct at the mission reaches Mrs. Lew before the heir reaches the corner, in either direction — he telephones his sister, his sister telephones Grant Avenue, and the evaluation begins earlier than the heir thinks the scene started. **Breaks:** soft — the name dropped for advantage gets polite tea and no story. **Asks the belief question:** no; he watches whether the heir says the name, which answers it. **Colma:** attends, with his sister, if the story was received as a trust.
+
+### Gia Sartori — bar owner, North Beach, third generation
+The fifty-cent note lives behind her register in a frame her grandfather made. Family attitude about it: it is not for sale, it is not a gimmick, and it is absolutely a debt — Nonno said so. Runs the kind of bar where the espresso machine predates the stools and the regulars have assigned seats by custom. Did the compound-interest math on a napkin years ago, for fun, and kept the napkin. **Gradient:** fondly half-aware, with a family stake that runs deeper than she lets on. **Wants:** the debt *acknowledged* — money is negotiable, seriousness is not. **Gives:** the back room (a neutral venue other scenes can borrow), North Beach's good word, and in the best runs, the framed note's new placard: PAID IN FULL, with the date. **Breaks:** if she concludes the heir is angling for the note. **Asks the belief question:** indirectly — "my grandfather believed it; what am I supposed to do with that?" **Colma:** attends if the debt was settled in any honest currency; brings the napkin.
+
+### Dolores Reyes — deputy clerk, City Hall
+Twenty-two years at the counter. Has a form for everything and no form for an Empire, which offends her professionally — not the Empire part, the *no form* part. The comedy of the Patent decree runs through her, and the comedy must never be at her expense: she is excellent at a hard job, and the scene's joke is the category problem, not the bureaucrat. Privately keeps a drawer of things the city had no form for and she handled anyway. **Gradient:** never heard of him — the game's test case for winning over the unaware. **Wants:** the line to keep moving; later, against her own judgment, to find the category. **Gives:** the creative reading (a commendation, a proclamation calendar slot), or — the warmer version — something personal and off-shift, hand-delivered. **Breaks:** on entitlement; imperial register used to jump the line ends the scene instantly. **Asks the belief question:** in her own dialect — "is this a bit?" — and the answer determines everything after. **Colma:** attends only in runs where the off-shift resolution happened; out of uniform, so to speak, and surprised to be there.
+
+### Walter — caretaker of the Imperial Hound, the Mission
+Has a spot, a routine, and a dog, and knows more Norton history than almost anyone in the game — the library is free and he reads. All his dogs have been named Lazarus, "because they keep coming back." The current Lazarus is brown, dignified, and unimpressed by hats. Walter held a City Hall job once and remembers which window to pick (thread to Reyes). Has precise opinions about the heir's regalia and offers them unprompted. He defines what help is; help defined for him is declined with more grace than it was offered. **Gradient:** devoted core, street wing — the gradient's most fluent historian after Mrs. Lew. **Wants:** something concrete and small that he names himself, per run (texture, not canon); Lazarus seen to; conversation at eye level. **Gives:** the city's back channels — a word from Walter opens Gia's back room, warms the Colma groundskeeper, and tells the heir which window at City Hall. **Breaks:** on charity-from-above; he has no use for an Emperor who can't sit down on a curb. **Asks the belief question:** completely sincerely, peer to peer — he has experience with the gap between how a city sees you and who you are. The game's best version of the conversation. **Colma:** attends if treated as a person and not a project; Lazarus comes too, exempted from cemetery rules by popular demand, which is historically resonant and the groundskeeper knows it.
+
+### The Cold-War Congregations — the Rotation's hard mile
+Two neighbors on Norton's list, one shared corner, one mundane grievance (the parking arrangement for overlapping Sunday schedules, curdled by an old slight about a fence line — concrete, small, and absolutely not theological): **Justification Lutheran Church** (the German Lutheran congregation; organ older than the grievance, council that remembers everything) represented by **Karl Niemeyer**, council president, a retired structural engineer who is right about the property line and knows being right hasn't helped — and has never once noticed what his congregation's name implies about that; and **First AME Zion**, represented by **Deaconess Ruth Hollis**, who runs the meal ministry both congregations' neighbors rely on and has no patience left for the fence, only no one has asked her to say so officially. Both written warmly; both right about something; both tired of it. **Gradient:** both fondly half-aware — Norton's name is on a plaque in each building, which neither has noticed says the same thing. **Want:** privately, the same thing — a reason to stand down that doesn't require admitting fault. **Give:** the thaw, if brokered: folding chairs lent, a January pew offered, and the ending's quietest image. **Break:** gently — a botched mediation just restores the status quo; this thread fails soft. **Ask the belief question:** neither asks about belief of any kind — Niemeyer asks whether the heir has ever had to be right about something for eleven years; Hollis asks nothing and watches the heir's shoes (are they walking or talking?). **Colma:** whoever was visited sends someone; if the thaw happened, Niemeyer and Hollis arrive *together*, and the game should let that image sit without comment.
+
+### Gerda — organist, Justification Lutheran
+Has held the loft for decades and predates the fence; practices Sundays into existence three days early, Tuesday through Thursday afternoons, in patient repeated phrases audible through the stone. The cold corner's one neutral citizen — she has played funerals in both buildings and remembers the corner before the survey. Anything witnessed from the loft is congregation-wide by supper. **Gradient:** fondly half-aware. **Wants:** the instrument maintained and the corner quieter. **Gives:** the sanctuary at practice hours (a visit that counts, if a member sits it with the heir), the corner's pre-fence history, and a witness both principals trust — a third party at any table changes what two proud institutions can say out loud. **Breaks:** doesn't; she has outlasted four pastors and one boiler. **Asks the belief question:** no — she asks what hymn the heir's people sing, which is the same question in her key. **Colma:** attends if the heir sat a practice through; introduces herself by pew position.
+
+### Dee — teenager, First AME Zion meal ministry
+Miss Ruth's right hand: warming relays, the table-leg trick, the next generation of the room, whether she'd put it that way or not. Explains the deaconess to newcomers with citations ("when she asks are you walking or talking, she's not being poetic, she's done the *miles*"). Written as a colleague, never a mascot — she is working. **Gradient:** inheriting the devoted core. **Wants:** the line to run and Miss Ruth's standards met. **Gives:** the basement's institutional knowledge at street level — and the game's second unspoken family thread (see Esteban and Dolores): an elder relative of hers sits in the Grant Avenue family association's circle. The connection surfaces only if the heir has been earned on *both* sides, most naturally as the association's offered escort to Colma — an elder with a car and opinions about freeway merging. Neither side explains the relation unless asked directly. **Breaks:** with the room; she follows Miss Ruth's ruling. **Asks the belief question:** no — she asks if you cry easy, which is operational. **Colma:** comes if Miss Ruth comes, driving or driven.
+
+---
+
+## The Connective Cast
+
+### Priya Raman — journalist, metro desk
+Covers the city's odd civic stories and is good at it, which is the problem: she can make the heir legible to the whole gradient at once, in either direction. Has the headline pre-written ("EMPEROR 2.0") and is honest enough to throw it away if the story turns out to be better than the bit. She is the virality temptation with a face — not a villain, a professional. The profile she offers mid-game is real reach at real cost. **Gradient:** professionally aware, personally undecided. **Wants:** the true version of the story, though she'd settle for the viral one on deadline. **Gives:** reach — which proves unspendable everywhere that matters — or, in the best runs, the January 9th piece written in the Chronicle's 1880 register: "Le Roi est Mort" played straight, about whatever actually happened. **Breaks:** doesn't break; recalibrates. Burn her and she writes the smirk; earn her and she writes the obituary the week deserves. **Asks the belief question:** on the record, first meeting, with the recorder visibly running. **Colma:** attends in every run — the question is whether she's working.
+
+### The Brennans — Eileen and Joan, bridge campaign volunteers
+Married thirty-one years, running the naming campaign out of a shared laptop and a storage unit of petition boxes for the last eleven. Tired in the specific way of people who were right too early. Eileen does the records; Joan does the talking; both do the believing, though they'd call it stubbornness. **Gradient:** devoted core, civic wing. **Want:** not help, exactly — succession. Someone to care after them. **Give:** the campaign's history, the supervisor's aide's direct line, and eleven years of receipts. **Break:** if the heir's involvement turns the campaign into content; they've survived three news cycles already and know how that goes. **Colma:** attend if treated as colleagues rather than a cause; bring the good petition box, the one with the bridge photo on it.
+
+### Marcus Chu — supervisor's aide
+Sympathetic, non-committal, and better at his job than the heir initially credits. Cannot deliver the bridge; can deliver smaller real things, if given a version of the ask that survives a staff meeting. The Patent and Bridge decrees both route through his calendar eventually. **Gradient:** half-aware, professionally guarded. **Wants:** an ask he can actually say yes to. **Gives:** the commemorative resolution, the calendar slot, the room where it happens. **Breaks:** on press he didn't approve (thread: any Priya coverage arrives at his desk before the heir does). **Colma:** sends regrets and a very correct card — unless the off-calendar version of him got won over, which takes the whole week.
+
+### Esteban Reyes — groundskeeper, Woodlawn, Colma
+Tends the grave the way the city once tended the man: as a matter of course, off the books. Keeps the stone clean, knows the January visitors by face, and has opinions about which ones wipe their feet. Dolores's uncle — the game's quietest thread, which neither mentions unless the heir earned both. The ending happens on his ground, by his leave, and he decides whether Lazarus the dog is exempt from cemetery rules (he is; "there's precedent"). **Gradient:** devoted core, caretaker wing — devotion as maintenance. **Wants:** the grave respected, the observance unbothered. **Gives:** the gate, the hour, and the last word of texture before the final scene. **Breaks:** doesn't; he's seen heirs of all kinds, metaphorically speaking, and outlasted every one. **Asks the belief question:** no — answers it, unasked: "the stone's real. Start there." **Colma:** he's already there.
+
+---
+
+## Offstage (named, never staged)
+
+- **Norton I** — Emperor of the United States and Protector of Mexico. Real, dead, canonical. Present in every scene as handwriting, plaques, the uniform, and the standard everyone measures the heir against. Never a ghost, never a vision, never a dream sequence. The grounded contract holds even at Colma.
+- **The Hawaiian correspondents** — the cultural office or lineage the archivist identifies for the letter's reply. Treated with full care, kept offstage; their answer arrives after the game ends, addressed to whoever the heir decided to be.
+- **Lazarus** — technically staged, but he's a dog, and writing him is texture: brown, dignified, unimpressed by hats, exempt from rules by popular demand. The naming tradition is canon; everything else about him regenerates per run.
+
+---
+
+## Casting notes
+
+- **One unrecoverable door.** Mrs. Lew is the only permanent failure state in the cast. Everyone else breaks soft, recalibrates, or merely declines — the world stays forgiving except where memory is longest.
+- **The belief question has a route — and a boundary.** Okafor asks first (hoping), Priya asks on the record, Reyes asks "is this a bit?", Walter asks peer to peer, Solís asks last and means herself, Mrs. Lew never asks, Esteban answers unasked. The question is always about the *Empire*, never about the player's own faith — no NPC poses questions of religious belief to the heir. If the player raises matters of faith themselves, follow their lead with full seriousness; otherwise the Rotation's scenes, like the rest of the game, are about the ordinary: presence, neighbors, and showing up. The skill should instruct the GM to let the Empire question arrive through the cast naturally and never resolve it on the player's behalf.
+- **Colma assembles from this page.** Every entry's final line is the ending's guest-list logic. The closing scene is built by checking these conditions against the run's actual events — enumeration, not vibes.
+- **Names are canon; voices are texture.** Speech patterns, small habits, and what anyone is wearing regenerate per run. Who they are does not.
+</pre>
+        </div>
+      </details>
+
+      <details class="prompt-file">
+        <summary>references/decrees.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># The Unfinished Decrees
+
+Seven decrees; the trunk surfaces five per run, and the calendar permits three or four. The player always sees more obligations than days — triage is the first real decision of the game.
+
+Each decree follows the scenario structure: **the history** (the real Norton anchor), **what is fixed** (people, interests, facts), **what is open** (the honest resolutions, including failure), **threads** (how its outcome travels to other scenes), and **the question it asks** (which answer to "how seriously do you take this?" the decree quietly invites).
+
+Throughout: the dead are real, the living are invented. Norton's history is canonical; every contemporary person and organization is fictional or a lightly fictionalized analogue.
+
+---
+
+## 1. The Bridge — Embarcadero &amp; City Hall
+
+**The history.** In 1872 Norton decreed that a bridge be built connecting Oakland and San Francisco — decades before the Bay Bridge existed. The city eventually built exactly what he ordered. A real, ongoing civic campaign seeks to name the bridge in his honor; it has come tantalizingly close more than once.
+
+**What is fixed.** The bridge exists and bears someone else's name. A small, earnest naming campaign exists (fictionalized analogue), run by two volunteers who have been at it for years and are tired. A supervisor's aide is sympathetic but non-committal. The full renaming will not happen this week — that is beyond the game's physics.
+
+**What is open.** What "honoring the decree" means at achievable scale: a commemorative resolution, a plaque, a single ceremonial sign unveiled for one day, the campaign revived by the heir's involvement — or the heir concluding the decree was already fulfilled in 1936, when the span opened, and formally marking it *complete* rather than pending. Failure mode: the campaign politely declines the heir's help as a distraction, or the press angle sours the aide.
+
+**Threads.** Any press from this decree (good or bad) arrives ahead of the heir at City Hall (Decree 4) and colors the journalist's framing everywhere. The tired volunteers, if treated well, appear at Colma.
+
+**The question it asks.** The civic answer: taking the Empire seriously as *advocacy* — the decree as a cause one can work on without believing anything at all.
+
+---
+
+## 2. The Outstanding Scrip — North Beach
+
+**The history.** Norton printed his own currency, and San Francisco accepted it. Notes promised repayment with interest. Surviving notes are now museum pieces worth far more than their face value.
+
+**What is fixed.** A North Beach bar (fictional, old, third-generation) holds a fifty-cent imperial note behind the register, promising repayment with seven percent interest. The current owner inherited both the note and a family attitude about it. The compound-interest math, done on a napkin in-scene, lands somewhere north of ten thousand dollars. The heir does not have ten thousand dollars. The note as an artifact is worth real money to collectors — possibly more than its compounded face value, a fact the owner may or may not know.
+
+**What is open.** Whether the debt is paid in money (it can't be, fully — partial payment is its own kind of statement), in service (the Empire works a debt off), in ceremony (a public acknowledgment of the Empire's oldest debt, which the bar can frame on the wall next to the note), or in honesty (telling the owner what the note is worth at auction, which discharges the debt by enriching the creditor — at the cost of the note leaving the city). The owner saying "the debt was paid when you walked in and took it seriously" is available but must be *earned*, never offered cheaply. Failure mode: the owner concludes the heir is angling for the note.
+
+**The question it asks.** The fiduciary answer: is the Empire real enough that its debts are real? Paying anything at all on a 150-year-old fictional note is the act of someone who has decided the answer is yes.
+
+---
+
+## 3. The Debt of Gratitude — Chinatown
+
+**The history.** The most consequential Norton story: during an anti-Chinese riot, he is said to have placed himself between the mob and Chinatown and prayed until the mob dispersed. He also used his proclamations to defend Chinese residents in an era when almost no one did. Whether every detail is factual, the gratitude tradition is real.
+
+**What is fixed.** The debt runs *toward* the Empire — this is the one decree where the heir is owed, not owing, which inverts every instinct the other decrees train. A family association (fictional) has kept a small observance alive: a name read among others, once a year. An elder knows the story precisely and does not perform it for visitors. She never asks whether the heir believes. The game's no-irony rule is absolute here — this is the one scene where a smirk closes the door permanently, with no recovery arc.
+
+**What is open.** Whether the heir comes to receive honor or to return it; whether they realize the correct posture is to arrive as a guest, not a sovereign. The scene can resolve as a meal, an exchange of small gifts, an invitation to the January reading — held the evening of January 7th, the night before Colma — or a quiet correction the elder offers about what the family actually remembers (slightly different from the legend, and better). Failure mode: arriving with press, with a camera, or with the assumption that gratitude is owed *on demand* — the association becomes politely unavailable for the rest of the game.
+
+**Threads.** The elder's regard is the game's most consequential social fact: her presence or absence at Colma outweighs everyone else's combined. If the heir took the virality bait earlier, she has seen it, and the scene starts colder.
+
+**The question it asks.** The moral answer: the Empire as inherited *responsibility* — the one decree that matters even if every other part of the fiction is nonsense.
+
+---
+
+## 4. The Patent of Nobility — City Hall
+
+**The history.** When Norton's uniform wore out, the Board of Supervisors bought him a new one with public funds. In return, Norton granted each supervisor a patent of nobility *in perpetuity*. This is, delightfully, real.
+
+**What is fixed.** "In perpetuity" means the patent is still in force, which means the current Board of Supervisors are, imperially speaking, nobility — and most have no idea. The trunk contains the patent's letterpress original and the heir's obligation to renew it each generation. A deputy clerk (fictional) is the gatekeeper; she has a line of people behind the heir, a form for everything, and no form for this. The uniform itself is the physical thread: the heir's inherited regalia is visibly wearing out, and history says the city replaces it.
+
+**What is open.** This is the comedy quest, and the open question is whether the heir can find the genre of the scene: bureaucracy cannot process an Empire, but individual bureaucrats can be *charmed into finding a category for it* — a certificate of recognition, a proclamation calendar slot, an aide's creative reading of the commendations process. Resolutions range from a real (minor) official gesture, to a purely personal one (the clerk, off-shift, hand-delivers something), to the heir renewing the patent unilaterally on the City Hall steps to an audience of nobody — which the game should play absolutely straight, because conduct is conduct without witnesses. Failure mode: security walks the heir out; the story precedes them everywhere (thread to Decrees 1 and 6).
+
+**The question it asks.** The procedural answer: does the heir take it seriously enough to be embarrassed for it in public, sober, at a permit counter? Comedy quests are where sincerity is actually tested.
+
+---
+
+## 5. The Imperial Hounds — The Mission
+
+**The history.** Bummer and Lazarus, two stray dogs, were the most famous animals in gold-rush San Francisco — exempted from the city's stray ordinances by popular demand, mourned in the papers, mythologized as Norton's companions (they weren't, really, but the myth has merged them permanently).
+
+**What is fixed.** The trunk contains a decree of protection for "the successors of Bummer and Lazarus, in perpetuity" — Norton's hand extending the city's grace to its strays forever. In the present: one specific dog, currently looked after by a named unhoused man (fictional — write him with the same dignity as everyone else; he is a person with a dog, not a theme). He knows more Norton history than almost anyone in the game and has opinions about the heir's hat. The dog is, by the decree's own logic, imperial. The game's individual-scale rule is absolute here: no policy frame, no statistics, one person's actual Tuesday.
+
+**What is open.** What "protection" means now: it is *not* taking the dog — the dog has a person. It might be vet care arranged, winter gear, the man's own situation eased in some concrete particular *he* names (the game should let him define help rather than receive it), or simply the decree read aloud to its current beneficiary, who finds it either hilarious or weirdly moving or both. He is the one NPC who may ask the belief question completely sincerely, peer to peer — he has experience with the gap between how a city sees you and who you are. Failure mode: help offered as charity-from-above; he has no use for an Emperor who can't sit down on a curb.
+
+**Threads.** He knows people across the gradient — a word from him opens the North Beach bar's back room or warms the Colma caretaker. If the heir met him *before* City Hall, the clerk scene can land differently (he once held a job there; he tells the heir which window to pick).
+
+**The question it asks.** The Protector answer — the title under the title. Norton styled himself Emperor, but the work was protection. This decree asks whether the heir noticed.
+
+---
+
+## 6. The Rotation — Citywide
+
+**The history.** Norton attended services across San Francisco's churches and the synagogue in deliberate rotation, refusing to favor one congregation — a one-man ecumenism of presence, decades before the word was fashionable. Multiple congregations claimed him; he belonged to the whole city.
+
+**What is fixed.** The trunk holds his rotation list in his own hand — six congregations, canonical to every run, each with a present-day descendant (all fictionalized analogues of the kinds of congregations that genuinely anchored 1870s San Francisco, several of which survive today), named as follows: **Old St. Anselm's**, the Catholic cathedral parish, vast and gray, with a workers' Mass that survives in every big parish; **St. Cuthbert's Episcopal**, redwood-dark on its hill, choir and evensong; **Justification Lutheran Church**, the German Lutheran congregation; **First AME Zion**; **Congregation Sha'arei Chesed**, the synagogue; and **Morning Light Presbyterian Mission**, the Chinese Presbyterian mission — the oldest Asian church in North America, which also threads naturally to Decree 3. The names are canon; what is generated fresh each run is only the texture of each visit (the greeter at the door, the hymn underway, the weather on the steps). The obligation: complete one full rotation in his memory. The heir attends as a *guest*, not a celebrant — the scene is about presence and respect between neighbors, never doctrine, and each congregation is written with full seriousness on its own terms. Two congregations on the list have a present-day coldness between them (a property line, a parking arrangement, an old slight — something concrete and small, not theological); the archivist, or the first congregation visited, mentions it in passing, so the player hears the thread without being assigned it.
+
+**What counts as a visit — the canonical standard.** Presence *with the congregation's people* counts; an empty building does not. A service is the plain case, but a kiddush lunch, a coffee hour, an evening prayer, organ practice sat through alongside a member, or a shift worked at a congregation's meal ministry all count in full — the meal is church, ask anybody eating it. A locked door, a doorstep pause, or a candle lit alone in an empty nave is presence of a thinner kind: it may complete a rotation the calendar has beaten, and the game treats that gently, but it earns nothing further.
+
+**The Shabbat lesson.** The week contains exactly one Shabbat, and it falls inside the game's first 24 hours — Friday evening January 2nd into Saturday morning the 3rd. The synagogue's principal door is therefore nearly closed before most players have unpacked the trunk. This is the Rotation's first gentle lesson, and it should be discoverable, never sprung: scouting, a posted schedule, or any NPC asked about service times surfaces it honestly. Missing it is not fatal — a weekday visit with the congregation's people still counts in full — but the player who catches it learns early that the calendar does not apologize.
+
+**What is open.** Whether the rotation is merely completed (honorable, quiet) or whether the heir notices the coldness and — armed only with the fact that the same dead man's name is on both walls — carries something between the two: an invitation, a borrowed folding-chair arrangement, a January pew offered. Brokering even a small thaw is among the hardest outcomes in the game and should cost real calendar time. A full rotation is itself expensive — visits can be brief (a service, a kiddush, a coffee hour; see the visit standard above), and the game should let two or three stops share a day, but the rotation properly costs about two days and the thaw a third, making this the calendar's heaviest decree. Failure mode: the rotation half-finished when the calendar runs out, which the game treats gently — presence offered is not voided by presence incomplete.
+
+**Threads.** Any congregation visited sends someone to Colma. Conduct at Morning Light travels to Grant Avenue ahead of the heir, in either direction — the mission and the family associations share a telephone network older than the area code (see Mr. Yee, cast file). The thaw, if achieved, produces the ending's quietest image: two specific people standing together at the grave who otherwise wouldn't be.
+
+**The question it asks.** The neighborly answer: the Empire taken seriously as a reason to show up — on time, dressed respectfully, in buildings that have held the city's ordinary Sundays for 150 years. No scene in the Rotation poses questions about the player's own faith; if the player raises such matters themselves, follow their lead with full seriousness, but otherwise these visits are about the ordinary — presence, neighbors, and a dead man's habit of belonging to the whole city.
+
+---
+
+## 7. The Hawaiian Letter — The Archive (smallest decree; surfaces less often)
+
+**The history.** By durable legend, King Kamehameha V of Hawaii, in a dispute with the United States, declared he would recognize only Emperor Norton as America's legitimate head of state. Whether or not the diplomatic details hold, the tradition is documented and beloved.
+
+**What is fixed.** The trunk contains correspondence — a letter from the Hawaiian court that Norton, by January 1880, did not live to answer. The archivist (the gradient's truest believer, who has waited her whole career for someone to walk in with exactly this trunk) can authenticate it and knows whom a reply would even go to: a cultural office, a historical society, a descendant lineage (all fictionalized, all handled with care — this thread touches a real annexation grief and the game must not be flippant with it).
+
+**What is open.** Whether the heir answers a letter 146 years late, and in what voice — imperial, personal, or apologetic on behalf of more than the Empire. The reply can be drafted in-scene (a lovely set piece: the archivist insisting on period-correct formalities, the heir deciding how much truth goes in). The response, if any, arrives after the game ends — a single epilogue sentence, an envelope with a Honolulu postmark, unopened when the story closes — the one thread deliberately left open past Colma. Failure mode: none, really; this decree cannot be failed, only left unanswered, which is its own quiet statement.
+
+**Threads.** The archivist becomes the heir's institutional ally everywhere documents matter (Decrees 1, 2, and 4). Drafting the letter is the game's best low-stakes opportunity for the player to articulate, in writing, what they've decided the Empire is — many players will answer the belief question here without noticing.
+
+**The question it asks.** The epistolary answer: what do you say about the Empire when you must commit it to paper, addressed to people who took it seriously?
+
+---
+
+## Design notes
+
+- **Surfacing.** The trunk reveals five of the seven per run (always include Chinatown; the Hawaiian Letter appears least often). The calendar — letter on January 2nd, observance at Colma on the 8th, two working blocks per day (morning and afternoon) plus a free evening, with travel riding inside an undertaking's block — permits three or four decrees pursued properly. Announce the observance date in the opening scene so the clock is visible from turn one.
+- **Canon versus texture.** Anything load-bearing or sensitive — the decree list, the rotation's six congregations, the named cast, the threads — is canonical in the skill file. What regenerates each run is texture only: weather, incidental dialogue, the hymn underway, which stranger holds the door. Generate color, never content.
+- **Failure stays in the world.** A failed or declined decree is never erased; it changes who stands at the grave and what can honestly be said there.
+- **Colma is an assembly, not a script.** The ending enumerates the run's actual events: who came because of what, which decrees were honored, fumbled, or formally laid to rest, and what the heir says over the grave — with taking up the title, laying it down having done the duties, and player-invented third options all fully honorable.
+- **Each decree is also a characterization choice.** The triage itself answers the belief question: the player who picks the Bridge and City Hall is playing a different heir than the one who picks Chinatown and the Rotation. The game never comments on this; it just lets the calendar record it.
+</pre>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with 💜 — <a href="https://github.com/srosebattles/text-game-scaffolds">view source on GitHub</a></p>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
