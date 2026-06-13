@@ -3,11 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Game Scaffolds — Ready-to-Play Text Adventures for AI Chatbots</title>
-  <meta name="description" content="Free, ready-to-use text-based game scaffolds for Claude, ChatGPT, Grok, and other AI chatbots. Download as Claude skills or copy the prompts directly — no install required.">
-  <meta property="og:title" content="Text Game Scaffolds">
-  <meta property="og:description" content="Free text-based game scaffolds you can play with any AI chatbot. Download or copy-paste — your adventure starts in seconds.">
+  <title>Text Game Scaffolds — Free Text Adventures &amp; Interactive Fiction for AI Chatbots</title>
+  <meta name="description" content="Free text adventures and one-player TTRPG-style interactive fiction you play with an AI game master. Built as Claude skills; adaptable for ChatGPT, Gemini, and other LLMs. Copy the prompt or download — no install required.">
+  <link rel="canonical" href="https://srosebattles.github.io/text-game-scaffolds/">
+  <meta property="og:title" content="Text Game Scaffolds — Text Adventures for AI Chatbots">
+  <meta property="og:description" content="Free interactive fiction you play with an AI game master. Copy a prompt, paste it into a chat, and start playing.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://srosebattles.github.io/text-game-scaffolds/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Text Game Scaffolds",
+    "url": "https://srosebattles.github.io/text-game-scaffolds/",
+    "description": "Free text adventures and interactive fiction played with an AI game master — built as Claude skills, adaptable to any LLM.",
+    "hasPart": [
+      {
+        "@type": "Game",
+        "name": "A Fool's Errand",
+        "url": "https://srosebattles.github.io/text-game-scaffolds/games/fools-errand/",
+        "description": "A warm, silly medieval text adventure where an AI plays game master. You're a peasant farmer accidentally declared the Chosen One.",
+        "genre": ["Interactive fiction", "Text adventure", "Comedy"],
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "Game",
+        "name": "Ecclesiastical Politics",
+        "url": "https://srosebattles.github.io/text-game-scaffolds/games/ecclesiastical-politics/",
+        "description": "A literary text adventure of medieval church politics — cathedral chapters, councils, and diets — run by an AI game master.",
+        "genre": ["Interactive fiction", "Text adventure", "Historical fiction"],
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "Game",
+        "name": "The Emperor of the United States",
+        "url": "https://srosebattles.github.io/text-game-scaffolds/games/emperor-of-the-united-states/",
+        "description": "A grounded, gently comic text adventure in contemporary San Francisco: you've inherited the obligations of Emperor Norton I.",
+        "genre": ["Interactive fiction", "Text adventure", "Contemporary fiction"],
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "Game",
+        "name": "New Vinland",
+        "url": "https://srosebattles.github.io/text-game-scaffolds/games/new-vinland/",
+        "description": "An alternate-history text adventure world: Norse-colonized 15th-century North America, explored with an AI game master.",
+        "genre": ["Interactive fiction", "Text adventure", "Alternate history"],
+        "isAccessibleForFree": true
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,8 +74,9 @@
     <section class="hero">
       <h1>Text adventures you play with an AI</h1>
       <p class="hero-tagline">
-        Free game scaffolds that turn Claude, ChatGPT, or any AI chatbot into your
-        personal game master. Copy a prompt, paste it into a chat, and start playing.
+        Free interactive fiction scaffolds that turn Claude, ChatGPT, or any AI chatbot
+        into your personal game master — part text adventure, part one-player tabletop
+        RPG. Copy a prompt, paste it into a chat, and start playing.
       </p>
       <div class="hero-actions">
         <a href="#games" class="btn btn-primary">Browse the games</a>
@@ -42,32 +88,38 @@
       <h2>The Games</h2>
       <p class="section-intro">
         Each game is a structured prompt (a "scaffold") that gives an AI everything it
-        needs to run the game: rules, world details, and a consistent tone. Every game
-        page includes the full text to copy, plus downloads for Claude skill users.
+        needs to run the game: rules, world details, and a consistent tone — like a
+        rules-light TTRPG module written for an AI game master. Every game page includes
+        the full text to copy, plus downloads for Claude skill users. Some games are
+        worlds with multiple scenarios, and new scenarios are added over time.
       </p>
       <div class="card-grid">
         <a class="game-card" href="games/fools-errand/">
           <span class="game-card-emoji">🪿</span>
           <h3>A Fool's Errand</h3>
           <p>A warm, silly, Terry Pratchett-lite medieval adventure. You're a peasant farmer declared the Chosen One by a very nearsighted Royal Wizard. Track your HP, Gold, Dignity, and Cheese.</p>
+          <span class="card-badges"><span class="tag tag-tested">Well-tested</span></span>
           <span class="game-card-cta">Play this game →</span>
         </a>
         <a class="game-card" href="games/ecclesiastical-politics/">
           <span class="game-card-emoji">⛪</span>
           <h3>Ecclesiastical Politics</h3>
-          <p>Literary historical fiction set inside medieval church assemblies. Navigate a cathedral chapter election with theology, rhetoric, and political savvy. Stone and incense and winter light.</p>
+          <p>Literary historical fiction set inside medieval and early-modern church assemblies — cathedral chapters, councils, and diets. Theology, rhetoric, and political savvy in a world of stone and incense and winter light. A growing collection of scenarios.</p>
+          <span class="card-badges"><span class="tag tag-beta">Beta</span></span>
           <span class="game-card-cta">Play this game →</span>
         </a>
         <a class="game-card" href="games/emperor-of-the-united-states/">
           <span class="game-card-emoji">👑</span>
           <h3>The Emperor of the United States</h3>
           <p>A grounded, gently comic adventure in contemporary San Francisco. You've inherited the obligations of Emperor Norton I and have one week to decide what that means.</p>
+          <span class="card-badges"><span class="tag tag-beta">Beta</span></span>
           <span class="game-card-cta">Play this game →</span>
         </a>
         <a class="game-card" href="games/new-vinland/">
           <span class="game-card-emoji">🗺️</span>
           <h3>New Vinland</h3>
-          <p>Alternate-history exploration in 15th-century North America where Norse colonization took hold. Map the continent's rivers for the Danish crown — but a map is not neutral.</p>
+          <p>An alternate-history world: 15th-century North America where Norse colonization took hold five centuries early. A growing collection of scenarios, starting with mapping the continent's rivers for the Danish crown — but a map is not neutral.</p>
+          <span class="card-badges"><span class="tag tag-tested">Well-tested</span></span>
           <span class="game-card-cta">Play this game →</span>
         </a>
       </div>
@@ -105,11 +157,23 @@
         </p>
       </details>
       <details class="faq-item">
-        <summary>Do I need a specific AI to play?</summary>
+        <summary>Is this like a TTRPG or D&amp;D?</summary>
         <p>
-          No. The scaffolds are written as Claude skills, but the full text of every game
-          is available on its page so you can paste it into ChatGPT, Grok, Gemini, or any
-          other chatbot that accepts long prompts.
+          Close cousin. These play like a one-player tabletop RPG where the AI is the game
+          master — you have stats, make choices, face consequences, and can attempt anything
+          your character plausibly could. Crossed with classic interactive fiction: it's all
+          told in prose, turn by turn, in a chat window. No dice, no rulebook, no scheduling
+          four friends.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I play these with ChatGPT, Gemini, or Grok?</summary>
+        <p>
+          Mostly, with some tweaking. The games are written and tested as Claude skills.
+          Other AI chatbots can run them too, but they have different prompt structures and
+          length limits — a long multi-file game may need to be condensed or restructured
+          to fit. The single-file games port most easily. If you adapt one and it plays
+          well, that's a modified version, and your mileage may vary.
         </p>
       </details>
       <details class="faq-item">
@@ -117,7 +181,18 @@
         <p>
           A Claude skill is a folder containing a main instruction file (and sometimes
           supporting reference files) that Claude loads automatically. If you use Claude,
-          downloading the skill is the smoothest way to play. If not, copy-paste works great.
+          downloading the skill is the smoothest way to play. If not, copy-paste works
+          great. The <code>.skill</code> download is just a ZIP archive with a different
+          extension — you can open it with any unzip tool.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>What do "Well-tested" and "Beta" mean?</summary>
+        <p>
+          Well-tested games have been through many full play sessions and their mechanics
+          are smoothed out. Beta games are complete and playable, but newer — they've had
+          fewer run-throughs, so you might hit a rough edge. Beta games graduate once
+          they've earned it.
         </p>
       </details>
       <details class="faq-item">

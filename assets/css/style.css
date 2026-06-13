@@ -359,6 +359,30 @@ a {
   border-radius: var(--radius-pill);
 }
 
+.tag-tested {
+  background: #e2f6e9;
+  color: #1d7d44;
+}
+
+.tag-beta {
+  background: #fce7f1;
+  color: #b32567;
+}
+
+.card-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.compat-note {
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
 .download-row {
   display: flex;
   gap: 1rem;
