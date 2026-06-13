@@ -13,7 +13,8 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
         btn.classList.remove("copied");
       }, 2000);
     } catch {
-      btn.textContent = "Press Ctrl+C";
+      const isMac = /Mac|iPhone|iPad/.test(navigator.platform || "");
+      btn.textContent = isMac ? "Press ⌘C" : "Press Ctrl+C";
     }
   });
 });
