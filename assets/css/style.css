@@ -383,6 +383,13 @@ a {
   margin-top: 1rem;
 }
 
+.game-length {
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 .download-row {
   display: flex;
   gap: 1rem;

@@ -1,4 +1,4 @@
-# Text Game Scaffolds
+# AI Text Game Scaffolds
 
 A static site sharing text-based game scaffolds — structured prompts that turn
 Claude, ChatGPT, or any AI chatbot into a game master. Built for GitHub Pages.
