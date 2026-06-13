@@ -7,7 +7,7 @@
   <meta name="description" content="Free text adventures and one-player TTRPG-style interactive fiction you play with an AI game master. Built as Claude skills; adaptable for ChatGPT, Gemini, and other LLMs. Copy the prompt or download — no install required.">
   <link rel="canonical" href="https://srosebattles.github.io/text-game-scaffolds/">
   <meta property="og:title" content="AI Text Game Scaffolds — Text Adventures for AI Chatbots">
-  <meta property="og:description" content="Free interactive fiction you play with an AI game master. Copy a prompt, paste it into a chat, and start playing.">
+  <meta property="og:description" content="Free interactive fiction you play with an AI game master. Set one up as a skill, custom GPT, or Gem and start playing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://srosebattles.github.io/text-game-scaffolds/">
   <script type="application/ld+json">
@@ -80,7 +80,7 @@
       <p class="hero-tagline">
         Free interactive fiction scaffolds that turn Claude, ChatGPT, or any AI chatbot
         into your personal game master — part text adventure, part one-player tabletop
-        RPG. Copy a prompt, paste it into a chat, and start playing.
+        RPG. Load one into your AI as a skill, a custom GPT, or a Gem, and start playing.
       </p>
       <div class="hero-actions">
         <a href="#games" class="btn btn-primary">Browse the games</a>
@@ -93,9 +93,10 @@
       <p class="section-intro">
         Each game is a structured prompt (a "scaffold") that gives an AI everything it
         needs to run the game: rules, world details, and a consistent tone — like a
-        rules-light TTRPG module written for an AI game master. Every game page includes
-        the full text to copy, plus downloads for Claude skill users. Some games are
-        worlds with multiple scenarios, and new scenarios are added over time.
+        rules-light TTRPG module written for an AI game master. Every game page has a
+        downloadable skill and the full text, so you can run it as a skill, build a custom
+        GPT or Gem from it, or paste it straight into a chat. Some games are worlds with
+        multiple scenarios, and new scenarios are added over time.
       </p>
       <div class="card-grid">
         <a class="game-card" href="games/fools-errand/">
@@ -139,13 +140,13 @@
         </div>
         <div class="step">
           <span class="step-number">2</span>
-          <h3>Copy or download</h3>
-          <p>Copy the full game text right from the page, or download the <code>.skill</code> file if you use Claude (it's just a ZIP archive under the hood).</p>
+          <h3>Set it up</h3>
+          <p>The smoothest way is a skill: download the <code>.skill</code> file for Claude or Grok and it loads automatically. On ChatGPT or Gemini, build a custom GPT or Gem from the text so the rules stay put.</p>
         </div>
         <div class="step">
           <span class="step-number">3</span>
-          <h3>Paste and play</h3>
-          <p>Paste the text into a new chat with your favorite AI — Claude, ChatGPT, Grok, whatever — and the game begins.</p>
+          <h3>Play</h3>
+          <p>Start a session and the game begins. In a pinch you can paste the text straight into a chat — fine for a short game, but in a long one the instructions can slip out of the AI's memory as the story grows.</p>
         </div>
       </div>
     </section>
@@ -173,21 +174,24 @@
       <details class="faq-item">
         <summary>Can I play these with ChatGPT, Gemini, or Grok?</summary>
         <p>
-          Mostly, with some tweaking. The games are written and tested as Claude skills.
-          Other AI chatbots can run them too, but they have different prompt structures and
-          length limits — a long multi-file game may need to be condensed or restructured
-          to fit. The single-file games port most easily. If you adapt one and it plays
-          well, that's a modified version, and your mileage may vary.
+          Yes. The games are written and tested as Claude skills, and Grok supports skills
+          too, so the <code>.skill</code> download works directly in both. On ChatGPT or
+          Gemini, the best results come from building a custom GPT or a Gem with the game
+          text as its instructions — that keeps the rules in place for the whole session.
+          You can also paste the text straight into any chatbot, but longer multi-file games
+          may need condensing to fit, and the instructions can drift out of memory in a long
+          session. Any adaptation is a modified version, and your mileage may vary.
         </p>
       </details>
       <details class="faq-item">
         <summary>What's a Claude skill?</summary>
         <p>
           A Claude skill is a folder containing a main instruction file (and sometimes
-          supporting reference files) that Claude loads automatically. If you use Claude,
-          downloading the skill is the smoothest way to play. If not, copy-paste works
-          great. The <code>.skill</code> download is just a ZIP archive with a different
-          extension — you can open it with any unzip tool.
+          supporting reference files) that Claude loads automatically. If you use Claude
+          (or Grok, which also supports skills), downloading the skill is the smoothest way
+          to play. On other chatbots, build a custom GPT or Gem from the text instead. The
+          <code>.skill</code> download is just a ZIP archive with a different extension —
+          you can open it with any unzip tool to get at the text.
         </p>
       </details>
       <details class="faq-item">
