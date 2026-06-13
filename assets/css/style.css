@@ -173,7 +173,7 @@ a {
 
 .section-intro {
   color: var(--color-text-soft);
-  max-width: 680px;
+  max-width: 760px;
   margin-bottom: 2rem;
 }
 
@@ -379,7 +379,7 @@ a {
 .compat-note {
   color: var(--color-text-soft);
   font-size: 0.9rem;
-  max-width: 600px;
+  max-width: 680px;
   margin-top: 1rem;
 }
 
