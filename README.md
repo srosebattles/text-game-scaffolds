@@ -3,7 +3,7 @@
 A static site sharing text-based game scaffolds — structured prompts that turn
 Claude, ChatGPT, or any AI chatbot into a game master. Built for GitHub Pages.
 
-Live site: https://srosebattles.github.io/text-game-scaffolds/
+Live site: https://llmtextgames.xyz/
 
 ## Structure
 
@@ -40,7 +40,7 @@ editing any of those shared blocks, update **all** HTML pages.
 ## URLs
 
 All absolute URLs (canonical, Open Graph, JSON-LD, sitemap, robots) point at
-`https://srosebattles.github.io/text-game-scaffolds/`. If the site moves to a
+`https://llmtextgames.xyz/`. If the site moves to a
 custom domain, find-and-replace that base URL across the repo.
 
 ## Local preview
