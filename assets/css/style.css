@@ -523,6 +523,16 @@ a {
   }
 }
 
+/* The gradient-clipped heading renders as transparent text, which can vanish
+   in forced-colors mode; fall back to a solid system color there. */
+@media (forced-colors: active) {
+  .hero h1 {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
 @media (max-width: 600px) {
   .nav-links {
     width: 100%;
