@@ -25,6 +25,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 4.5rem;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -41,6 +45,25 @@ h1, h2, h3 {
 
 a {
   color: var(--color-primary);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
 }
 
 /* ===== Header / nav ===== */
