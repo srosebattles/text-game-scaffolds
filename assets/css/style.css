@@ -342,6 +342,13 @@ a {
   gap: 1rem;
 }
 
+/* These summaries sit flush inside an overflow:hidden rounded container, so an
+   outset focus ring gets clipped; inset it so it stays visible. */
+.faq-item summary:focus-visible,
+.prompt-file summary:focus-visible {
+  outline-offset: -2px;
+}
+
 .faq-item summary::-webkit-details-marker,
 .prompt-file summary::-webkit-details-marker {
   display: none;
