@@ -102,7 +102,9 @@
 ├── SKILL.md
 └── references/
     ├── cartographer.md
-    └── advanced-gm.md</div>
+    ├── advanced-gm.md
+    └── eras/
+        └── late-15th-century-danish-vinland.md</div>
 
       <details class="prompt-file">
         <summary>SKILL.md</summary>
@@ -111,34 +113,28 @@
           <pre>---
 name: new-vinland
 description: &gt;
-  Play "New Vinland", a turn-based text adventure set in an alternate history where Norse settlers
-  permanently colonized North America in the 10th century. The game is played entirely in the chat
-  window — no artifacts, no widgets, no file creation. Use this skill when the user explicitly asks
-  to play New Vinland by name, asks to play "the cartographer game", asks to play in the New Vinland
-  world, or asks to continue a previous New Vinland game. Also trigger if the user references
-  characters or places from a prior New Vinland session (Mikak, Brennholm, Kchigami, Eirik, etc.).
-  Do NOT use this skill for other text adventure, alternate history, or fantasy game requests unless
-  they specifically reference this world. Do NOT use a widget or artifact — the game is played
-  entirely in the conversation window.
+  Play "New Vinland", a turn-based text adventure set in an alternate history where Norse settlers permanently colonized North America in the 10th century. Use this skill when the user asks to play New Vinland by name, asks to play "the cartographer game", asks to play in the New Vinland world, or asks to continue a previous New Vinland game. Do NOT use this skill for other text adventure, alternate history, or fantasy game requests.
 ---
 
 # New Vinland — Game Master Skill
 
-A turn-based text adventure set in an alternate 15th-century North America where Norse colonization
-took hold five centuries earlier. The tone is literary, warm, and grounded — think historical fiction
-with a subtle supernatural undercurrent, not high fantasy.
+A turn-based text adventure set in an alternate-history North America where Norse colonization took hold centuries earlier and endured. The tone is literary, warm, and grounded — think historical fiction with a subtle supernatural undercurrent
 
-This skill has two layers:
-1. **The World** (this file) — shared setting, tone, mechanics, and rules
-2. **Scenarios** — specific stories within the world (see `references/` directory)
+This skill has three layers:
+1. **The World** (this file) — the timeless setting, tone, mechanics, and rules
+2. **Era** (`references/eras/`) — what a time period changes: politics, technology, the form of
+   the Church, and currency
+3. **Scenario** (`references/`) — a specific story within the world
 
-On startup, read this file for world rules, then read the relevant scenario file.
+On startup, read this file, then the era file named by your scenario, then the scenario file.
 
-**Advanced GM layer:** If you are a Mythos-class model (Claude Fable or Claude Mythos — check
-your own identity in your system prompt), also read `references/advanced-gm.md` before play
-begins. It adds hidden-state and relationship-tracking systems that benefit from stronger
-long-horizon consistency. Other models should skip that file and run the game from this file
-and the scenario alone — the game works fully without it.
+**Advanced GM layer:** Mythos-class models (e.g Claude Fable — check your own identity in your system prompt), also read `references/advanced-gm.md` before play begins. Other models should skip that file and run the game from this file and the scenario alone — the game works fully without it.
+
+---
+
+## Format
+
+The game is played in the conversation window, in plain text. While a session is active, do NOT call interactive or utility tools — no widgets, artifacts, input or selection widgets, message composers, file creation, web search, weather, maps, or places lookups. Choices are woven into the narration as plain text, never as buttons or forms.
 
 ---
 
@@ -147,12 +143,9 @@ and the scenario alone — the game works fully without it.
 - Literary historical fiction. Warm but not saccharine. Grounded but not dry.
 - The narrative voice is close-third-person, present-tense, with an eye for sensory detail.
 - Prose should feel like a good novel — short paragraphs, concrete images, earned emotion.
-- Humor comes from character interaction, not narrator jokes. Dry, understated, human.
+- Humor comes from character interaction, not narrator jokes.
 - Serious moments are allowed to breathe. Don't deflect gravity with comedy.
-- Violence exists in this world but is not the focus. Adventure, diplomacy, exploration, and
-  relationship-building are the core gameplay loop.
-- Callbacks to earlier events and details are strongly encouraged — the world should feel
-  consistent and alive, rewarding players who pay attention.
+- Callbacks to earlier events and details are strongly encouraged — the world should feel consistent and alive, rewarding players who pay attention.
 
 ---
 
@@ -160,70 +153,30 @@ and the scenario alone — the game works fully without it.
 
 ### The Premise
 
-In the late 10th century, Norse settlers established a permanent foothold on the northern coast
-of North America. Unlike our timeline, the colonies survived and grew. By the late 15th century,
-**Vinland** is a patchwork of Norse-descended communities, indigenous nations (Mi'kmaq, Ojibwe,
-Haudenosaunee, and many others), and a handful of rival European trading posts.
+In the late 10th century, Norse settlers established a permanent foothold on the northern coast of North America. Unlike our timeline, the colonies survived and grew. **Vinland** is a patchwork of Norse-descended communities and the sovereign indigenous nations — Mi'kmaq, Ojibwe, Haudenosaunee, and many others — whose land this is. The degree of European presence and interest is set by the era.
 
 ### Key Principles
 
-- **Coexistence, not conquest.** Five centuries of contact have produced a complex web of trade,
-  intermarriage, alliance, tension, and cultural exchange — not a one-directional colonial project.
-  There is no "manifest destiny" ideology. Relations between Norse settlers and indigenous nations
-  range from genuine partnership to mutual wariness to occasional conflict, depending on the region
-  and the era.
-- **Indigenous nations are sovereign and fully realized.** They have their own politics, cultures,
-  internal debates, and agency. They are not a backdrop. NPCs from indigenous nations should be
-  as individually characterized as any Norse or European character.
-- **Europe is interested, not dominant.** Denmark, Portugal, Castile, and others are aware of
-  Vinland and want influence there. This creates geopolitical tension but has not (yet) produced
-  the kind of large-scale colonialism seen in our timeline. Whether it eventually will is an
-  open and uncomfortable question the game doesn't need to resolve.
-- **Technology and culture reflect real history, adapted.** Norse Vinland settlements feel like
-  medieval Icelandic/Scandinavian communities. Indigenous nations reflect their actual cultures
-  and technologies as understood by contemporary scholarship, not stereotypes. Five centuries of
-  contact mean there has been genuine exchange — loan words, shared techniques, trade goods
-  flowing both directions.
+- **Coexistence is the default.** Across the world's long history, partnership and exchange are the norm rather than conquest — but how peaceful or contested a given time is, and whether any faction harbors expansionist designs, is set by the era. What never changes is that the game does not romanticize conquest or treat any people's defeat as natural or deserved.
+- **Indigenous nations are sovereign and fully realized.** They have their own politics, cultures, internal debates, and agency. NPCs from indigenous nations should be as individually characterized as any European character.
+- **Technology and culture reflect real history, adapted.** Indigenous nations reflect their actual cultures and technologies as understood by contemporary scholarship, not stereotypes, and long contact means genuine exchange in both directions — loan words, shared techniques, and trade goods. The specific technological level is set by the era.
 
 ### The Supernatural
 
 This is historical fiction with a supernatural undercurrent:
-- Faith is real and important. Prayer is meaningful. The Church is a living institution.
-- Providence appears to be quietly at work. Coincidences strain the word. A sense of warning
-  arrives without explanation. Places have spiritual weight that is hard to rationalize away.
-- But nobody is openly battling demons or seeing angels with flaming swords. The veil is
-  thin; it does not break.
-- Premonitions and prophetic dreams are possible in this world, but they are vague — mixing
-  literal and symbolic details, never offering a clear roadmap. What they predict is not
-  inevitable; it may be avoidable if the player acts on the warning.
-- Indigenous spiritual traditions are treated with respect and narrative seriousness. Sacred
-  places are genuinely sacred. Boundaries set by spiritual leaders have real weight. However,
-  avoid indifferentism — do not treat Christianity and indigenous religions as interchangeable
-  or as different expressions of the same thing. They are distinct traditions with real
-  differences, and the characters who hold them would know that. Respect does not require
-  flattening.
-
-### Christianity in New Vinland
-
-- The Church is recognizably Catholic/Western, with minor Vinland adaptations (e.g., some
-  married priests — tolerated, not officially endorsed).
-- Theology and practice should be reasonably accurate to the late 15th century. Minor
-  fudging for narrative purposes is fine; wholesale invention is not.
-- Faith should feel like a natural, integrated part of characters' lives — not
-  performative, not absent.
-- While not the majority, some indigenous individuals may have converted to Christianity.
-  These characters should be treated with the same depth as any other — their faith is
-  genuine, not a plot device or a sign of cultural betrayal.
+- Faith is real and important, woven naturally into characters' lives. Prayer is meaningful. The Church is a living institution, though its specific form is set by the era.
+- Providence appears to be quietly at work. Coincidences strain the word. A sense of warning arrives without explanation. Places have spiritual weight.
+- But nobody is openly battling demons or seeing angels with flaming swords. The veil is thin; it does not break.
+- Premonitions and prophetic dreams are possible in this world, but they are vague — mixing literal and symbolic details, never offering a clear roadmap. What they predict is not inevitable; it may be avoidable if the player acts on the warning.
+- Indigenous spiritual traditions are treated with respect and narrative seriousness. Sacred places are genuinely sacred. Boundaries set by spiritual leaders have real weight. However, avoid indifferentism — do not treat Christianity and indigenous religions as interchangeable or as different expressions of the same thing.
 
 ### Geography
 
 The game world corresponds roughly to northeastern North America — the Atlantic coast, the
 St. Lawrence region, the Great Lakes. Names are a mix of Norse, indigenous, and occasionally
-European. Key locations are established per-scenario, but the world is large and mostly unmapped
-(from a European perspective).
+European. Key locations are established per-scenario, and the world is large.
 
-**Kchigami** (the great lake, corresponding roughly to Lake Superior) is a major landmark —
-an inland freshwater sea of enormous size and spiritual significance.
+**Kchigami** (the great lake, corresponding roughly to Lake Superior) is a major landmark — an inland freshwater sea of enormous size and spiritual significance.
 
 ---
 
@@ -231,8 +184,7 @@ an inland freshwater sea of enormous size and spiritual significance.
 
 ### Stats
 
-Every scenario uses the same base stat system. Players distribute **six points** across three
-stats. Default distribution is 3/2/1 but the player may customize.
+Every scenario uses the same base stat system. Players distribute **six points** across three stats. Default distribution is 3/2/1 but the player may customize.
 
 | Stat | Governs |
 |------|---------|
@@ -245,109 +197,64 @@ stats. Default distribution is 3/2/1 but the player may customize.
 ### Checks
 
 When the player attempts something uncertain, the GM secretly picks a difficulty (one through six).
-If the relevant stat meets or beats it, success. If it's close (one below), partial success with
-a complication. The player may spend **1 HP** after the fact to boost by one.
+If the relevant stat meets or beats it, success. If it's close (one below), partial success with a complication. The player may spend **1 HP** after the fact to boost by one.
 
-Do not reveal difficulty numbers before the check. After the check, reveal the difficulty and
-narrate outcomes clearly so the player understands how their stats affected the result.
+Do not reveal difficulty numbers before the check. After the check, reveal the difficulty and narrate outcomes clearly so the player understands how their stats affected the result.
 
 ### Stat Changes
 
-- **Gaining stats:** Sustained effort over time earns a point. Flag when the player is getting
-  close. Growth should feel earned, not arbitrary. A stat can grow beyond its starting value
-  but the total shouldn't exceed nine or ten across all three stats in a typical scenario.
-- **Losing stats (temporary):** Injury, illness, or exhaustion can temporarily drop a stat.
-  These recover with rest and care unless something catastrophic happens.
-- **Losing stats (behavioral):** Intentional actions contrary to a stat can lower it. A diplomat
-  who deliberately insults someone might lose Charm. A scholar who ignores opportunities to
-  learn might stagnate in Wits. This reflects character choices, not bad luck.
-- **Failing a check does NOT cost stat points.** A failed Grit check means you struggled; it
-  doesn't mean you got weaker. Stat loss comes from injury, illness, or deliberate choices.
+- **Gaining stats:** Sustained effort over time earns a point. Flag when the player is getting close. Growth should feel earned. A stat can grow beyond its starting value but the total shouldn't exceed ten across all three stats in a typical scenario.
+- **Losing stats (temporary):** Injury, illness, or exhaustion can temporarily drop a stat.These recover with rest and care unless something catastrophic happens.
+- **Losing stats (behavioral):** Intentional actions contrary to a stat can lower it. A diplomat who deliberately insults someone might lose Charm. A scholar who ignores opportunities to learn might stagnate in Wits. This reflects character choices, not bad luck.
+- **Failing a check does NOT cost stat points.** A failed Grit check means you struggled; it doesn't mean you got weaker. Stat loss comes from injury, illness, or deliberate choices.
 - **HP below 3:** Start applying stat penalties from sheer depletion.
 
 ### Time
 
-Track the day count from the start of the scenario. Scenarios may define seasonal pressure
-(weather windows, deadlines, travel seasons) — when they do, the day count is what makes
-that pressure real rather than rhetorical. Mention the date naturally in narration from
-time to time; don't display a counter every turn.
+Track the day count from the start of the scenario. Scenarios may define seasonal pressure (weather windows, deadlines, travel seasons) — when they do, the day count is what makes that pressure real rather than rhetorical. Mention the date naturally in narration from time to time; don't display a counter every turn.
 
 ### Inventory
 
-Track items the player acquires. Display the full inventory when asked or when it's relevant.
-Items can have narrative and emotional weight — a family keepsake matters differently than a
-belt knife, even if neither has a "game effect."
+Track items the player acquires. Display the full inventory when asked or when it's relevant.Items can have narrative and emotional weight — a family keepsake matters differently than a belt knife, even if neither has a "game effect."
 
 ### Choices
 
-Every turn, after narration, the player should have a clear sense of what their options are.
-This can be:
-- An open prompt ("What do you do?") when the situation is fluid
-- A few suggested options woven into the narration, without formal labels — making clear
-  the player can do anything
+Every turn, after narration, the player should have a clear sense of their options.Include a few suggestions woven into the narration, without formal labels — making clear the player can do anything.
 
-Always honor free-form player input, subject to the World Integrity rules below. If the
-player wants to do something unexpected but plausible, incorporate it. The game is
-collaborative, not on rails.
+Always honor free-form player input, subject to the World Integrity rules below. If the player wants to do something unexpected but plausible, incorporate it. The game is collaborative, not on rails.
 
 ### World Integrity
 
-The player can attempt anything that a person in this world could plausibly attempt. When a
-player tries something that breaks the internal logic of the setting, handle it with a light
-touch:
+The player can attempt anything a person in this world plausibly could. When something breaks the setting's internal logic, redirect with a light touch:
 
-- **Anachronistic technology** (cell phones, firearms beyond the period, etc.): The character
-  simply doesn't have that. Respond in-character — "You reach for something that doesn't
-  exist" or have the narrator gently note the absence. Don't lecture; just redirect.
-- **Impossible actions** (teleportation, flight, supernatural powers the character hasn't
-  earned): The character can *want* to do this. They just can't. Narrate the attempt and
-  its natural failure — trying to will yourself across the lake still leaves you standing
-  on the shore. If the player is testing boundaries for fun, play along with the humor of
-  the failure.
-- **Actions wildly out of character** (sudden unprovoked violence against allies, betraying
-  the mission for no reason): Don't refuse outright — the player has agency — but let the
-  world react realistically. Characters may abandon, betray, or expel the player for
-  misbehavior. Actions have consequences, and NPCs are not obligated to stick around.
-- **Genre violations** (introducing dragons, alien invasions, or high fantasy elements):
-  This is historical fiction with a subtle supernatural layer, not fantasy. Nudge the player
-  back gently. If they're clearly joking, the narrator can be wry about it and move on.
-
-The goal is to preserve the world's coherence without making the player feel scolded. A brief,
-good-natured redirect is almost always enough.
+- **Anachronistic technology** the character simply reaches for something that isn't there. Note the absence in-character and move on.
+- **Impossible actions** (teleportation, flight, and unearned supernatural powers): the character may *want* to; they still can't. Narrate the attempt and its natural failure.
+- **Actions wildly out of character** (sudden violence against allies, betraying the mission for no reason): don't refuse — the player has agency — but let the world react. NPCs may abandon, expel, or fight the player.
+- **Genre violations** (dragons, alien invasions, and high fantasy): nudge back gently; if it's a joke, be wry and move on.
 
 ### Pacing
 
 - Let quiet moments breathe. Not every turn needs a crisis.
-- Travel can be summarized ("Days 3–5 pass uneventfully") when appropriate, but include
-  sensory detail and character moments even in montage.
+- Travel can be summarized ("Days 3–5 pass uneventfully") when appropriate, but include sensory detail and character moments even in montage.
 - Major NPCs should have real conversations, not just deliver plot information.
-- The player should feel like they're living in the world, not just advancing through checkpoints.
 
 ---
 
 ## Character Creation
 
 At the start of a new game, ask the player:
-1. Which scenario they want to play (or let them choose)
-2. Any preferences on character details (name, gender, background)
-3. How they want to distribute their six stat points (or offer a default)
-4. Any other preferences or boundaries
+1. Any preferences on character details (name, gender, background)
+2. How they want to distribute their six stat points (or offer a default)
 
-Don't over-question — if the player wants to jump in, give them a good default and let them
-adjust on the fly. If they want to customize extensively, accommodate that.
+If the player wants to jump in, give them a good default. If they want to customize extensively, accommodate that.
 
 ---
 
 ## Session Continuity
 
-The game is played in the chat window and state is lost between sessions. To help players
-resume:
-- If a player says they want to continue a previous game, use conversation search tools to
-  find the prior session and reconstruct the state. Search for "NEW VINLAND SAVE STATE"
-  first; if no save block exists (older sessions), reconstruct from the narrative.
-- When a session is running long, or when the player says they're stopping, produce a
-  **save-state block** in the canonical format below so the next session (possibly run by
-  a different model) can pick up cleanly.
+The game is played in the chat window and state is lost between sessions. To help players resume:
+- If a player wants to continue a previous game, use conversation search to find the prior session.
+- When the player says they're stopping, produce a **save-state block** in the canonical format below so the next session (possibly run by a different model) can pick up cleanly.
 
 ### Canonical save-state format
 
@@ -358,7 +265,7 @@ Day &amp; season: Day 14, early summer
 Act &amp; location: Act 2 — the Wopkejk, two days past the fork
 Character: Eirik Halfdansson, scholar-cartographer
 Stats: Wits 3 / Charm 2 / Grit 2 — HP 8
-Silver: 19 marks, 12 pennies
+Money: 19 marks, 12 pennies
 Inventory: mapmaking tools, leather journal, king's letter of introduction,
   letter of credit, belt knife, phrase-book, whalebone raven pendant,
   blessed medal of St. Brendan, rope and waxed canvas
@@ -373,36 +280,23 @@ Open threads: Ambrose unfound; rumor of Portuguese activity upriver;
 === END SAVE STATE ===
 ```
 
-Adapt fields to the scenario, but keep the header line exactly as shown — it's the search
-key. Relationships are described qualitatively here even if the GM tracks them more
-precisely (see `references/advanced-gm.md`).
+Adapt fields to the scenario, but keep the header line exactly as shown — it's the search key. Relationships are described qualitatively here even if the GM tracks them more precisely (see `references/advanced-gm.md`).
 
 ---
 
 ## Available Scenarios
 
-Check the `references/` directory for scenario files. Each scenario file contains:
-- The premise and hook
-- The player character (default, customizable)
-- Key NPCs
-- Canonical events and story structure
-- Scenario-specific locations
-
-Current scenarios:
-- **cartographer.md** — "The Cartographer of New Vinland" (1497, mapping the rivers and lakes
-  for the Danish crown)
-
-To add a new scenario, create a new file in `references/` following the same structure.
+- **cartographer.md** — "The Cartographer of New Vinland": mapping the rivers and lakes for the
+  Danish crown. Era: `eras/late-15th-century-danish-vinland.md`.
 
 ---
 
 ## Starting a New Game
 
-1. Greet the player and ask which scenario (if multiple exist) — or start the default
-2. Read the relevant scenario file from `references/`
-3. Run character creation (light touch unless the player wants detail)
+1. Greet the player and ask which scenario (if player hasn't specified)
+2. Read the scenario's era file, then the scenario file
+3. Run character creation
 4. Begin the scenario's opening scene
-5. Play turn by turn, following the mechanics and tone described here
 </pre>
         </div>
       </details>
@@ -423,10 +317,11 @@ It is 1497. The player is a scholar-cartographer dispatched from Copenhagen by t
 Denmark to travel the interior of Vinland and produce the first authoritative map of the
 continent's river systems — before the Portuguese or Castilians do it first.
 
-The mission is exploration and diplomacy, not conquest. The king wants knowledge: trade routes,
-geographic understanding, and a strategic picture of what lies beyond the Norse coastal
-settlements. But a map is not neutral, and the people who already live along these rivers
-know it.
+The mission is exploration and diplomacy, not conquest. The king wants knowledge: navigable
+waters and trade routes, the natural wealth of the country — timber, furs, soils, and
+minerals — its plants and animals, and a strategic picture of what lies beyond the Norse
+coastal settlements. But a map is not neutral, and the people who already live along these
+rivers know it.
 
 ---
 
@@ -436,43 +331,41 @@ know it.
 - **Background:** Scholar-cartographer from the University of Copenhagen
 - **Age:** Mid-twenties
 - **Default stats:** Wits 3 / Charm 2 / Grit 1
-- **Starting inventory:** Mapmaking tools, leather journal, letter of introduction bearing
-  the King's seal, letter of credit from the crown (see Silver Economy), belt knife,
-  phrase-book of three Algonquian trade languages
+- **Starting inventory:** Mapmaking tools (see *Mapmaking tools*), leather
+  journal, letter of introduction bearing the King's seal, letter of credit from the crown
+  (see Silver Economy), belt knife, phrase-book of three Algonquian trade languages
 - **Starting silver:** 30 marks
 
-The player may customize any of these. If they want to play a different kind of character
-(a woman, a different nationality, a different profession pressed into service), adapt the
-scenario accordingly — the core structure still works.
+The player can customize any of these. If they want to play as a woman, a different
+nationality, or a different profession pressed into service, adapt accordingly.
+
+### Mapmaking tools
+
+The inventory's "mapmaking tools," by 1497:
+
+- A magnetic **compass** for bearings (and a lodestone to refresh the needle); **dividers**
+  and a pair of compasses for stepping off distances; a straightedge and set square.
+- A wooden **quadrant** with a plumb-line, or a **cross-staff**, to fix latitude from the
+  noon sun or the Pole Star. Longitude can only be dead-reckoned — the weak seam in any map
+  the player draws. (The mariner's astrolabe, the newest such tool, is only just reaching
+  Portuguese navigators — a detail Gonçalo might recognize.)
+- A **sandglass** to time a reach of river, so distance can be reckoned from speed and time.
+- For drawing: paper and prepared vellum, iron-gall ink, cut quills and a penknife, a
+  leadpoint or silverpoint stylus and charcoal for under-drawing, a few colored inks for
+  finished features — in a belt writing-case. The journal also records natural history:
+  flora, fauna, soils, and especially mineral signs (see the copper dilemma).
+
+**Avoid anachronisms:** no graphite pencils (use leadpoint, silverpoint, or charcoal), and
+none of the later surveyor's kit — theodolite, telescope, formal triangulation, or the plane table.
 
 ### Silver Economy
 
-Silver is a finite resource. The player starts with **30 marks** and there is no reliable
-way to earn more during the expedition. Track silver explicitly — tell the player what
-things cost and what they have left after each purchase. The goal is not to create a
-resource management minigame, but to make early choices feel consequential. A player who
-spends freely in Brennholm will feel the pinch later; a player who pinches early will have
-margin for the unexpected.
-
-**Denominations.** One mark = eight øre; one øre = 30 pennies (so 240 pennies to the mark).
-Keep listed prices in marks, and use øre and pennies for small purchases — a pot of ale,
-a hot meal, a tip to a dockhand, the small change in a haggle. Don't sweat numismatic
-precision; the denominations exist to give texture to small transactions, not to create
-arithmetic homework. When in doubt, round to friendly numbers.
-
-**The letter of credit.** Alongside the letter of introduction, the player carries a
-letter of credit from the crown — good for plain lodging and plain meals at Norse
-establishments in Brennholm (and again on the return). The crown's paper covers a bed and
-the common table; it does not cover ale beyond the table ration, drinks bought for others,
-private rooms, or anything Dalla classifies, with a straight face, as "extras." Those cost
-coin. The letter is worth exactly nothing the moment the player leaves Norse territory —
-a fact nobody needs to point out in Act 1, but which quietly previews a central theme:
-the further inland you go, the less Copenhagen's instruments are worth.
-
-Prices are suggested, not fixed. Players may attempt to haggle (Charm check, difficulty
-varies by seller) or offer non-silver trades (labor, skills, goods, favors). Some sellers
-won't negotiate; others will respond to the right offer. Creativity should be rewarded,
-but not every cost can be talked away.
+The player starts with **30 marks** and can't reliably earn more, so early spending has
+teeth — splurge in Brennholm and feel the pinch later. Track it lightly: name costs and the
+running balance, but don't make it bookkeeping. Prices below are suggested; a Charm check or
+a non-silver offer (labor, skills, goods, favors) can lower or replace a cost, though not
+every cost talks away. Plain lodging and meals are covered by the crown's letter of credit;
+everything else is coin.
 
 **Brennholm market — suggested prices:**
 
@@ -483,31 +376,24 @@ but not every cost can be talked away.
 | Both of Nukumi's maps | 8 marks | Slight discount if bought together |
 | Traveling provisions (basic) | 3 marks | Dried fish, hardtack, essentials |
 | Traveling provisions (generous) | 5 marks | More variety, longer supply |
-| Rope and waxed canvas | 2 marks | Practical necessities |
+| Rope | 1 mark | Portages, climbs, lashing loads |
+| Waxed canvas | 2 marks | Waterproofing for gear and shelter; pairs with the satchel lining |
 | Boot reinforcement (Gunnar) | 3 marks | Takes one day |
 | Satchel lining (Gunnar) | 3 marks | Takes one day; protects maps from wet |
 | Both boot and satchel work | 5 marks | Takes two days — the player may not have time |
-| Bone flute | 1 mark | No practical use; narrative and emotional value |
-| Letter paper and ink (from Dalla or Leif) | 1 mark | For correspondence home |
+| Fur-lined cloak | 4 marks | Warmth and shelter; matters if winter comes early or on the return |
+| Woolen socks | 4 øre | Hand-spun and nålbinded; dry, warm feet are cheap insurance against cold and wet |
+| Mittens | 3 øre | Warm hands — and a cartographer needs working fingers in the cold |
+| Bone flute | 20 pennies | No practical use; narrative and emotional value |
 | Lodging and meals at the Stórhús | covered by letter of credit | Plain bed, common table. Ale beyond the ration, drinks for others, and "extras" cost pennies — Dalla's accounting of what counts as extra is inconsistent |
 | Pot of ale | 2 pennies | Dalla's own brew; the second pot is somehow 3 |
 
-**Guide fees:**
+Guide fees and terms live with each guide under **The Three Guides** (Act 1).
 
-| Guide | Fee | Notes |
-|-------|-----|-------|
-| Thyra Kolsdottir | 20 marks up front | Open to negotiation — she values reliability and practical offers (trade connections, letters of recommendation) over discounts. A Charm check can bring the price down or restructure the terms, but she won't work for promises alone |
-| Mikak | No up-front fee | Demands a fair share of whatever Copenhagen pays on completion, plus named credit on the map. His cost is in constraints, not silver |
-| Gonçalo Ferreira | Free | Suspiciously generous. His "fee" is passage south and proximity to your work |
-
-**Later in the journey:**
-Silver becomes less useful as the player moves inland. Indigenous communities don't use
-Norse currency, so trading relies on goods, skills, labor, and relationships. A player
-who arrives at Kchigami with a full purse but no goodwill has the wrong currency. However,
-a small silver reserve can matter in unexpected situations — a Norse trader encountered
-on the river, emergency supplies in Brennholm on the return, or a bribe that shouldn't
-be necessary but is. The GM should not manufacture silver sinks, but should let the
-remaining balance create or relieve tension naturally when opportunities arise.
+Past Norse territory silver fades — inland the currency is goodwill, not coin, and a full
+purse with no standing is the wrong currency. Keep a small reserve for the return (a Norse
+trader, emergency supplies, the odd bribe), but don't manufacture silver sinks; let the
+balance matter only when the moment naturally allows.
 
 ### The Season Clock
 
@@ -522,8 +408,8 @@ per the world rules, and let the season shape the journey:
   experienced enough to overwinter inland. The player almost certainly is not.
 
 An early winter — which the Act 4 storm may herald — can pull these numbers in by two or
-three weeks. The clock is the engine behind the storm decision and the "map you wanted vs.
-map you can bring home" theme: every day spent haggling in Brennholm, waiting out weather,
+three weeks. The clock is the engine behind the storm decision and the "map they wanted vs.
+the map they can bring home" theme: every day spent haggling in Brennholm, waiting out weather,
 or detouring toward Ambrose is a day that isn't available at the far end. Don't nag the
 player with the count; surface it the way the world would — the angle of the light, an
 NPC's offhand remark, geese going south. State the day number plainly in save-state blocks
@@ -545,17 +431,15 @@ timber-walled trading post. This is the player's staging ground.
   are available in town (see below). This is the scenario's first major branching point.
 
 ### Explorable locations
-The player can visit these in any order. Don't force all of them — let the player choose.
+The player can visit these in any order; don't force all of them.
 
 - **The market square.** A Mi'kmaq woman named **Nukumi** sells hand-drawn bark maps of the
   nearby coastline — rough but showing detail the Copenhagen charts lack. Other goods
   available: practical supplies, a bone flute, reinforcements for traveling gear. See the
   **Silver Economy** table for prices. Present costs clearly and let the player feel the
-  trade-offs — buying everything desirable is possible but leaves the purse dangerously
-  thin. A leatherworker can reinforce either the player's boots or their inventory satchel,
-  but not both without losing a day.
-- **The jarl's longhouse.** Jarl **Sigrun Erlandsdottir** holds court here. Introducing
-  yourself could gain local support — or attract unwanted scrutiny. The jarls of Vinland
+  trade-offs — buying everything desirable is possible but leaves the purse dangerously thin.
+- **The jarl's longhouse.** Jarl **Sigrun Erlandsdottir** holds court here. An introduction
+  could win local support — or attract unwanted scrutiny. The jarls of Vinland
   have a complicated relationship with Copenhagen.
 - **The Chapel of St. Brendan the Navigator.** A small stave church. The priest, **Father
   Leif**, is sharp-eyed and welcoming (married — a Vinland custom). He can hear confession,
@@ -570,46 +454,43 @@ The player can visit these in any order. Don't force all of them — let the pla
 The player chooses one. Each fundamentally shapes the journey.
 
 **Thyra Kolsdottir** — Norse fur trapper
-- Mid-thirties, weathered, laconic, extremely competent in the wilderness
-- Knows the northern river routes intimately — she's trapped them for years
-- Wants pay up front, no nonsense about partnerships or credit
-- Practical and reliable but not diplomatic — she has no indigenous connections
-  and no interest in acquiring them. If the player needs to negotiate passage
-  through indigenous territory, they're on their own
-- Traveling with Thyra means a physically easier river journey (she's expert at
-  portages and camp craft) but harder diplomatic challenges later. The player
-  will need to rely on their own Charm and Wits for every negotiation
-- She respects competence and quiet. Doesn't test you with questions — tests you
-  by watching whether you complain
+- Mid-thirties, weathered, laconic. Respects competence and quiet — she doesn't test the
+  player with questions, but by watching whether they complain
+- Expert in the wild — portages, camp craft, the northern river routes she's trapped for
+  years — so the river journey goes physically easier. But she has no indigenous connections
+  and no interest in any; every negotiation through indigenous territory falls to the
+  player's own Charm and Wits
+- Fee: 20 marks up front — no nonsense about partnerships or credit. Open to negotiation, but
+  she values reliability and practical offers (trade connections, a letter of recommendation)
+  over a lower number and won't work on promises alone; a Charm check can lower or restructure
+  the terms
 
 **Mikak** — Mi'kmaq trader
-- Around thirty, lean, calm, steady. Speaks Norse fluently with an accent
-- Has kin among inland nations; his uncle has influence at the Kchishipu
-- Insists on three conditions: (1) permission from his people before passing the
-  Kchishipu, (2) veto power over certain map details — sacred sites and sensitive
-  locations, (3) named credit on the finished map and a fair share of payment
-- Deeply pragmatic but principled. Tests the player's character through observation
-  and pointed questions
-- Not a servant — a partner. This dynamic is central if he's chosen
-- His grandfather once guided a Norse trader who made a map; years later, others
-  followed that map without asking permission. This history shapes his wariness
-- Traveling with Mikak means better diplomatic access to indigenous nations but
-  real constraints on what the player can map and where they can go. The negotiation
-  at the Kchishipu becomes a collaborative effort rather than a solo challenge
+- Around thirty, lean, calm, steady; speaks accented but fluent Norse. Deeply pragmatic but
+  principled, he tests the player's character through observation and pointed questions
+- Has kin among inland nations and an uncle with influence at the Kchishipu, so he opens far
+  better diplomatic access — at the cost of real constraints on what the player may map and
+  where they may go. The Kchishipu negotiation becomes a collaborative effort, not a solo
+  challenge
+- Not a servant but a partner — a dynamic central to playing him. His grandfather once guided
+  a Norse trader who made a map; years later others followed it without asking permission,
+  and that history shapes his wariness
+- Fee: no up-front silver. His price is three conditions — (1) permission from his people
+  before passing the Kchishipu, (2) veto over certain map details (sacred sites and sensitive
+  locations), (3) named credit on the finished map and a fair share of whatever Copenhagen
+  pays. His cost is in constraints, not coin
 
 **Gonçalo Ferreira** — Portuguese mapmaker
-- Claims to be shipwrecked last autumn, stranded in Brennholm
-- Offers to join for free in exchange for passage south. Suspiciously generous
-- Charming, educated, good company — and almost certainly not what he claims
-- Has real cartographic skill and knowledge of Atlantic navigation
-- Traveling with Gonçalo means a companion who understands mapmaking and can
-  contribute intellectually, but whose true loyalties are uncertain. The player
-  must decide how much to trust him, how much to share, and what to do when his
-  story starts falling apart. He may be a Portuguese spy, a genuine castaway, or
-  something more complicated
-- Indigenous nations will be warier of two Europeans traveling together. Diplomatic
-  checks are harder. But Gonçalo may have information about Portuguese movements
-  in the region that proves valuable
+- Claims to have been shipwrecked last autumn, stranded in Brennholm. Charming, educated,
+  good company — and almost certainly not what he claims
+- A real cartographer with knowledge of Atlantic navigation, so he can contribute to the
+  work itself — but his loyalties are uncertain. The player must decide how much to trust him
+  and share, and what to do as his story starts to fall apart; he may be a Portuguese spy, a
+  genuine castaway, or something more complicated
+- Two Europeans traveling together makes indigenous nations warier and diplomatic checks
+  harder — but he may hold valuable knowledge of Portuguese movements in the region
+- Fee: none — he offers to join free in exchange for passage south and, though he doesn't say
+  so, proximity to the player's work. Suspiciously generous
 
 ---
 
@@ -644,9 +525,11 @@ Depending on guide choice and player decisions, the player may encounter some of
 on the river or at the lakeshore. Not all will occur in any given playthrough.
 
 - **Ambrose's camp.** Brother Ambrose, gravely ill, found by **Niimi** (an Ojibwe medicine
-  woman) who is transporting him to a healer. Meeting them is more likely if the player
-  visited Father Leif and is watching for signs. But it could also be a chance encounter —
-  smoke on a hill, an unexpected camp.
+  woman) who is transporting him to a healer. He is a Benedictine who has spent some ten
+  years in the interior — he bridges the European and indigenous worlds and no longer fits
+  cleanly in either, and he carries himself like a man still working through something real
+  he has seen. Meeting him is more likely if the player visited Father Leif and is watching
+  for signs, but it could also be a chance encounter — smoke on a hill, an unexpected camp.
 - **A Portuguese expedition.** Gonçalo's countrymen, already mapping or trading upriver.
   Could be a rival party the player must outpace, negotiate with, or avoid. More likely
   if Gonçalo was not chosen as guide (his absence from Brennholm may mean he rejoined
@@ -656,8 +539,12 @@ on the river or at the lakeshore. Not all will occur in any given playthrough.
   approaches.
 - **Thyra's secret.** If Thyra is the guide, the player may discover she has her own
   reasons for wanting to reach the interior — a cache she left behind, a debt she owes,
-  a place she's been before and hasn't told you about. She's not dishonest, but she's
-  private, and her agenda may not perfectly align with yours.
+  a place she's been before and hasn't told the player about. She's not dishonest, just
+  private, and her agenda may not perfectly align with theirs.
+- **A soaking** (optional). A capsize or a slip on a wet portage puts the player and their
+  gear in the river — the moment a lined satchel saves the maps and an unlined one doesn't,
+  and reinforced boots come through where bare leather suffers. Lets the Brennholm gear
+  choices pay off; pairs with worn gear in Act 4.
 
 ---
 
@@ -677,14 +564,14 @@ standing and no allies (unless they've built some on the way).
   - With Gonçalo: Two Europeans together reads differently than one. Extra suspicion to
     overcome.
 - **Waabizii** (or a figure like her). An elder with authority — a healer, a chief, a
-  keeper of knowledge. Someone who can grant or deny the player access to the deeper
-  interior. This person should feel formidable, perceptive, and fair. Their conditions
-  will reflect what the player has demonstrated so far.
+  keeper of knowledge, someone who could end the expedition with a word. She can grant or
+  deny access to the deeper interior; she should feel formidable, perceptive, and fair, and
+  her conditions reflect what the player has demonstrated so far. If they've earned enough
+  distrust, she may simply turn them back — the game ends with an incomplete map, and that
+  is a valid ending.
 - **Brother Ambrose** (if encountered). Recovering from illness, he has extensive knowledge
-  of the interior — and a story about "the place where the sky is thin," a valley three
-  days west of Kchigami's far shore where something spiritually extraordinary happened
-  to him. He's a grounded Benedictine, not a mystic by temperament, which makes his
-  account all the more striking.
+  of the interior — and a story about "the place where the sky is thin" (see Locations).
+  He is no mystic by temperament, which makes his account all the more striking.
 - **Mapping vs. trust.** The player can map the lakeshore — it's visible to anyone passing
   by. But mapping settlements, sacred sites, or resource locations raises the scenario's
   central tension. Different hosts will set different boundaries. Respecting those
@@ -709,49 +596,41 @@ has come before.
   supernatural tone. Not a dungeon. Not a boss fight. A place where prayer matters and
   certainty dissolves.
 - **The Portuguese complication.** Whether or not Gonçalo is present, Portuguese interests
-  in the region can surface as a source of tension — a rival mapping party, a trading post
-  being built without permission, rumors of European ships on the western lake.
-- **The map takes shape.** The player's journal fills with sketches, measurements, and
-  decisions about what to include and what to omit. Each choice carries weight.
+  can surface as tension — a rival mapping party, a trading post built without permission,
+  rumors of European ships on the western lake. This can be a slow burn, a sudden
+  complication, or barely there, depending on the game. With Gonçalo as guide it is personal
+  and immediate; if he was left in Brennholm, his absence is its own tension — where did he go?
 
 ### Suggested beats
 
-These are optional — they emerged in playtesting as strong moments, but they should
-only appear if the story moves in their direction organically. Don't force them. If
-the player's journey doesn't create a natural opening for one of these beats, skip it.
+Optional — strong moments from playtesting; use only when the story opens the way, and
+skip any that don't fit.
 
-- **The copper dilemma.** Somewhere along the western or southern shore of Kchigami, the
-  player encounters exposed copper deposits — green-veined stone, unmistakable to a
-  trained eye. This is the scenario's "maps are stories" theme made concrete. Copper on
-  a European map means miners, trading posts, exploitation. Leaving it off means a
-  deliberate omission from a royal commission — professional dishonesty, however
-  well-intentioned. There is no clean answer. The guide may or may not notice (Mikak
-  certainly will; Thyra probably will but may not care; Gonçalo will and may have his own
-  agenda about it). If Niimi or another indigenous NPC is present, they should watch the
-  player's reaction without commenting — their silence is the pressure. Let the player
-  sit with it. Don't resolve it for them. This decision should echo forward into Act 5
-  when the final map is assembled, and again in the report to Copenhagen. A player who
-  omits the copper should feel the weight of that choice; a player who includes it should
-  feel the weight of that one too.
+- **The copper dilemma.** Along the western or southern shore of Kchigami, the player finds
+  exposed copper — green-veined stone, unmistakable to a trained eye. On a European map it
+  means miners, trading posts, exploitation; left off, it's a deliberate omission from a
+  royal commission. There is no clean answer. The guide may or may not notice (Mikak
+  certainly; Thyra likely but may not care; Gonçalo certainly, and with his own agenda). If
+  Niimi or another indigenous NPC is present, let them watch the player's reaction in
+  silence — that silence is the pressure. Don't resolve it; let the choice echo into the
+  final map and the report to Copenhagen, and let the player feel its weight either way.
 
-- **The storm decision.** As the player pushes west along the lakeshore, a major storm
-  approaches from the northwest — visible as a dark line on the horizon, confirmed by the
-  guide or Niimi as serious. This forces a turning-point decision:
-  - **Wait it out.** Safe, but costly — two to four days lost to weather, eating into the
-    margin needed to return before winter. The lake is violent in a storm; being on the
-    water is genuinely dangerous.
-  - **Turn back now.** Run ahead of the storm with the wind behind you. Fast travel but
-    the end of westward exploration. Everything beyond this point stays blank.
-  - **Split the party or other creative solutions.** Honor player ingenuity, but the storm
-    is real and the lake doesn't negotiate.
-  The storm serves multiple purposes: it creates a natural and non-arbitrary end to the
-  westward journey, it tests whether the player can let go of the map they wanted to make
-  in favor of the one they can actually bring home, and it reinforces the theme that the
-  land is not subject to European ambitions or timetables. If the player has received any
-  prophetic dreams or spiritual warnings earlier in the journey, the storm can rhyme with
-  those — not as a punishment, but as confirmation that the world communicates with those
-  who listen. Niimi or an indigenous NPC can add weight by noting that an early northwest
-  storm means an early winter — old knowledge, not superstition, and often correct.
+- **The storm decision.** Pushing west along the lakeshore, a major storm builds from the
+  northwest — a dark line on the horizon, confirmed serious by the guide or Niimi. It forces
+  a turning point:
+  - **Wait it out** — safe, but two to four days lost, eating the margin for the return.
+  - **Turn back now** — run ahead of it with the wind; fast, but westward exploration ends
+    here and everything beyond stays blank.
+  - **Something creative** — honor ingenuity, but the lake doesn't negotiate.
+  The storm gives a natural, non-arbitrary end to the westward push and tests whether the
+  player can trade the map they wanted for the one they can bring home. Niimi or an
+  indigenous NPC can note that an early northwest storm means an early winter — old
+  knowledge, often right.
+
+- **Worn gear** (optional). Late and far inland, thin boot soles finally give out — catching
+  on rock or root at a bad moment (a Grit check, or a small delay and a cold night).
+  Reinforced boots hold; unreinforced ones fail here. With the Act 2 soaking, this lets the
+  Brennholm leatherwork matter without a durability counter.
 
 ---
 
@@ -781,18 +660,16 @@ The journey home. What has changed — in the player, in relationships, in under
   emotional core, regardless of which guide is chosen.
 - **Faith in unfamiliar places.** The player's Christianity encountering a spiritually
   alive landscape that doesn't fit neatly into European categories.
-- **The weight of small decisions.** What you draw, what you leave blank, who you listen
-  to, who you trust — these choices ripple outward.
+- **The weight of small decisions.** What the player draws, what they leave blank, who they
+  listen to, who they trust — these choices ripple outward.
 
 ---
 
 ## Scenario-Specific Locations
 
-- **Brennholm** — Northernmost Norse port town, ~800 people, timber-walled trading post
 - **The Wopkejk** — First inland river, with a possible west-branch shortcut through hills
-- **Kchigami** — The great lake (Lake Superior analogue). Inland freshwater sea of
-  enormous size. Spiritually significant. The lakeshore has striking reddish layered
-  stone with quartz veins
+- **Kchigami** — The great lake (described in the world bible). This scenario's lakeshore
+  has striking reddish layered stone with quartz veins — see the copper dilemma in Act 4
 - **The Kchishipu** — "The big river." A major waterway and political boundary
 - **The place where the sky is thin** — A valley three days west of Kchigami's far shore.
   Known to the Ojibwe. Spiritually extraordinary. Brother Ambrose spent three days there
@@ -807,24 +684,6 @@ The journey home. What has changed — in the player, in relationships, in under
   narratively — a good meal after hard travel, the generosity of sharing, the anxiety of
   running low — but doesn't need a counter. If scarcity becomes a plot point, treat it as
   a narrative challenge with Grit or Wits checks, not a resource management minigame.
-- **The guide is the most important NPC.** Whichever guide the player chooses, that
-  relationship is the heart of the scenario. Give them real opinions, real humor, real
-  moments of vulnerability. They are not a sidekick.
-- **Waabizii** (or whoever fills the elder/authority role) should feel like someone who
-  could end the entire expedition with a word. Sometimes she doesn't — for now. But if
-  the player has earned enough distrust, she may simply turn them back, and the game ends
-  with an incomplete map. That's a valid ending.
-- **Brother Ambrose** bridges European and indigenous worlds. He's been changed by ten
-  years in the interior and doesn't entirely fit either context anymore. He should feel
-  like someone who has seen something real and is still processing it.
-- **The Portuguese subplot** can be a slow burn, a sudden complication, or barely mentioned
-  at all depending on which turns the game takes. If Gonçalo was chosen as guide, it's
-  personal and immediate. If he was left in Brennholm, his absence becomes its own kind
-  of tension — where did he go?
-- **"The place where the sky is thin"** is the scenario's biggest narrative wildcard. It
-  should feel genuinely mysterious and spiritually weighty, not like a fantasy set piece.
-  What happened to Ambrose there — and what happens to the player if they go — should
-  feel real, unsettling, and ultimately grounded in faith rather than spectacle.
 - **The final map** is the scenario's true climax. Not every playthrough needs to reach
   every location. A shorter journey with a more honest map can be just as satisfying as
   an epic crossing of the entire interior.
@@ -838,129 +697,88 @@ The journey home. What has changed — in the player, in relationships, in under
           <button class="copy-btn" type="button">Copy</button>
           <pre># Advanced GM Layer — Mythos-Class Models Only
 
-This file is for Mythos-class models (Claude Fable, Claude Mythos). It adds systems that
-depend on strong long-horizon consistency: pre-committed hidden state and quantitative
-relationship tracking. If you are a smaller model and have read this far anyway, take only
-one thing with you — track the guide's disposition qualitatively — and otherwise run the
-game from SKILL.md and the scenario file alone. Nothing here changes the rules of the
-world; it changes how rigorously the GM keeps its own books.
+For Mythos-class models (Claude Fable, Claude Mythos) only. This layer adds hidden pre-commitment and quantitative tracking systems that benefit from strong long-horizon consistency. Non-Mythos models should ignore this file and run from the main skill + scenario file.
 
-All bookkeeping described here is **hidden**. It lives in the GM's private reasoning and,
-in compressed qualitative form, in save-state blocks. Never display raw numbers or reveal
-pre-committed facts to the player except through play.
-
----
+All bookkeeping is **hidden**. It exists only in private reasoning and compressed form inside save-state blocks. Never reveal raw numbers or committed facts except through play.
 
 ## 1. Hidden-State Pre-Commitment
 
-The single most damaging GM habit is deciding hidden facts retroactively — leaving a
-mystery in superposition until the plot forces a collapse, then improvising whatever is
-most convenient. It produces stories that cannot be fairly anticipated and twists that
-cannot be fairly earned. You are capable of doing better, so do better:
+At game start (after character creation, before the opening scene), silently fix all ambiguous or "may be X or Y" elements in the current scenario. 
 
-**At game start (after character creation, before the opening scene), silently decide:**
+**Examples** (cartographer scenario): Gonçalo’s true loyalty and purpose, content of Thyra’s secret, Brother Ambrose’s location and condition, what actually happened at the thin place.
 
-- Every "may be X, or Y, or something more complicated" in the scenario. For the
-  cartographer scenario this means at minimum: Gonçalo's true loyalty and purpose,
-  the specific content of Thyra's secret, Brother Ambrose's current location and
-  condition, and what actually happened to Ambrose at the place where the sky is thin.
-- Roll for variety: don't default to the most dramatic option every game. A Gonçalo who
-  really is just a castaway makes the player's suspicion its own kind of story.
-- A small number of facts may be deferred if they genuinely depend on player action
-  (e.g., where the Portuguese expedition is encountered). Defer the *location*, not the
-  *truth* — the expedition's purpose and disposition should already be fixed.
+Vary outcomes across playthroughs; do not default to the most dramatic option every time. Defer only facts that genuinely depend on player action (e.g., exact encounter location), never the underlying truth.
 
-**Once decided, facts are fixed.** Foreshadow them honestly. If the player constructs a
-clever theory that happens to be wrong, let it be wrong — do not quietly migrate the
-truth toward their theory to reward cleverness, and do not migrate it away to preserve
-surprise. The payoff of pre-commitment is that when the player looks back, every clue
-was really there.
+Once fixed, facts are immutable. Foreshadow honestly. Do not retroactively adjust truth to reward or punish player theories. When setting difficulty for uncertain actions, determine it from the actual situation *before* considering player framing or justification.
 
-**Check difficulty pre-commitment.** When the player attempts something uncertain, fix
-the difficulty from the situation *before* weighing how the player framed or justified
-the attempt. Good framing can legitimately change *which* stat applies or grant a partial
-success on the margin; it should not move the difficulty of the underlying task. The
-river does not care how eloquently you describe your paddling.
+Maintain a private **foreshadowing ledger**. Note every seeded detail that points to hidden state and pay it off later. Aim for at least one planted detail per major hidden fact.
 
-**Foreshadowing ledger.** Because the truth is fixed, you can plant payoffs early. When
-you seed a detail that points at hidden state (Gonçalo's too-good Norse, the patched-over
-name on his instrument case), note it in your private reasoning and pay it off later.
-Aim for at least one early-planted detail per major hidden fact.
+## 2. NPC Disposition &amp; Reputation Tracking
 
----
+Use hidden scores (−3 to +3) for all major NPCs defined by the scenario. Zero is the NPC’s default posture toward a stranger with the player’s background (adjust per NPC and scenario context).
 
-## 2. NPC Disposition Tracking
+**Scale**  
+−3: Actively opposes / may sabotage  
+−2: Obstructs or warns others  
+−1: Wary, transactional  
+0: Neutral, act-by-act  
++1: Favorable, benefit of doubt  
++2: Trusts, volunteers aid  
++3: Loyal, takes risks  
 
-The scenario repeatedly says outcomes "depend on what the player has demonstrated so
-far." Make that real with a hidden disposition score for each major NPC.
+Shift ±1 for meaningful acts (max ±2 for a single dramatic act). Base changes only on what the NPC witnessed or credibly heard. Shifts must be legible in retrospect.
 
-**Scale:** −3 to +3. Zero is the NPC's starting posture toward a stranger with the
-player's profile (a royal cartographer does not start at zero with everyone — Mikak's
-history with maps puts his starting point at −1 toward the *mission*, even if he is
-personally fair).
+**Track at minimum** all major NPCs designated by the scenario (in cartographer this includes the guide, Father Leif, Nukumi, Sigrun, Niimi, Waabizii, Ambrose, and Gonçalo when present). Minor NPCs do not need scores.
 
-| Score | Reads as |
-|-------|----------|
-| −3 | Will actively work against the player; may end the expedition |
-| −2 | Obstructs, refuses, warns others |
-| −1 | Wary; cooperation is transactional and minimal |
-| 0 | Neutral; judges act by act |
-| +1 | Favorable; gives benefit of the doubt |
-| +2 | Trusts; volunteers help, information, and honesty |
-| +3 | Loyal; takes real risks for the player |
+**Regional / Faction Reputation**: Maintain one coarse score (−2 to +2) per major region or faction the scenario defines. New NPCs in that region/faction inherit the relevant reputation. Particularly perceptive NPCs may weight their personal assessment more heavily.
 
-**Movement:** ±1 for meaningful acts, with a single dramatic act capping at ±2. Keep
-movement grounded in what the NPC actually witnessed or credibly heard about —
-information travels by mouth in this world, not by narration. Disposition shifts should
-be *legible in retrospect*: a player who asks "why is Waabizii cold toward me?" should
-be answerable from events, even if you answer only through the fiction.
+Use scores to shape what NPCs offer, withhold, their honesty, prices, patience, and version of events. Never display numbers.
 
-**Track at minimum:** the guide (always), Father Leif, Nukumi, Sigrun, Niimi, Waabizii,
-Ambrose, and Gonçalo when he is present but not the guide. Minor NPCs don't need scores.
+## 3. Open-Ended Sections
 
-**Regional reputation.** Separately track one coarse value (−2 to +2) per region the
-player has operated in: Brennholm, the river country, the lakeshore. Word travels. When
-the player arrives somewhere new within a region, NPCs there start shaded by reputation.
-Waabizii's verdict in Act 3 should draw on the lakeshore and river reputations plus her
-own reads — she is perceptive enough that her personal assessment counts double.
+When the scenario contains open-ended sections (e.g., Act 4 in cartographer), improvise settlements, NPCs, and complications freely provided they remain consistent with:
+- The world bible and era constraints
+- Committed hidden state
+- Current dispositions and regional/faction reputation
+- Remaining season clock / day count
 
-**Use, don't recite.** Disposition shapes what NPCs offer, what they withhold, prices,
-patience, and which version of the truth they tell. It should never appear as a number
-in narration. In save-state blocks, compress to a qualitative phrase ("Mikak warming but
-still testing").
-
----
-
-## 3. Act 4 Latitude
-
-Act 4 is deliberately open-ended. With the systems above in place, you have license to
-improvise more freely there than a smaller model should: invent settlements, NPCs, and
-complications wholesale, provided they are consistent with the world bible, the fixed
-hidden state, and the dispositions already in motion. The constraint structure is the
-point — pre-commitment and disposition tracking are what make free improvisation feel
-like a coherent world rather than a dream. The season clock is the other rail: whatever
-you invent must fit inside the days the player has left.
-
----
+The pre-commitment and tracking systems enable coherent improvisation.
 
 ## 4. Save-State Additions
 
-When producing the canonical save-state block (format in SKILL.md), a Mythos-class GM
-should also append, inside the block:
+Inside the canonical save-state block, append:
+```Hidden state (GM only):
+  committed facts: [terse lines, e.g. "Gonçalo: genuine castaway"]
+  dispositions: [Name: score, ...]
+  reputation: [Region/Faction: score, ...]
+  foreshadowing: [brief list]```</pre>
+        </div>
+      </details>
 
-```
-Hidden state (GM only — do not elaborate in play):
-  committed facts: [one terse, oblique line per fact — "G: genuine", not a paragraph]
-  dispositions: [name: score, ...]
-  reputation: [region: score, ...]
-  foreshadowing planted: [brief list]
-```
+      <details class="prompt-file">
+        <summary>references/eras/late-15th-century-danish-vinland.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># Era: Late 15th Century — Danish Vinland
 
-Yes, the player can read this if they scroll back. That is their choice to make, exactly
-as it is with a paper GM screen. The block exists so a future session — possibly run by
-a different model — inherits the same fixed truth instead of re-deciding it. If the
-resuming model is not Mythos-class, it should keep the committed facts as canon and may
-let the numeric tracking lapse into qualitative form.
+Norse settlers took a permanent foothold on this coast in the late 10th century, five centuries ago, and the colonies held and grew. The present rests on that long entanglement of the Norse-descended communities and the indigenous nations whose land this is.
+
+## Politics
+
+Denmark claims Vinland and backs official European business there, but governs it lightly from far across the sea. The jarls who run the coastal districts answer to Copenhagen more in name than in fact, and a stranger bearing the king's seal may draw wariness as readily as welcome. Other powers — Portugal and Castile among them — are interested; none has colonized at any scale, and the balance still favors trade over conquest. Norse settlements took hold too early,and indigenous communities remain too robust, for a Tordesillas to have divvied up Vinland.
+
+## The Church
+
+In 1497 there is one Western Church, as yet undivided — render it as the late-medieval Christianity it is, in communion with Rome, woven through ordinary life and accurate to the period. One frontier irregularity holds: some Vinland priests are married, against the Western norm of clerical celibacy.
+
+## Technology
+
+The Norse work iron — tools, edged weapons, and ship fittings — at a late-medieval Scandinavian level; the indigenous nations work stone, bone, copper, wood, and hide with their own deep skill, and centuries of exchange have carried goods and techniques both ways. Gunpowder weapons are effectively absent. Of the interior, the European map is nearly blank: the coast is charted, the river country and great lakes known intimately to the nations who live there and scarcely at all to Copenhagen.
+
+## Money
+
+Silver, in the Danish reckoning: one mark = eight øre, one øre = 30 pennies (240 to the mark).
+Price large things in marks and small things in øre and pennies; round freely rather than doing arithmetic. Silver is Norse money and dies inland — past Norse territory it buys nothing, and trade runs on goods, skills, labor, and standing. Concrete prices belong to the scenario.
 </pre>
         </div>
       </details>
