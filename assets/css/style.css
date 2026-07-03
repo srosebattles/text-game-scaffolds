@@ -376,9 +376,14 @@ a {
 }
 
 .faq-item p {
-  margin: 0;
-  padding: 0 1.5rem 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0 1.5rem;
   color: var(--color-text-soft);
+}
+
+.faq-item p:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 1.25rem;
 }
 
 /* ===== Game page ===== */

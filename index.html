@@ -53,6 +53,78 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — all the games here are free to download, copy, remix, and share. The game content is licensed under CC BY 4.0: if you re-share a game substantially based on one of these scaffolds, please link back to this site so others can find the originals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a text game scaffold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's a carefully written prompt (sometimes several files) that sets up an AI chatbot to run a text adventure as your game master. It defines the world, the rules, and the tone so the game stays consistent and fun instead of wandering off course."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this like a TTRPG or D&D?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Close cousin. These play like a solo tabletop RPG with the AI as your game master: you have stats, make choices, face consequences, and can attempt anything your character plausibly could. The other side of the family is classic interactive fiction — the story is told in prose, turn by turn, in a chat window. No dice, no rulebook, no scheduling four friends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Won't the AI just give me whatever I want?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Left to itself, it might — so each scaffold builds in ways for the world to push back. NPCs have their own interests and can tell you no, negotiations stall or cost something, and consequences stick from scene to scene. These are still story-first games, though: if you're after brutal mechanics where the numbers are merciless, an AI chatbot isn't the right engine for that."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I play these with ChatGPT, Gemini, or Grok?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The games are written and tested as Claude skills, and Grok supports skills too, so the .skill download works directly in both. On ChatGPT or Gemini, the best results come from building a custom GPT or a Gem with the game text as its instructions. Pasting the text straight into a chat works too, but longer games may need condensing and the rules can drift out of memory in a long session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's a Claude skill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Claude skill is a folder containing a main instruction file (and sometimes supporting reference files) that Claude loads automatically. If you use Claude or Grok, downloading the skill is the smoothest way to play; on other chatbots, build a custom GPT or Gem from the text instead. The .skill download is just a ZIP archive with a different extension."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do \"Well-tested\" and \"Beta\" mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Well-tested games have been through many full play sessions and their mechanics are smoothed out. Beta games are complete and playable, but newer — they've had fewer run-throughs, so you might hit a rough edge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these games kid-friendly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They're written for a general audience, and it's all text, so a player needs to read fairly comfortably to enjoy them. How any given session actually plays depends on two things the scaffold doesn't control: your chatbot's built-in moderation, which sets the real content boundaries, and the choices the player makes."
+        }
+      }
+    ]
+  }
+  </script>
   <meta property="og:image" content="https://llmtextgames.xyz/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://llmtextgames.xyz/assets/og-image.png">
@@ -157,8 +229,10 @@
       <details class="faq-item">
         <summary>Is this free?</summary>
         <p>
-          Yes — all the games here are free to download, copy, remix, and share. The game
-          content is licensed under
+          Yes — all the games here are free to download, copy, remix, and share.
+        </p>
+        <p>
+          The game content is licensed under
           <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: if you
           re-share a game substantially based on one of these scaffolds, please link back
           to this site so others can find the originals.
@@ -168,44 +242,52 @@
         <summary>What is a text game scaffold?</summary>
         <p>
           It's a carefully written prompt (sometimes several files) that sets up an AI
-          chatbot to act as a game master. It defines the world, the rules, and the tone
-          so the game stays consistent and fun instead of wandering off course.
+          chatbot to run a text adventure as your game master. It defines the world, the
+          rules, and the tone so the game stays consistent and fun instead of wandering
+          off course.
         </p>
       </details>
       <details class="faq-item">
         <summary>Is this like a TTRPG or D&amp;D?</summary>
         <p>
-          Close cousin. These play like a one-player tabletop RPG where the AI is the game
-          master — you have stats, make choices, face consequences, and can attempt anything
-          your character plausibly could. Crossed with classic interactive fiction: it's all
-          told in prose, turn by turn, in a chat window. No dice, no rulebook, no scheduling
+          Close cousin. These play like a solo tabletop RPG with the AI as your game
+          master: you have stats, make choices, face consequences, and can attempt
+          anything your character plausibly could.
+        </p>
+        <p>
+          The other side of the family is classic interactive fiction — the story is told
+          in prose, turn by turn, in a chat window. No dice, no rulebook, no scheduling
           four friends.
         </p>
       </details>
       <details class="faq-item">
         <summary>Won't the AI just give me whatever I want?</summary>
         <p>
-          These scaffolds lean narrative-heavy rather than crunchy. If you're after brutal
-          mechanics where the player loses often and the numbers are merciless, an AI
-          chatbot isn't the right engine for that — and these games aren't trying to be.
-          What they do instead is work <em>with</em> the model's disposition rather than
-          against it: each scaffold builds in world-integrity constraints and honest failure
-          modes — NPCs with their own interests who can say no, negotiations that stall or
-          cost something, consequences that stick — so the world pushes back without the AI
-          having to be argued into it. You can always overrule the game master, but the
-          story lands better when you let it hold the line.
+          Left to itself, it might — so each scaffold builds in ways for the world to push
+          back. NPCs have their own interests and can tell you no, negotiations stall or
+          cost something, and consequences stick from scene to scene. The AI doesn't have
+          to be argued into any of this; the game hands it a line to hold.
+        </p>
+        <p>
+          These are still story-first games, though. If you're after brutal mechanics
+          where the numbers are merciless and you lose often, an AI chatbot isn't the
+          right engine for that, and these games aren't trying to be. And while you can
+          always overrule the game master, the story lands better when you don't.
         </p>
       </details>
       <details class="faq-item">
         <summary>Can I play these with ChatGPT, Gemini, or Grok?</summary>
         <p>
           Yes. The games are written and tested as Claude skills, and Grok supports skills
-          too, so the <code>.skill</code> download works directly in both. On ChatGPT or
-          Gemini, the best results come from building a custom GPT or a Gem with the game
-          text as its instructions — that keeps the rules in place for the whole session.
-          You can also paste the text straight into any chatbot, but longer multi-file games
-          may need condensing to fit, and the instructions can drift out of memory in a long
-          session. Any adaptation is a modified version, and your mileage may vary.
+          too, so the <code>.skill</code> download works directly in both.
+        </p>
+        <p>
+          On ChatGPT or Gemini, the best results come from building a custom GPT or a Gem
+          with the game text as its instructions — that keeps the rules in place for the
+          whole session. Pasting the text straight into a chat works too, but longer
+          multi-file games may need condensing to fit, and the rules can drift out of
+          memory as a session runs long. However you adapt a game, expect it to play a
+          little differently than it does on Claude.
         </p>
       </details>
       <details class="faq-item">
@@ -214,9 +296,11 @@
           A Claude skill is a folder containing a main instruction file (and sometimes
           supporting reference files) that Claude loads automatically. If you use Claude
           (or Grok, which also supports skills), downloading the skill is the smoothest way
-          to play. On other chatbots, build a custom GPT or Gem from the text instead. The
-          <code>.skill</code> download is just a ZIP archive with a different extension —
-          you can open it with any unzip tool to get at the text.
+          to play. On other chatbots, build a custom GPT or Gem from the text instead.
+        </p>
+        <p>
+          The <code>.skill</code> download is just a ZIP archive with a different
+          extension — you can open it with any unzip tool to get at the text.
         </p>
       </details>
       <details class="faq-item">
@@ -231,12 +315,14 @@
       <details class="faq-item">
         <summary>Are these games kid-friendly?</summary>
         <p>
-          First, the practical bar: it's all text, so a player needs to read fairly
-          comfortably to enjoy them. Beyond that, the games are written for a general
-          audience — but how any given session actually plays depends on two things the
-          scaffold doesn't control: your chatbot's built-in moderation, which sets the real
-          content boundaries, and the choices the player makes, since the story follows
-          where they steer it.
+          They're written for a general audience, and it's all text — so the practical
+          bar is that a player needs to read fairly comfortably to enjoy them.
+        </p>
+        <p>
+          How any given session actually plays depends on two things the scaffold doesn't
+          control: your chatbot's built-in moderation, which sets the real content
+          boundaries, and the choices the player makes, since the story follows where
+          they steer it.
         </p>
       </details>
     </section>
