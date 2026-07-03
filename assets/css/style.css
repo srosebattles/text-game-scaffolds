@@ -342,11 +342,18 @@ a {
   gap: 1rem;
 }
 
-/* These summaries sit flush inside an overflow:hidden rounded container, so an
-   outset focus ring gets clipped; inset it so it stays visible. */
+/* These summaries sit flush inside an overflow:hidden rounded container, which
+   clips their outline (even inset, it lands on the clip edge and the rounded
+   corners); draw the focus ring on the container instead. */
 .faq-item summary:focus-visible,
 .prompt-file summary:focus-visible {
-  outline-offset: -2px;
+  outline: none;
+}
+
+.faq-item:has(summary:focus-visible),
+.prompt-file:has(summary:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .faq-item summary::-webkit-details-marker,
