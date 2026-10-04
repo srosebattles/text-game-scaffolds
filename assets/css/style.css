@@ -616,6 +616,10 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.essay-cta > :last-child {
+  margin-bottom: 0;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   text-align: center;
@@ -640,6 +644,20 @@ a {
     background: none;
     color: CanvasText;
     -webkit-text-fill-color: currentColor;
+  }
+}
+
+/* The sticky header wraps onto extra rows on narrow screens, so anchor jumps
+   need more clearance to keep headings from landing underneath it. */
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    scroll-padding-top: 11.5rem;
   }
 }
 
