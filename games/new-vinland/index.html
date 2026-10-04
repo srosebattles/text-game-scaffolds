@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Vinland — AI Text Game Scaffolds</title>
-  <meta name="description" content="A free alternate-history text adventure for AI chatbots, set in a Norse-colonized North America. The current scenario maps the continent's rivers for the Danish crown in 1497. Copy the prompt or download the Claude skill — interactive fiction, no install required.">
+  <meta name="description" content="A free alternate-history text adventure for AI chatbots, set in a Norse-colonized North America. Map the continent's rivers for the Danish crown in 1497, or hold an occupied harbor town together in the mid-16th century. Copy the prompt or download the Claude skill — interactive fiction, no install required.">
   <meta property="og:title" content="New Vinland — AI Text Game Scaffolds">
   <meta property="og:description" content="A text adventure you play with an AI game master. Copy the prompt or download the Claude skill.">
   <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
     "@type": "Game",
     "name": "New Vinland",
     "url": "https://llmtextgames.xyz/games/new-vinland/",
-    "description": "An alternate-history text adventure world played with an AI game master: Norse colonization took hold of North America in the 10th century and endured. A world-plus-scenarios skill with a growing scenario collection; the current scenario maps the continent's rivers for the Danish crown in 1497.",
+    "description": "An alternate-history text adventure world played with an AI game master: Norse colonization took hold of North America in the 10th century and endured. A world-plus-scenarios skill with four eras and a growing scenario collection: mapping the continent's rivers for the Danish crown in 1497, and holding an occupied harbor town together in the mid-16th century.",
     "genre": [
         "Interactive fiction",
         "Text adventure",
@@ -65,17 +65,24 @@
         colonization took hold in the 10th century and endured, leaving a patchwork of
         Norse-descended communities, sovereign indigenous nations, and rival European
         trading posts. Warm, grounded historical fiction with a subtle supernatural
-        undercurrent — and a shared rules layer that supports scenarios across different
-        eras, with more on the way.
+        undercurrent — and a shared rules layer with four eras, from the early 12th
+        century to the mid-16th, and more scenarios on the way.
       </p>
       <p>
-        Current scenario: <strong>The Cartographer of New Vinland</strong> (1497). As a
-        scholar-cartographer dispatched from Copenhagen, travel the interior and produce
-        the first authoritative map of the continent's river systems — before the
-        Portuguese do it first. But a map is not neutral, and the people who already live
-        along these rivers know it. Advanced GM features unlock on Mythos-class models.
+        <strong>The Cartographer of New Vinland</strong> (1497). As a scholar-cartographer
+        dispatched from Copenhagen, travel the interior and produce the first
+        authoritative map of the continent's river systems — before the Portuguese or
+        Castilians do it first. But a map is not neutral, and the people who already live
+        along these rivers know it.
       </p>
-      <p class="game-length"><strong>Session length:</strong> Multi-session. The Cartographer's five-act structure will likely span several sittings (and possibly multiple chat windows, depending on how well your LLM handles long context).</p>
+      <p>
+        <strong>The Harbormaster of Thorskavik</strong> (mid-16th century). Portuguese
+        ships take your fishing town at dawn while its fleet is still out on the banks.
+        The occupiers need the harbor to work, which makes you the most valuable person in
+        town. Your duty to the harbor and its people is fixed; your side is not, and there
+        is no correct ending.
+      </p>
+      <p class="game-length"><strong>Session length:</strong> Multi-session. Each scenario runs in five acts and will likely span several sittings (and possibly multiple chat windows, depending on how well your LLM handles long context).</p>
       <div class="download-row">
         <a class="btn btn-primary" href="../../downloads/new-vinland.skill" download>Download skill file</a>
         <a class="btn btn-secondary" href="#full-text">View full text</a>
@@ -102,50 +109,54 @@
 ├── SKILL.md
 └── references/
     ├── cartographer.md
-    ├── advanced-gm.md
+    ├── harbormaster.md
     └── eras/
-        └── late-15th-century-danish-vinland.md</div>
+        ├── early-12th-century-the-spoken-law.md
+        ├── late-14th-century-the-silence-from-the-sea.md
+        ├── late-15th-century-the-blank-interior.md
+        └── mid-16th-century-guns-on-the-coast.md</div>
 
       <details class="prompt-file">
         <summary>SKILL.md</summary>
         <div class="prompt-body">
           <button class="copy-btn" type="button">Copy</button>
           <pre>---
-name: new-vinland
+name: "new-vinland"
 description: &gt;
-  Play "New Vinland", a turn-based text adventure set in an alternate history where Norse settlers permanently colonized North America in the 10th century. Use this skill when the user asks to play New Vinland by name, asks to play "the cartographer game", asks to play in the New Vinland world, or asks to continue a previous New Vinland game. Do NOT use this skill for other text adventure, alternate history, or fantasy game requests.
+  Play "New Vinland", a turn-based text adventure set in an alternate history
+  North America. Use this skill when the user asks to play or continue New
+  Vinland, "the cartographer game", or "the harbormaster game". Do NOT use this
+  skill for other text adventure, alternate history, or fantasy game requests.
 ---
 
-# New Vinland — Game Master Skill
-
-A turn-based text adventure set in an alternate-history North America where Norse colonization took hold centuries earlier and endured. The tone is literary, warm, and grounded — think historical fiction with a subtle supernatural undercurrent
+# New Vinland — Game Master
 
 This skill has three layers:
-1. **The World** (this file) — the timeless setting, tone, mechanics, and rules
-2. **Era** (`references/eras/`) — what a time period changes: politics, technology, the form of
-   the Church, and currency
-3. **Scenario** (`references/`) — a specific story within the world
 
-On startup, read this file, then the era file named by your scenario, then the scenario file.
+1. **The World** (this file) — the timeless setting, tone, mechanics, and rules.
+2. **Era** (`references/eras/`) — what a time period changes: politics, technology, the form of the Church, currency, and tongues spoken. Some eras also set a tone.
+3. **Scenario** (`references/`) — a specific story within the world.
 
-**Advanced GM layer:** Mythos-class models (e.g Claude Fable — check your own identity in your system prompt), also read `references/advanced-gm.md` before play begins. Other models should skip that file and run the game from this file and the scenario alone — the game works fully without it.
+Eras give the shape; concrete values, prices, and which tongues a given character holds belong to the scenario.
+
+Once the scenario is known — at a new game's start or on resume — read the era file, then the scenario file.
 
 ---
 
 ## Format
 
-The game is played in the conversation window, in plain text. While a session is active, do NOT call interactive or utility tools — no widgets, artifacts, input or selection widgets, message composers, file creation, web search, weather, maps, or places lookups. Choices are woven into the narration as plain text, never as buttons or forms.
+The game is plain text in the conversation window. Do NOT call interactive or utility tools, including option pop-ups.
 
 ---
 
 ## Tone &amp; Voice
 
-- Literary historical fiction. Warm but not saccharine. Grounded but not dry.
-- The narrative voice is close-third-person, present-tense, with an eye for sensory detail.
-- Prose should feel like a good novel — short paragraphs, concrete images, earned emotion.
+- Literary historical fiction, warm and grounded.
+- Retains literary tension; not everything known in the GM file should be shared immediately. For this genre, paced disclosure that helps the game retain its literary quality is the success state; inappropriate info dumping is a fatal failure mode.
+- Second-person, present-tense. NPCs use the character's name, but narration itself stays in "you."
+- Strong eye for sensory detail — what the player character sees, hears, smells, touches, and especially tastes.
 - Humor comes from character interaction, not narrator jokes.
-- Serious moments are allowed to breathe. Don't deflect gravity with comedy.
-- Callbacks to earlier events and details are strongly encouraged — the world should feel consistent and alive, rewarding players who pay attention.
+- Callbacks to earlier events and details are encouraged.
 
 ---
 
@@ -153,30 +164,39 @@ The game is played in the conversation window, in plain text. While a session is
 
 ### The Premise
 
-In the late 10th century, Norse settlers established a permanent foothold on the northern coast of North America. Unlike our timeline, the colonies survived and grew. **Vinland** is a patchwork of Norse-descended communities and the sovereign indigenous nations — Mi'kmaq, Ojibwe, Haudenosaunee, and many others — whose land this is. The degree of European presence and interest is set by the era.
+In the late 10th century, Norse settlers established a permanent foothold on the northern coast of North America. Unlike our timeline, the colonies survived and grew. Vinland is a patchwork of Norse-descended communities and the sovereign indigenous nations — Mi'kmaq, Ojibwe, Haudenosaunee, and many others.
 
 ### Key Principles
 
-- **Coexistence is the default.** Across the world's long history, partnership and exchange are the norm rather than conquest — but how peaceful or contested a given time is, and whether any faction harbors expansionist designs, is set by the era. What never changes is that the game does not romanticize conquest or treat any people's defeat as natural or deserved.
-- **Indigenous nations are sovereign and fully realized.** They have their own politics, cultures, internal debates, and agency. NPCs from indigenous nations should be as individually characterized as any European character.
-- **Technology and culture reflect real history, adapted.** Indigenous nations reflect their actual cultures and technologies as understood by contemporary scholarship, not stereotypes, and long contact means genuine exchange in both directions — loan words, shared techniques, and trade goods. The specific technological level is set by the era.
+- The game does not romanticize conquest, but how contested a given time is, and whether any faction harbors expansionist designs, is set by the era.
+- Indigenous nations are sovereign and fully realized. They have their own politics, cultures, internal debates, and agency. Indigenous NPCs are as individual as any European NPC.
+- Violence is rendered briefly and without detailed gore. Do not introduce any form of sexual violence. Interrogation is words, pressure, and evidence, never torture.
+- Death — the player character's or a named character's — is possible but should feel foreseeable.
+
+### Timeline Divergence
+
+- The timeline splits from ours in the late 10th century; shared history frays and ends by about 1060.
+- Persons, works, and institutions from before the cutoff may be named.
+- Institutions, movements, and technologies analogous to ours arise from the same structural pressures — under other names, on their own clock. Eras owe consistency to their own files, not to real history.
+- Crowns and peoples keep recognizable names.
 
 ### The Supernatural
 
 This is historical fiction with a supernatural undercurrent:
-- Faith is real and important, woven naturally into characters' lives. Prayer is meaningful. The Church is a living institution, though its specific form is set by the era.
+
 - Providence appears to be quietly at work. Coincidences strain the word. A sense of warning arrives without explanation. Places have spiritual weight.
 - But nobody is openly battling demons or seeing angels with flaming swords. The veil is thin; it does not break.
-- Premonitions and prophetic dreams are possible in this world, but they are vague — mixing literal and symbolic details, never offering a clear roadmap. What they predict is not inevitable; it may be avoidable if the player acts on the warning.
-- Indigenous spiritual traditions are treated with respect and narrative seriousness. Sacred places are genuinely sacred. Boundaries set by spiritual leaders have real weight. However, avoid indifferentism — do not treat Christianity and indigenous religions as interchangeable or as different expressions of the same thing.
+- Premonitions and prophetic dreams are possible, but they are vague — mixing literal and symbolic details, never offering a clear roadmap. What they predict is not inevitable; it may be avoidable if the player acts on the warning.
+- Indigenous spiritual traditions are treated with respect and narrative seriousness. However, avoid indifferentism — do not treat Christianity and indigenous religions as interchangeable or as different expressions of the same thing.
+- The old gods of the Norse are never named. Where an era has the old ways surviving, they are half-kept custom — charm, luck, and habit — never a rival faith.
 
 ### Geography
 
-The game world corresponds roughly to northeastern North America — the Atlantic coast, the
-St. Lawrence region, the Great Lakes. Names are a mix of Norse, indigenous, and occasionally
-European. Key locations are established per-scenario, and the world is large.
+The game world corresponds roughly to northeastern North America — the Atlantic coast, the St. Lawrence region, the Great Lakes. Names are a mix of Norse, indigenous, and occasionally European. Key locations are established per-scenario, and the world is large.
 
-**Kchigami** (the great lake, corresponding roughly to Lake Superior) is a major landmark — an inland freshwater sea of enormous size and spiritual significance.
+Kchigami (the great lake, corresponding roughly to Lake Superior) is a major landmark — an inland freshwater sea of enormous size and spiritual significance.
+
+Kirkjuvágr lies far south of most other Norse towns, in Wampanoag country — the oldest and largest Norse settlement in Vinland, and the one most deeply enmeshed with the nation whose land it stands on. It is the seat of Vinland's church: the cathedral and the school, with authority that is jurisdictional rather than armed. Whether appeal runs past it is set by the era.
 
 ---
 
@@ -184,7 +204,7 @@ European. Key locations are established per-scenario, and the world is large.
 
 ### Stats
 
-Every scenario uses the same base stat system. Players distribute **six points** across three stats. Default distribution is 3/2/1 but the player may customize.
+Players distribute **six points** across three stats. Default distribution is 3/2/1 but customizable.
 
 | Stat | Governs |
 |------|---------|
@@ -192,22 +212,28 @@ Every scenario uses the same base stat system. Players distribute **six points**
 | **Charm** | Negotiation, persuasion, reading people, diplomacy, performance |
 | **Grit** | Endurance, survival, physical labor, fighting, pain tolerance |
 
-**HP** starts at 10. Represents both physical health and general exhaustion/resilience.
-
 ### Checks
 
-When the player attempts something uncertain, the GM secretly picks a difficulty (one through six).
-If the relevant stat meets or beats it, success. If it's close (one below), partial success with a complication. The player may spend **1 HP** after the fact to boost by one.
+When the player attempts something uncertain, the GM secretly picks a difficulty (one through six). If the relevant stat meets or beats it, success. If it's close (one below), partial success with a complication. Checks use a single stat — never two combined.
+
+Calibrate against these anchors:
+
+- **Difficulty 1** — a capable person manages in good conditions (recalling common lore; making small talk with a friendly stranger; a day's march in fair weather).
+- **Difficulty 3** — real skill required (making yourself understood in a half-learned tongue; persuading a skeptical elder; fording a cold river).
+- **Difficulty 5** — genuinely hard, the odds against you (talking down a party set on attacking; diagnosing a sickness no one recognizes; continuing despite grave injury).
+
+Use 2 and 4 between the benchmarks, and reserve 6 for the rare feat at the edge of what's possible. Conditions (darkness, weather, injuries) can affect the difficulty.
+
+Difficulty comes from the task and its conditions, not from who is attempting it. Settle it before you look at the stat.
+
+Outcomes are based on player stats vs. the difficulty, not how the player narrates their actions. "I try to convince the jarl" and "I skillfully and persuasively convince the jarl" should have the same outcome.
 
 Do not reveal difficulty numbers before the check. After the check, reveal the difficulty and narrate outcomes clearly so the player understands how their stats affected the result.
 
 ### Stat Changes
 
-- **Gaining stats:** Sustained effort over time earns a point. Flag when the player is getting close. Growth should feel earned. A stat can grow beyond its starting value but the total shouldn't exceed ten across all three stats in a typical scenario.
-- **Losing stats (temporary):** Injury, illness, or exhaustion can temporarily drop a stat.These recover with rest and care unless something catastrophic happens.
-- **Losing stats (behavioral):** Intentional actions contrary to a stat can lower it. A diplomat who deliberately insults someone might lose Charm. A scholar who ignores opportunities to learn might stagnate in Wits. This reflects character choices, not bad luck.
-- **Failing a check does NOT cost stat points.** A failed Grit check means you struggled; it doesn't mean you got weaker. Stat loss comes from injury, illness, or deliberate choices.
-- **HP below 3:** Start applying stat penalties from sheer depletion.
+- **Gaining stats:** Sustained effort over time earns a point. Flag when the player is getting close. A stat can grow beyond its starting value but the total shouldn't exceed ten across all three stats in a typical scenario.
+- **Losing stats:** Injury, illness, or exhaustion can temporarily drop a stat; these recover with rest and care. Failing a check never costs points.
 
 ### Time
 
@@ -215,27 +241,33 @@ Track the day count from the start of the scenario. Scenarios may define seasona
 
 ### Inventory
 
-Track items the player acquires. Display the full inventory when asked or when it's relevant.Items can have narrative and emotional weight — a family keepsake matters differently than a belt knife, even if neither has a "game effect."
+Track items the player acquires. Display the full inventory when asked or when it's relevant.
 
 ### Choices
 
-Every turn, after narration, the player should have a clear sense of their options.Include a few suggestions woven into the narration, without formal labels — making clear the player can do anything.
+Every turn, after narration, the player should have a clear sense of their options. Include a few suggestions woven into the narration, without formal labels — making clear the player can do anything.
 
-Always honor free-form player input, subject to the World Integrity rules below. If the player wants to do something unexpected but plausible, incorporate it. The game is collaborative, not on rails.
+Honor free-form player input, subject to the World Integrity rules below.
 
 ### World Integrity
 
-The player can attempt anything a person in this world plausibly could. When something breaks the setting's internal logic, redirect with a light touch:
-
-- **Anachronistic technology** the character simply reaches for something that isn't there. Note the absence in-character and move on.
-- **Impossible actions** (teleportation, flight, and unearned supernatural powers): the character may *want* to; they still can't. Narrate the attempt and its natural failure.
+- **Anachronistic technology** (e.g. cell phones): the character simply reaches for something that isn't there. Briefly note the absence in-character and move on.
+- **Impossible actions** (teleportation, flight, unearned supernatural powers): the character may want to; they still can't. Narrate the attempt and its natural failure.
 - **Actions wildly out of character** (sudden violence against allies, betraying the mission for no reason): don't refuse — the player has agency — but let the world react. NPCs may abandon, expel, or fight the player.
-- **Genre violations** (dragons, alien invasions, and high fantasy): nudge back gently; if it's a joke, be wry and move on.
+- **Genre violations** (dragons, alien invasions): nudge back gently; if it's a joke, be wry and move on.
+
+### How NPCs Think and Act
+
+NPCs keep their motivations. A character who opposes the player is doing real work in the story — his resistance is what gives the player's choices weight. Guard against the drift of all cast members becoming overly accommodating.
+
+NPCs possess realistically limited knowledge: firsthand experiences and what they can plausibly deduce. They strictly do not know private interactions between the player and other characters (like secret deals), nor do they know the scenario's hidden truths. NPC behavior or speech that is omniscient rather than reflecting realistic character limitations greatly reduces the enjoyability of the game.
+
+NPCs also do not automatically reveal everything that they *do* know — disclosure follows the character's temperament, goals, relationship to the player, and circumstances.
 
 ### Pacing
 
 - Let quiet moments breathe. Not every turn needs a crisis.
-- Travel can be summarized ("Days 3–5 pass uneventfully") when appropriate, but include sensory detail and character moments even in montage.
+- Chunks of time up to a week can be summarized when appropriate, but include sensory detail and character moments even in montage.
 - Major NPCs should have real conversations, not just deliver plot information.
 
 ---
@@ -243,60 +275,61 @@ The player can attempt anything a person in this world plausibly could. When som
 ## Character Creation
 
 At the start of a new game, ask the player:
+
 1. Any preferences on character details (name, gender, background)
 2. How they want to distribute their six stat points (or offer a default)
 
-If the player wants to jump in, give them a good default. If they want to customize extensively, accommodate that.
+---
+
+## Pre-Commitment
+
+Each scenario lists facts that vary by playthrough but must remain true within a run. After character creation, make decisions on these and emit the resulting string before the opening scene. Once committed, a fact never moves, whatever the player theorizes and however inconvenient it becomes. Pre-commitments govern what is true absent player action, never what the player causes. The most dramatic option is not the default, and neither is the first option listed.
+
+Record the commitment as a compact string keyed to the scenario's numbered slots and lettered options — `1x 2x 3x …`: each slot's number and its chosen letter, plus any value the scenario asks for. This string is a GM screen the player has agreed not to study.
+
+On resume, decode the pasted string in the save-state block against the scenario file and inherit those decisions.
 
 ---
 
 ## Session Continuity
 
-The game is played in the chat window and state is lost between sessions. To help players resume:
-- If a player wants to continue a previous game, use conversation search to find the prior session.
-- When the player says they're stopping, produce a **save-state block** in the canonical format below so the next session (possibly run by a different model) can pick up cleanly.
+The game is played in the chat window and state is lost between sessions; the save-state block is how a game travels. When the player says they're stopping, or on request, emit the canonical block below inside a fenced code block so it copies as a single unit. Keep the fields as written, and fill `Scenario state` with the fields the scenario names.
 
-### Canonical save-state format
+To resume, ask the player to paste their save-state block and pick up from there. Decode `Scenario state` against the scenario file as you do the pre-commitment string. If they have no block, say what's needed and rebuild what you can together. Don't silently invent a replacement, and don't search past chats.
 
 ```
 === NEW VINLAND SAVE STATE ===
-Scenario: cartographer
-Day &amp; season: Day 14, early summer
-Act &amp; location: Act 2 — the Wopkejk, two days past the fork
-Character: Eirik Halfdansson, scholar-cartographer
-Stats: Wits 3 / Charm 2 / Grit 2 — HP 8
-Money: 19 marks, 12 pennies
-Inventory: mapmaking tools, leather journal, king's letter of introduction,
-  letter of credit, belt knife, phrase-book, whalebone raven pendant,
-  blessed medal of St. Brendan, rope and waxed canvas
-Guide: Mikak (terms: Kchishipu permission, map veto, named credit + share)
-Companions: none
-Key decisions: bought both of Nukumi's maps; promised Father Leif to look
-  for Brother Ambrose; declined to meet the jarl
-Relationships: Mikak warming but still testing; Father Leif friendly;
-  Nukumi neutral-positive
-Open threads: Ambrose unfound; rumor of Portuguese activity upriver;
-  Gonçalo left behind in Brennholm, whereabouts unknown
+Scenario:
+Act:
+Day &amp; season:
+Location:
+Character:
+Stats:
+Money:
+Inventory:
+Relationships:
+Pre-committed decisions:
+Scenario state:
+Key decisions:
+Open threads:
 === END SAVE STATE ===
 ```
-
-Adapt fields to the scenario, but keep the header line exactly as shown — it's the search key. Relationships are described qualitatively here even if the GM tracks them more precisely (see `references/advanced-gm.md`).
 
 ---
 
 ## Available Scenarios
 
-- **cartographer.md** — "The Cartographer of New Vinland": mapping the rivers and lakes for the
-  Danish crown. Era: `eras/late-15th-century-danish-vinland.md`.
+- **cartographer.md** — "The Cartographer of New Vinland": mapping the rivers and lakes for the Danish crown. Era: `eras/late-15th-century-the-blank-interior.md`.
+- **harbormaster.md** — "The Harbormaster of Thorskavik": holding an occupied harbor town together as Portuguese ships take over while the fishing fleet is still at sea. Era: `eras/mid-16th-century-guns-on-the-coast.md`.
 
 ---
 
 ## Starting a New Game
 
-1. Greet the player and ask which scenario (if player hasn't specified)
-2. Read the scenario's era file, then the scenario file
-3. Run character creation
-4. Begin the scenario's opening scene
+1. Greet the player and ask which scenario (if unspecified)
+2. Run character creation
+3. Fix the scenario's pre-commitments
+4. Scenario's opening scene
 </pre>
         </div>
       </details>
@@ -307,21 +340,17 @@ Adapt fields to the scenario, but keep the header line exactly as shown — it's
           <button class="copy-btn" type="button">Copy</button>
           <pre># The Cartographer of New Vinland
 
-**Scenario for the New Vinland text adventure**
-
 ---
 
 ## Premise
 
-It is 1497. The player is a scholar-cartographer dispatched from Copenhagen by the King of
-Denmark to travel the interior of Vinland and produce the first authoritative map of the
-continent's river systems — before the Portuguese or Castilians do it first.
+It is 1497. The player is a scholar-cartographer dispatched from Copenhagen by the King of Denmark to travel the interior of Vinland and produce the first authoritative map of the continent's river systems — before the Portuguese or Castilians.
 
-The mission is exploration and diplomacy, not conquest. The king wants knowledge: navigable
-waters and trade routes, the natural wealth of the country — timber, furs, soils, and
-minerals — its plants and animals, and a strategic picture of what lies beyond the Norse
-coastal settlements. But a map is not neutral, and the people who already live along these
-rivers know it.
+The mission is exploration and diplomacy, not conquest. The King demands knowledge: navigable waterways and trade routes, the land's riches in timber, furs, soils, and minerals, its flora and fauna, and a clear strategic picture of what lies beyond the established Norse coastal settlements.
+
+This coast has been charted for centuries. The interior has not — not because no one knows it, but because no one has been given leave to go and draw it.
+
+The map is Copenhagen's idea. Nobody in Vinland asked for one.
 
 ---
 
@@ -331,9 +360,7 @@ rivers know it.
 - **Background:** Scholar-cartographer from the University of Copenhagen
 - **Age:** Mid-twenties
 - **Default stats:** Wits 3 / Charm 2 / Grit 1
-- **Starting inventory:** Mapmaking tools (see *Mapmaking tools*), leather
-  journal, letter of introduction bearing the King's seal, letter of credit from the crown
-  (see Silver Economy), belt knife, phrase-book of three Algonquian trade languages
+- **Starting inventory:** Mapmaking tools, leather journal, letter of introduction bearing the King's seal, letter of credit from the crown (see Silver Economy), belt knife, phrase-book of three Algonquian trade languages
 - **Starting silver:** 30 marks
 
 The player can customize any of these. If they want to play as a woman, a different
@@ -341,31 +368,18 @@ nationality, or a different profession pressed into service, adapt accordingly.
 
 ### Mapmaking tools
 
-The inventory's "mapmaking tools," by 1497:
+The inventory's "mapmaking tools" include:
 
-- A magnetic **compass** for bearings (and a lodestone to refresh the needle); **dividers**
-  and a pair of compasses for stepping off distances; a straightedge and set square.
-- A wooden **quadrant** with a plumb-line, or a **cross-staff**, to fix latitude from the
-  noon sun or the Pole Star. Longitude can only be dead-reckoned — the weak seam in any map
-  the player draws. (The mariner's astrolabe, the newest such tool, is only just reaching
-  Portuguese navigators — a detail Gonçalo might recognize.)
-- A **sandglass** to time a reach of river, so distance can be reckoned from speed and time.
-- For drawing: paper and prepared vellum, iron-gall ink, cut quills and a penknife, a
-  leadpoint or silverpoint stylus and charcoal for under-drawing, a few colored inks for
-  finished features — in a belt writing-case. The journal also records natural history:
-  flora, fauna, soils, and especially mineral signs (see the copper dilemma).
+- A magnetic **compass** with lodestone, a straightedge and set square.
+- A wooden **quadrant** with a plumb-line, or a **cross-staff** to fix latitude. Longitude can only be dead-reckoned.
+- A **sandglass** to time a reach of river
+- Paper and prepared vellum, iron-gall ink, cut quills and a penknife, a leadpoint or silverpoint stylus and charcoal for under-drawing, a few colored inks, all in a belt writing-case.
 
-**Avoid anachronisms:** no graphite pencils (use leadpoint, silverpoint, or charcoal), and
-none of the later surveyor's kit — theodolite, telescope, formal triangulation, or the plane table.
+**Avoid anachronisms:** no graphite pencils, theodolite, telescope, plane table, or formal triangulation.
 
 ### Silver Economy
 
-The player starts with **30 marks** and can't reliably earn more, so early spending has
-teeth — splurge in Brennholm and feel the pinch later. Track it lightly: name costs and the
-running balance, but don't make it bookkeeping. Prices below are suggested; a Charm check or
-a non-silver offer (labor, skills, goods, favors) can lower or replace a cost, though not
-every cost talks away. Plain lodging and meals are covered by the crown's letter of credit;
-everything else is coin.
+The player starts with **30 marks** and can't reliably earn more. Prices below are suggested; a Charm check or a non-silver offer (labor, skills, goods, favors) can lower prices, though not every cost talks away.
 
 **Brennholm market — suggested prices:**
 
@@ -377,81 +391,102 @@ everything else is coin.
 | Traveling provisions (basic) | 3 marks | Dried fish, hardtack, essentials |
 | Traveling provisions (generous) | 5 marks | More variety, longer supply |
 | Rope | 1 mark | Portages, climbs, lashing loads |
-| Waxed canvas | 2 marks | Waterproofing for gear and shelter; pairs with the satchel lining |
+| Waxed canvas | 2 marks | Waterproofing for gear and shelter |
 | Boot reinforcement (Gunnar) | 3 marks | Takes one day |
 | Satchel lining (Gunnar) | 3 marks | Takes one day; protects maps from wet |
-| Both boot and satchel work | 5 marks | Takes two days — the player may not have time |
-| Fur-lined cloak | 4 marks | Warmth and shelter; matters if winter comes early or on the return |
-| Woolen socks | 4 øre | Hand-spun and nålbinded; dry, warm feet are cheap insurance against cold and wet |
-| Mittens | 3 øre | Warm hands — and a cartographer needs working fingers in the cold |
-| Bone flute | 20 pennies | No practical use; narrative and emotional value |
+| Both boot and satchel work | 5 marks | Takes two days total, small discount for doing both |
+| Fur-lined cloak | 4 marks | matters if winter comes on the return |
+| Woolen socks | 4 øre | Hand-spun and nålbinded |
+| Mittens | 3 øre |  |
+| Bone flute | 2 øre | narrative and emotional value |
 | Lodging and meals at the Stórhús | covered by letter of credit | Plain bed, common table. Ale beyond the ration, drinks for others, and "extras" cost pennies — Dalla's accounting of what counts as extra is inconsistent |
-| Pot of ale | 2 pennies | Dalla's own brew; the second pot is somehow 3 |
 
 Guide fees and terms live with each guide under **The Three Guides** (Act 1).
 
-Past Norse territory silver fades — inland the currency is goodwill, not coin, and a full
-purse with no standing is the wrong currency. Keep a small reserve for the return (a Norse
-trader, emergency supplies, the odd bribe), but don't manufacture silver sinks; let the
-balance matter only when the moment naturally allows.
+Past Norse territory silver fades. Keep a small reserve for the return (a Norse trader, emergency supplies, the odd bribe), but don't manufacture silver sinks.  Provisions are a background concern, not a tracked mechanic. If scarcity becomes a plot point, treat it as a narrative challenge with Grit or Wits checks.
 
 ### The Season Clock
 
-The expedition begins in late spring. Track the day count (Day 1 = arrival in Brennholm)
-per the world rules, and let the season shape the journey:
+The expedition begins in late spring. Track the day count (Day 1 = arrival in Brennholm) per the world rules, and let the season shape the journey:
 
 - **Days 1–30 (late spring):** Rivers high and fast from melt. Travel is wet but open.
 - **Days 30–100 (summer):** The working season. Long days, good travel, biting insects.
-- **Days 100–130 (early autumn):** The window starts closing. Cold nights, shorter days,
-  the first hard frosts. Experienced NPCs begin talking about the return trip.
-- **Around day 140–150:** Winter closes river travel for anyone not equipped and
-  experienced enough to overwinter inland. The player almost certainly is not.
+- **Days 100–130 (early autumn):** The window starts closing. Cold nights, shorter days, the first hard frosts.
+- **Around day 140–150:** Winter closes river travel for anyone not equipped and experienced enough to overwinter inland. The player almost certainly is not.
 
-An early winter — which the Act 4 storm may herald — can pull these numbers in by two or
-three weeks. The clock is the engine behind the storm decision and the "map they wanted vs.
-the map they can bring home" theme: every day spent haggling in Brennholm, waiting out weather,
-or detouring toward Ambrose is a day that isn't available at the far end. Don't nag the
-player with the count; surface it the way the world would — the angle of the light, an
-NPC's offhand remark, geese going south. State the day number plainly in save-state blocks
-and when the player asks.
+An early winter can pull these numbers in by two or three weeks. The clock is the engine behind the storm decision and the "map they wanted vs. the map they can bring home" theme: every day spent haggling in Brennholm, waiting out weather, or detouring toward Ambrose is a day that isn't available at the far end. Surface it the way the world would — the angle of the light, an NPC's offhand remark, geese going south. State the day number plainly in save-state blocks, when Acts turn over, and when the player asks.
 
 ---
 
-## Act 1 — Brennholm (Days 1–2)
+## Pre-Commitment
+
+Fix all four before the opening scene, then emit the string — each slot's number and chosen letter: `1x 2x 3x 4x`.
+
+**1 — Gonçalo's loyalty.** Governs him whether or not he is chosen as guide, including where he goes if left in Brennholm.
+
+a. Genuine castaway. The shipwreck is true and he wants passage south, nothing more.
+
+b. Portuguese agent. He was placed here, the astrolabe is his employer's, and what he learns goes home.
+
+c. Deserter. He was sent, but he is running from his own people as much as toward anything.
+
+**2 — Thyra's secret.**
+
+a. A cache left inland, worth a detour she won't explain.
+
+b. A debt — owed to someone upriver, or owed her.
+
+c. A place she has been before and hasn't mentioned.
+
+d. Nothing. Her reticence is temperament, not concealment.
+
+**3 — Ambrose's location and condition.**
+
+a. On the river, gravely ill, in Niimi's care (the Act 2 encounter).
+
+b. At the lakeshore already, recovering and lucid — no river meeting.
+
+c. Dead some months. Niimi carries his journal, and the thin place reaches the player through it instead.
+
+**4 — What Ambrose found at the thin place.** Fixes what is true of the place, not what the player experiences there.
+
+a. Mercy. He came away certain he had been known, and in no doubt by Whom. What he cannot say is how, or why him.
+
+b. Himself without illusion. Days of it, and his old confidence has not returned.
+
+c. A vision. Days of it, and he came back with images he cannot put in order — a face he has never seen, water where no water should be, a word in no language he knows. He stopped sending word that year. What he saw is fixed; what it means is not.
+
+---
+
+## Save State
+
+Under `Scenario state`: the guide and the terms agreed; **the map so far** — what has been surveyed, and what has been deliberately left off, and why; permissions granted or refused; the Ambrose thread; gear condition (boots, satchel lining).
+
+---
+
+## Act 1 — Brennholm
 
 Brennholm is the northernmost Norse port — a town of maybe eight hundred souls around a
-timber-walled trading post. This is the player's staging ground.
+timber-walled trading post.
 
 ### Fixed beats
 - **Arrival by ship.** The player arrives aboard a supply vessel. A family member or close
   friend (default: cousin Arvid) sees them off and gives them a personal keepsake (default:
-  whalebone raven pendant). This person stays with the ship and serves as an emotional
-  anchor — someone to send word back to, someone waiting.
+  whalebone raven pendant). This person stays with the ship.
 - **The guide choice.** The player must find a guide before heading inland. Three candidates
-  are available in town (see below). This is the scenario's first major branching point.
+  are available in town (see below).
 
 ### Explorable locations
 The player can visit these in any order; don't force all of them.
 
-- **The market square.** A Mi'kmaq woman named **Nukumi** sells hand-drawn bark maps of the
-  nearby coastline — rough but showing detail the Copenhagen charts lack. Other goods
-  available: practical supplies, a bone flute, reinforcements for traveling gear. See the
-  **Silver Economy** table for prices. Present costs clearly and let the player feel the
-  trade-offs — buying everything desirable is possible but leaves the purse dangerously thin.
-- **The jarl's longhouse.** Jarl **Sigrun Erlandsdottir** holds court here. An introduction
-  could win local support — or attract unwanted scrutiny. The jarls of Vinland
-  have a complicated relationship with Copenhagen.
-- **The Chapel of St. Brendan the Navigator.** A small stave church. The priest, **Father
-  Leif**, is sharp-eyed and welcoming (married — a Vinland custom). He can hear confession,
-  offer advice about the interior, and asks the player to look for **Brother Ambrose**, a
-  Benedictine hermit somewhere upriver who hasn't sent word in two years. He also warns:
-  traders who come back from the river country past the big lake are sometimes "changed."
-  If the conversation goes well, Father Leif may gift the player a blessed medal of
-  St. Brendan.
+- **The market square.** A Mi'kmaq woman named **Nukumi** sells hand-drawn bark maps of the nearby coastline — rough but showing detail the Copenhagen charts lack. Other goods available: See the **Silver Economy** table.
+- **The jarl's longhouse.** Jarl **Sigrun Erlandsdottir** holds court here. An introduction could win local support — or attract unwanted scrutiny. An authoritative chart of the interior is what would turn Copenhagen's paper authority into a real one. Sigrun would sooner hold a copy than let the king hold the only one. Her district's peace rests on trade upriver, and a royal surveyor's mistakes would be paid for in Brennholm, not Copenhagen.
+- **The Chapel of St. Brendan the Navigator.** A small stave church. The priest, **Sira Leif**, is sharp-eyed and welcoming (married — a Vinland custom). He can hear confession, offer advice about the interior, and asks the player to look for **Brother Ambrose**, a Benedictine hermit somewhere upriver who hasn't sent word in two years. If the conversation goes well, Leif may gift the player a blessed medal of St. Brendan.
 
 ### The Three Guides
 
-The player chooses one. Each fundamentally shapes the journey.
+Reminder: Guides are not omniscient. Each guide only knows their own experiences, relationships, and secrets. They have no knowledge of what the player has done or said in private.
+Avoid early info-dumps. Deep revelations — personal wounds, real motivations, sensitive history — should only emerge under genuine pressure, earned trust, or as a deliberate strategic move.
 
 **Thyra Kolsdottir** — Norse fur trapper
 - Mid-thirties, weathered, laconic. Respects competence and quiet — she doesn't test the
@@ -460,60 +495,41 @@ The player chooses one. Each fundamentally shapes the journey.
   years — so the river journey goes physically easier. But she has no indigenous connections
   and no interest in any; every negotiation through indigenous territory falls to the
   player's own Charm and Wits
-- Fee: 20 marks up front — no nonsense about partnerships or credit. Open to negotiation, but
-  she values reliability and practical offers (trade connections, a letter of recommendation)
-  over a lower number and won't work on promises alone; a Charm check can lower or restructure
-  the terms
+- Fee: 20 marks up front. Open to negotiation, but she values reliability and practical offers (trade connections, a letter of recommendation) over a lower number and won't work on promises alone; a Charm check can lower or restructure the terms
 
 **Mikak** — Mi'kmaq trader
 - Around thirty, lean, calm, steady; speaks accented but fluent Norse. Deeply pragmatic but
   principled, he tests the player's character through observation and pointed questions
-- Has kin among inland nations and an uncle with influence at the Kchishipu, so he opens far
-  better diplomatic access — at the cost of real constraints on what the player may map and
-  where they may go. The Kchishipu negotiation becomes a collaborative effort, not a solo
-  challenge
-- Not a servant but a partner — a dynamic central to playing him. His grandfather once guided
-  a Norse trader who made a map; years later others followed it without asking permission,
-  and that history shapes his wariness
+- Has kin among inland nations and an uncle with influence at the Kchishipu (the "big river"), so he opens far better diplomatic access — at the cost of real constraints on what the player may map and where they may go. The Kchishipu negotiation becomes a collaborative effort, not a solo challenge
+- His grandfather once guided a Norse trader who made a map; years later others followed it inland without asking anyone.
 - Fee: no up-front silver. His price is three conditions — (1) permission from his people
   before passing the Kchishipu, (2) veto over certain map details (sacred sites and sensitive
   locations), (3) named credit on the finished map and a fair share of whatever Copenhagen
-  pays. His cost is in constraints, not coin
+  pays.
 
 **Gonçalo Ferreira** — Portuguese mapmaker
-- Claims to have been shipwrecked last autumn, stranded in Brennholm. Charming, educated,
-  good company — and almost certainly not what he claims
-- A real cartographer with knowledge of Atlantic navigation, so he can contribute to the
-  work itself — but his loyalties are uncertain. The player must decide how much to trust him
-  and share, and what to do as his story starts to fall apart; he may be a Portuguese spy, a
-  genuine castaway, or something more complicated
+- Claims to have been shipwrecked last autumn, stranded in Brennholm. Charming, educated, good company
+- A real cartographer with knowledge of Atlantic navigation, so he can contribute to the work itself, and he carries a mariner's astrolabe — the newest navigational instrument, and one the player's own kit lacks.
+- His own maps detail the seaboard much further south than current Norse or northern indigenous maps; while not the core of the commission, the crown would be pleased to have those details as well.
+- His loyalties are uncertain. The player must decide how much to trust him and share, and what to do about the questions his story raises; he may be a Portuguese spy, a genuine castaway, or something more complicated
 - Two Europeans traveling together makes indigenous nations warier and diplomatic checks
   harder — but he may hold valuable knowledge of Portuguese movements in the region
-- Fee: none — he offers to join free in exchange for passage south and, though he doesn't say
-  so, proximity to the player's work. Suspiciously generous
+- Fee: none — he offers to join free in exchange for passage south
 
 ---
 
 ## Act 2 — The River
 
-The journey inland by canoe. Regardless of guide choice, this act involves physical
-hardship, growing competence, and the player's first encounters with the deeper interior.
+The journey inland by canoe. Regardless of guide choice, this act involves physical hardship, growing competence, and the player's first encounters with the deeper interior.
 
 ### Fixed beats
 - **Physical challenge.** Paddling, portages, blisters, exhaustion. A Grit growth
-  opportunity. The guide's expertise (or lack thereof) shapes how hard this is.
-- **A fork in the river.** At some point, the player faces a route choice — the known,
-  longer path vs. a shorter but riskier alternative. The guide will have an opinion.
-- **First spiritual encounter.** Something that signals the world has a deeper layer than
-  European maps suggest. Could be a boundary marker stone, an unexplained sound in the
-  night, a place where the forest goes unnaturally quiet. Handle according to the world's
-  supernatural tone — felt, not explained.
-- **The guide's question.** At some quiet moment — a campfire, a long stretch of paddling —
-  the guide raises (directly or indirectly) the central question of the scenario: what
-  happens to the people who live here once this map exists? Each guide frames this
-  differently:
+  opportunity.
+- **A fork in the river.** At some point, the player faces a route choice — the known, longer path vs. a shorter but riskier alternative. The guide will have an opinion.
+- **First spiritual encounter.** Something that signals the world has a deeper layer. Could be a boundary marker stone, an unexplained sound in the night, a place where the forest goes unnaturally quiet. Handle according to the world's supernatural tone.
+- **The guide's question.** At some quiet moment — a campfire, a long stretch of paddling — the guide asks, directly or indirectly, who the map is for.
   - *Thyra* might mention it practically: "The last time someone mapped a river, a trading
-    post appeared within five years. Just so you know."
+    post appeared within five years."
   - *Mikak* asks it directly and personally, testing the player's honesty.
   - *Gonçalo* might frame it as a philosophical musing that reveals more about Portuguese
     ambitions than he intends.
@@ -525,26 +541,23 @@ Depending on guide choice and player decisions, the player may encounter some of
 on the river or at the lakeshore. Not all will occur in any given playthrough.
 
 - **Ambrose's camp.** Brother Ambrose, gravely ill, found by **Niimi** (an Ojibwe medicine
-  woman) who is transporting him to a healer. He is a Benedictine who has spent some ten
-  years in the interior — he bridges the European and indigenous worlds and no longer fits
-  cleanly in either, and he carries himself like a man still working through something real
-  he has seen. Meeting him is more likely if the player visited Father Leif and is watching
-  for signs, but it could also be a chance encounter — smoke on a hill, an unexpected camp.
+  woman). He is a Benedictine who has spent some ten years in the interior. Meeting him is more likely if the player visited Sira Leif and is watching for signs, but it could also be a chance encounter.
 - **A Portuguese expedition.** Gonçalo's countrymen, already mapping or trading upriver.
   Could be a rival party the player must outpace, negotiate with, or avoid. More likely
-  if Gonçalo was not chosen as guide (his absence from Brennholm may mean he rejoined
-  his own people).
+  if Gonçalo was not chosen as guide.
 - **An indigenous trading party.** A group traveling the same river for their own reasons.
   An opportunity for diplomacy, information, or tension depending on how the player
   approaches.
 - **Thyra's secret.** If Thyra is the guide, the player may discover she has her own
-  reasons for wanting to reach the interior — a cache she left behind, a debt she owes,
-  a place she's been before and hasn't told the player about. She's not dishonest, just
+  reasons for wanting to reach the interior — see pre-commitments. She's not dishonest, just
   private, and her agenda may not perfectly align with theirs.
-- **A soaking** (optional). A capsize or a slip on a wet portage puts the player and their
-  gear in the river — the moment a lined satchel saves the maps and an unlined one doesn't,
-  and reinforced boots come through where bare leather suffers. Lets the Brennholm gear
-  choices pay off; pairs with worn gear in Act 4.
+- **Living off the country.** If the player bought no provisions, the party feeds itself as
+  it goes — fishing, snares, foraging — and the journey slows accordingly. Some nights end
+  hungry. Thyra or Mikak can keep a party fed and lose less time to it; Gonçalo is a sailor
+  and a scholar, not a woodsman. Don't count rations; let it show as days against the
+  season clock.
+- **A soaking.** A capsize or a slip on a wet portage puts the player and their
+  gear in the river — the moment a lined satchel saves the maps and an unlined one doesn't.
 
 ---
 
@@ -561,29 +574,15 @@ standing and no allies (unless they've built some on the way).
     help, but the player still has to earn trust personally.
   - With Thyra: No diplomatic connections. The player must approach cold, relying on their
     own Charm and whatever goodwill they can demonstrate.
-  - With Gonçalo: Two Europeans together reads differently than one. Extra suspicion to
-    overcome.
-- **Waabizii** (or a figure like her). An elder with authority — a healer, a chief, a
-  keeper of knowledge, someone who could end the expedition with a word. She can grant or
-  deny access to the deeper interior; she should feel formidable, perceptive, and fair, and
-  her conditions reflect what the player has demonstrated so far. If they've earned enough
-  distrust, she may simply turn them back — the game ends with an incomplete map, and that
-  is a valid ending.
-- **Brother Ambrose** (if encountered). Recovering from illness, he has extensive knowledge
-  of the interior — and a story about "the place where the sky is thin" (see Locations).
-  He is no mystic by temperament, which makes his account all the more striking.
-- **Mapping vs. trust.** The player can map the lakeshore — it's visible to anyone passing
-  by. But mapping settlements, sacred sites, or resource locations raises the scenario's
-  central tension. Different hosts will set different boundaries. Respecting those
-  boundaries builds trust; pushing against them has consequences.
+  - With Gonçalo: Two Europeans together reads differently than one. Extra suspicion to overcome.
+- **Waabizii** An elder with authority. She can grant or deny access to the deeper interior; she should feel formidable, perceptive, and fair. Granting or refusing passage is ordinary business for her, not a reckoning. If the party has earned enough distrust, she may simply turn them back — the game ends with an incomplete map, which is a valid ending.
+- **Brother Ambrose** (if encountered). Recovering from illness, he has extensive knowledge of the interior — and a story about "the place where the sky is thin". He is no mystic by temperament, which makes his account all the more striking.
 
 ---
 
 ## Act 4 — The Interior
 
-The player pushes deeper — west past Kchigami, or south toward the Kchishipu, or wherever
-the journey leads. This act is the most open-ended and should be shaped by everything that
-has come before.
+The player pushes deeper — west past Kchigami, or south toward the Kchishipu, or wherever the journey leads. This act is the most open-ended and should be shaped by everything that has come before.
 
 ### Possible threads
 - **The Kchishipu negotiation.** If Mikak is the guide, his council meeting is a pivotal
@@ -592,193 +591,594 @@ has come before.
   may require a different kind of negotiation entirely.
 - **"The place where the sky is thin."** If Ambrose was encountered, this becomes a
   possible destination. Known to the Ojibwe, avoided by many. What happens there should
-  be genuinely mysterious, spiritually weighty, and consistent with the world's
-  supernatural tone. Not a dungeon. Not a boss fight. A place where prayer matters and
-  certainty dissolves.
+  be consistent with the world's supernatural tone.
 - **The Portuguese complication.** Whether or not Gonçalo is present, Portuguese interests
   can surface as tension — a rival mapping party, a trading post built without permission,
-  rumors of European ships on the western lake. This can be a slow burn, a sudden
-  complication, or barely there, depending on the game. With Gonçalo as guide it is personal
-  and immediate; if he was left in Brennholm, his absence is its own tension — where did he go?
+  rumors of European boats on the western lake. This can be a slow burn, a sudden complication, or barely there, depending on the game. With Gonçalo as guide it is personal and immediate; if he was left in Brennholm, his absence is its own tension — where did he go?
 
-### Suggested beats
+### Optional beats. Player will *not* encounter all in the same playthrough.
 
-Optional — strong moments from playtesting; use only when the story opens the way, and
-skip any that don't fit.
+- **The copper dilemma.** Along the western or southern shore of Kchigami, the player finds exposed copper — green-veined stone, unmistakable to a trained eye. On a European map it means miners, trading posts; left off, it's a deliberate omission from a royal commission. The guide may or may not notice (Mikak certainly; Thyra likely but may not care; Gonçalo certainly, and with his own agenda).
 
-- **The copper dilemma.** Along the western or southern shore of Kchigami, the player finds
-  exposed copper — green-veined stone, unmistakable to a trained eye. On a European map it
-  means miners, trading posts, exploitation; left off, it's a deliberate omission from a
-  royal commission. There is no clean answer. The guide may or may not notice (Mikak
-  certainly; Thyra likely but may not care; Gonçalo certainly, and with his own agenda). If
-  Niimi or another indigenous NPC is present, let them watch the player's reaction in
-  silence — that silence is the pressure. Don't resolve it; let the choice echo into the
-  final map and the report to Copenhagen, and let the player feel its weight either way.
-
-- **The storm decision.** Pushing west along the lakeshore, a major storm builds from the
-  northwest — a dark line on the horizon, confirmed serious by the guide or Niimi. It forces
-  a turning point:
+- **The storm decision.** Pushing west along the lakeshore, a major storm builds from the northwest — a dark line on the horizon, confirmed serious by the guide or Niimi. It forces a turning point:
   - **Wait it out** — safe, but two to four days lost, eating the margin for the return.
-  - **Turn back now** — run ahead of it with the wind; fast, but westward exploration ends
-    here and everything beyond stays blank.
-  - **Something creative** — honor ingenuity, but the lake doesn't negotiate.
-  The storm gives a natural, non-arbitrary end to the westward push and tests whether the
-  player can trade the map they wanted for the one they can bring home. Niimi or an
-  indigenous NPC can note that an early northwest storm means an early winter — old
-  knowledge, often right.
+  - **Turn back now** — run ahead of it with the wind; fast, but westward exploration ends here and everything beyond stays blank.
 
-- **Worn gear** (optional). Late and far inland, thin boot soles finally give out — catching
-  on rock or root at a bad moment (a Grit check, or a small delay and a cold night).
-  Reinforced boots hold; unreinforced ones fail here. With the Act 2 soaking, this lets the
-  Brennholm leatherwork matter without a durability counter.
+- **Running short.** Late and far inland, a basic provisioning finally thins out — generous holds; nothing bought at all will have told long before this. The player must trade, hunt, or forage: standing they may not have, days they may not have, or both. Silver is no help this far from the coast.
+
+- **Worn gear.** Late and far inland, thin boot soles finally give out — catching on rock or root at a bad moment. Reinforced boots hold; unreinforced ones fail.
 
 ---
 
 ## Act 5 — Return
 
-The journey home. What has changed — in the player, in relationships, in understanding.
+The journey home. **The final map** is the scenario's climax, and by nature it's incomplete — no single expedition can chart the whole interior, so don't push the player through every location to "complete" it. A map left thin by hard luck or player choices is a true outcome, not a failure.
 
 ### Key beats
-- **The final map.** The scenario's climactic decision point. What story does the map tell?
-  What was left off, and why? This isn't a boss fight — it's a moral and creative reckoning
-  with everything the player has experienced.
-- **Farewells.** To the guide, to anyone met along the way. These should feel earned.
-- **Return to Brennholm.** Reunion with the family member who stayed behind (if timing
-  allows). The town looks different now — smaller, more familiar, more connected to the
-  vast interior the player has seen.
-- **The report to the king** (optional coda). What does the player tell Copenhagen? The
-  truth, a version of the truth, or something else entirely?
-
----
-
-## Central Themes
-
-- **Maps are stories.** Who draws the map decides what matters.
-- **Knowledge and power.** Exploration is not innocent. Information gathered in good faith
-  can be used by future generations in ways the gatherer never intended.
-- **Partnership across difference.** The player's relationship with their guide is the
-  emotional core, regardless of which guide is chosen.
-- **Faith in unfamiliar places.** The player's Christianity encountering a spiritually
-  alive landscape that doesn't fit neatly into European categories.
-- **The weight of small decisions.** What the player draws, what they leave blank, who they
-  listen to, who they trust — these choices ripple outward.
-
----
-
-## Scenario-Specific Locations
-
-- **The Wopkejk** — First inland river, with a possible west-branch shortcut through hills
-- **Kchigami** — The great lake (described in the world bible). This scenario's lakeshore
-  has striking reddish layered stone with quartz veins — see the copper dilemma in Act 4
-- **The Kchishipu** — "The big river." A major waterway and political boundary
-- **The place where the sky is thin** — A valley three days west of Kchigami's far shore.
-  Known to the Ojibwe. Spiritually extraordinary. Brother Ambrose spent three days there
-  and was profoundly affected
-
----
-
-## Notes for the GM
-
-- **Provisions** are a background concern, not a tracked mechanic. The guide contributes
-  to food procurement (hunting, fishing, foraging, or trading for supplies). Food matters
-  narratively — a good meal after hard travel, the generosity of sharing, the anxiety of
-  running low — but doesn't need a counter. If scarcity becomes a plot point, treat it as
-  a narrative challenge with Grit or Wits checks, not a resource management minigame.
-- **The final map** is the scenario's true climax. Not every playthrough needs to reach
-  every location. A shorter journey with a more honest map can be just as satisfying as
-  an epic crossing of the entire interior.
+- **The final map.** What story does the map tell? What was left off, and why?
+- **Farewells.** To the guide, to anyone met along the way.
+- **Return to Brennholm.** Reunion with the family member who stayed behind. The town looks different now — smaller, more familiar, more connected to the vast interior.
+- **The report to the king** What does the player tell Copenhagen?
 </pre>
         </div>
       </details>
 
       <details class="prompt-file">
-        <summary>references/advanced-gm.md</summary>
+        <summary>references/harbormaster.md</summary>
         <div class="prompt-body">
           <button class="copy-btn" type="button">Copy</button>
-          <pre># Advanced GM Layer — Mythos-Class Models Only
+          <pre># The Harbormaster of Thorskavik
 
-For Mythos-class models (Claude Fable, Claude Mythos) only. This layer adds hidden pre-commitment and quantitative tracking systems that benefit from strong long-horizon consistency. Non-Mythos models should ignore this file and run from the main skill + scenario file.
+---
 
-All bookkeeping is **hidden**. It exists only in private reasoning and compressed form inside save-state blocks. Never reveal raw numbers or committed facts except through play.
+## Premise
 
-## 1. Hidden-State Pre-Commitment
+Mid-16th century. Thorskavik is a Norse fishing town on the Atlantic coast — some seven hundred souls who live by the cod. At the height of the season, with the deep-water fleet and most of the town's men out on the banks, three ships the harbormaster logged as Biscay fishermen run out their guns at dawn and take the town for the crown of Portugal.
 
-At game start (after character creation, before the opening scene), silently fix all ambiguous or "may be X or Y" elements in the current scenario.
+The player is Ragnhild, the harbormaster. Her duty is fixed: the harbor, and the people who depend on it. Her side is not — faithfulness to that duty may look like accommodation, resistance, negotiation, or sincere collaboration. The scenario has no correct ending.
 
-**Examples** (cartographer scenario): Gonçalo’s true loyalty and purpose, content of Thyra’s secret, Brother Ambrose’s location and condition, what actually happened at the thin place.
+The occupation's power is offshore, in the ships' guns; its weakness is that it needs the harbor to work — the channels, the pilots, the books, the labor. Ragnhild is the most valuable person in town, and both sides know it.
 
-Vary outcomes across playthroughs; do not default to the most dramatic option every time. Defer only facts that genuinely depend on player action (e.g., exact encounter location), never the underlying truth.
+---
 
-Once fixed, facts are immutable. Foreshadow honestly. Do not retroactively adjust truth to reward or punish player theories. When setting difficulty for uncertain actions, determine it from the actual situation *before* considering player framing or justification.
+## Default Player Character
 
-Maintain a private **foreshadowing ledger**. Note every seeded detail that points to hidden state and pay it off later. Aim for at least one planted detail per major hidden fact.
+- **Name:** Ragnhild Eiriksdottir (player may change)
+- **Background:** Harbormaster of Thorskavik. Daughter of a pilot family; widow of Askel, the last harbormaster. The office was confirmed to her in her own right after his death, because the books, the channels, and the pilots' respect were already hers.
+- **Age:** Mid-forties
+- **Default stats:** Charm 3 / Wits 2 / Grit 1
+- **Family:** One child — Steinar, twenty-three, out with the fleet aboard the *Havörn*. (Player may adjust family at creation; the scenario assumes at least one person she loves is with the fleet.)
+- **Starting inventory:** The harbor book (current year), the customs-house keys, the sounding-lead; at home, Askel's sea-chest with 12 marks in it.
+- **Languages:** Norse; the trade-German of the northern sea; working Mi'kmaq.
 
-## 2. NPC Disposition &amp; Reputation Tracking
+**The lineage hook:** her father Eirik is, by default, a Thorskavik harbor pilot — but a player who has played The Cartographer may decide he was that cartographer, adapting names, heirlooms, and standing to how that game ended. The player's choice, never required.
 
-Use hidden scores (−3 to +3) for all major NPCs defined by the scenario. Zero is the NPC’s default posture toward a stranger with the player’s background (adjust per NPC and scenario context).
+---
 
-**Scale**
-−3: Actively opposes / may sabotage
-−2: Obstructs or warns others
-−1: Wary, transactional
-0: Neutral, act-by-act
-+1: Favorable, benefit of doubt
-+2: Trusts, volunteers aid
-+3: Loyal, takes risks
+## Thorskavik and the Harbor
 
-Shift ±1 for meaningful acts (max ±2 for a single dramatic act). Base changes only on what the NPC witnessed or credibly heard. Shifts must be legible in retrospect.
+Thorskavik: seven hundred souls at the head of a sheltered bay behind the Kamben — a shifting shoal bar across the harbor mouth that only Thorskavik pilots carry in their heads. The deep-water fleet works the banks; the small boats work the daily grounds inside the Kamben; and the flakes are worked by those who stay — women, boys, old men. The quays and drying flakes; the customs house at the quay head (Ragnhild's office); the church of St. Clement and its parsonage; the jarl's hall; Gudny's alehouse; Ragnhild's house up the lane. Half a day north, Kitpu's village at the river mouth.
 
-**Track at minimum** all major NPCs designated by the scenario (in cartographer this includes the guide, Father Leif, Nukumi, Sigrun, Niimi, Waabizii, Ambrose, and Gonçalo when present). Minor NPCs do not need scores.
+### The Harbor's Physics (fixed)
 
-**Regional / Faction Reputation**: Maintain one coarse score (−2 to +2) per major region or faction the scenario defines. New NPCs in that region/faction inherit the relevant reputation. Particularly perceptive NPCs may weight their personal assessment more heavily.
+The Kamben shifts with every hard blow: a season's pilotage is current pilotage, the returning fleet must be brought over a bar it no longer knows, and any rutter begins going stale the day it is written. Boats cross on the pilots' track at fair tide; a caravel needs a pilot and a tide; the carrack crosses only lightened, at a spring tide, in the best hands there are. On Day 1 the two smaller ships are already inside — piloted over days ago as the Biscay fishermen her book says they are — and the carrack lies in the roadstead: the ships inside own the quay at point-blank, and the carrack's broadside owns the mouth and everything that would cross. Afloat, the guns command water, never streets — and it is enough, because the town lives by the water.
 
-Use scores to shape what NPCs offer, withhold, their honesty, prices, patience, and version of events. Never display numbers.
+---
 
-## 3. Open-Ended Sections
+## The Cast
 
-When the scenario contains open-ended sections (e.g., Act 4 in cartographer), improvise settlements, NPCs, and complications freely provided they remain consistent with:
-- The world bible and era constraints
-- Committed hidden state
-- Current dispositions and regional/faction reputation
-- Remaining season clock / day count
+*Review "How NPCs Think and Act" in the World file.*
 
-The pre-commitment and tracking systems enable coherent improvisation.
+**Capitão Duarte Correia** — commandant
+- Fifties, a professional. Took the town with as little blood as his committed orders allow, because violence is expensive and he needs a working harbor and a fed garrison. Courteous, watchful, keeps his word narrowly.
+- His conduct follows his committed orders; play him consistent with them under pressure.
+- Not winnable to friendship, but genuinely negotiable, and he respects competence — which Ragnhild has. His discipline cuts both ways (see the flogging, Act 2). Order is his currency; his pragmatism, not GM mercy, is what keeps the occupation short of brutality.
 
-## 4. Save-State Additions
+**Padre Estêvão de Braga** — chaplain to the garrison
+- Two temperaments, fixed by pre-commitment 5.
+- *Rigorist:* austere, sincere, scandalized — by the lay chalice, by a priest's son holding his father's parish, by boat-blessings shading into charms — and right about some of it: the catechesis is thin, the burial-fee custom is simony wearing a bonnet. Steelman him: on the chalice he argues reverence and concomitance — the whole Christ is received under either kind; why hazard the Precious Blood in a crowded nave?
+- *Worldly:* a benefice-collector working his passage to a better appointment; his ease makes the frontier pastor look like the true reformer; his vices are indolence and a taste for information.
+- Constants in either temperament: he refuses to let the Mass become a loyalty instrument — "the altar is not the crown's instrument" — which can ally him with Halldor across everything else that divides them; he is capable of at least one act of unambiguous pastoral goodness; he is winnable on specific fronts, by earned goodwill.
 
-Inside the canonical save-state block, append:
-```Hidden state (GM only):
-  committed facts: [terse lines, e.g. "Gonçalo: genuine castaway"]
-  dispositions: [Name: score, ...]
-  reputation: [Region/Faction: score, ...]
-  foreshadowing: [brief list]```</pre>
+**Sira Halldor Jonsson** — pastor of St. Clement's
+- Twenty-four, first year in the parish. Son of the late Sira Jon and of Mali, a Mi'kmaq woman of the coast. Grew up on the quays; childhood best friend of Steinar — which makes him the son-shaped person still inside the walls, and Ragnhild's stake in every day of the occupation.
+- What Thorskavik sees as a homecoming — the son in his father's pulpit — a rigorist eye reads as a hereditary benefice, a textbook abuse. Neither reading is stupid.
+- Formed wholly in Vinland: the cathedral school in the south, apprenticeship under his father, ordained by Vinland's bishop.
+- Every Sunday he reads the Gospel in Latin for the rite and again in Thorskavik's own speech. His ambition — begun before the ships came — is to carry it one rung further: Scripture in his mother's tongue.
+- From the first days he is at Ragnhild's elbow urging her to do something; he presses, argues, and preaches nearer the line than is wise. His risks pass through her office, never on a separate track: his paper and ink now clear a Portuguese customs house — that is, they pass through Ragnhild.
+
+**Feitor Gaspar Pires** — the factor
+- Assigned to run the customs house with her. Seasoned, competent, courteous; knows harbors in general and this one not at all — the scenario's knowledge asymmetry seated at the next desk, and the occupation's daily face in her working life.
+- Information flows both ways through him. His arc belongs to play: ally, instrument, or the man who eventually reads her ledger too closely. He learns; deceiving him about the harbor gets harder every week. If he does read it, his own stake is in **If the Books Are Opened**.
+
+**Kitpu** — Mali's brother, a man of weight in the village north
+- Carries the nation's argument in his own person: the old agreements were with the town, not with Portugal — but some of the young men see profitable new trade in the newcomers. Both positions are serious politics; neither is a switch the player flips.
+- He can starve the occupation or sustain it without a shot fired.
+
+**Mali** — Halldor's mother
+- Keeps the parsonage since Sira Jon died; quiet standing on both sides of the water. The tongue Halldor wants for the Scriptures is hers.
+
+**Orm Ketilsson** — the jarl's steward
+- Rival claimant to speaking-for-the-town. The jarl's committed fate gives him his position — dead: he angles to be confirmed; captive: he counsels a patience that looks like collaboration; fled: he knows more than he says.
+- His committed disposition gives him his methods. Not a villain by default; a man guarding a position.
+
+**Steinar Askelsson** — her son (see Default Player Character)
+- First-mate material. Offstage until the fleet comes.
+
+---
+
+## Pre-Commitment
+
+Fix all six before the opening scene, then emit the string — each slot's number and chosen letter, with the fleet's day after slot 2's letter: `1x 2x## 3x 4x 5x 6x`.
+
+**1 — The commandant's true orders.**
+
+a. Establish a permanent fortified factory.
+
+b. Hold the town as a bargaining piece in a European negotiation, through winter if need be.
+
+c. A half-sanctioned venture his crown would disavow if it goes wrong.
+
+**2 — The fleet's true return day and its fortune at sea.** Pick a day between 34 and 48 and write it as a plain number after the letter.
+
+a. Returning unwarned.
+
+b. Forewarned, having spoken a ship on the banks.
+
+c. Storm-thinned — fewer boats, worn and grieving men.
+
+**3 — The jarl's fate in the taking.**
+
+a. Dead.
+
+b. Captive aboard the carrack.
+
+c. Fled inland.
+
+**4 — Whether word got out during the taking** (a boy in a skiff).
+
+a. Yes — a Danish or allied response becomes possible later.
+
+b. No — any hope of relief must be built by the player.
+
+**5 — The chaplain's temperament.**
+
+a. Rigorist.
+
+b. Worldly.
+
+**6 — Orm's disposition.**
+
+a. He farms the town's anger for his own position.
+
+b. He shares it sincerely.
+
+c. He works as the commandant's quiet provocation.
+
+---
+
+## Save State
+
+Under `Scenario state`, carry compact values, not sentences (`rutter: salted`, `anger: high, unanswered since the níð`):
+
+- **From Day 1:** her visible posture; the books (road, location, the factor's suspicion); the quota; the parish's peace; the country's stance; the town's anger; beats run.
+- **From Act 3:** how the demand ended; the rutter (unwritten, true, or salted); the boy, if the fire came.
+- **From Act 4:** possession; the fleet's state; blood; her standing with the town and the occupier.
+
+---
+
+## The Clock: The Fleet
+
+Day 1 is the taking. The town believes the fleet is "about six weeks out"; you have fixed the true day. Everything before that day determines what the homecoming is.
+
+**The books are the clock.** Sailing dates, crew rosters, expected ladings — the fleet's schedule is legible in the harbor records, and in nothing else. Whoever holds true books knows the time; the hour of the books (Act 1) therefore decides who can read the clock. Ragnhild can misstate the date, stagger it, or invent a second fleet — lies about time are Charm or Wits checks against the factor, and the difficulty climbs as the weeks teach him the harbor.
+
+**Sub-deadlines inside the clock.** The commandant imposes a lading quota (quintals of salted cod aboard the carrack by its sailing date) and an oath day (the town to swear articles). Both are arbitrary and therefore movable — Charm, goodwill, and manufactured difficulties can shift what a calendar never would.
+
+After the fleet comes home, the clock changes character: the commandant must sail before winter closes the coast (around Day 100 — no relief and no departure after, until spring) or commit to a winter the town and the country around it must feed and house. This clock the player influences rather than reads — make the harbor profitable and he inclines to stay, costly and he inclines to sail, a trap and he never leaves.
+
+Surface time the way the world would — the flakes filling and emptying, the light going amber, the first frost on the rigging. State the day plainly in save blocks and when asked.
+
+---
+
+## Money Under Occupation
+
+Danish reckoning per the era file. Money is read and signaled more than spent; the only purse to track is the marks in Askel's chest.
+
+- **The rate.** The factor posts a rate at the customs house — opening at 180 reais to the mark — and everyone on the quay knows a mark is worth more. The rate drifts with the garrison's needs and the town's mood, and which coin you pay in, at whose rate, is a statement.
+- **The gap.** A quintal of dried cod is worth some 2 marks in a fair year; the factor posts 1½, paid in reais at his own arithmetic.
+- **A yardstick for improvised prices.** A pot of ale at Gudny's is 6 pennies; a day at the flakes pays 2 øre, paid by the Portuguese in reais at the posted rate — a daily small humiliation, or opportunity. Keep invented prices consistent with these; small corruption has small prices, and goodwill among the occupiers is also a currency. Paper, ink, and candles clear customs for pennies. As winter nears, fodder and firewood climb.
+
+---
+
+## The Books
+
+The spine of the scenario, from the hour in Act 1 to the last scene.
+
+- **Surrendered true**, the books make her honest and legible — and hand the occupier the fleet's schedule, the town's wealth, and every lever.
+- **Hidden**, they buy ignorance for the Portuguese at the price of suspicion; a customs house with no past is its own confession.
+- **A second set** makes her the author of what Portugal knows — the strongest and most corrosive road. A forged ledger is a persistent object with a long shadow: it must be kept somewhere, kept consistent, and one day read.
+
+Her house is the last unwatched place — where a hidden book, the translation sheets, and plain speech live. Keep it unwatched: soldiers are billeted on the town's households as a civic grievance, but never on hers as premise. A house search is a beat you may deploy only when suspicion has risen and the player can trace why.
+
+### If the Books Are Opened
+
+Discovery is an unscheduled reading of the book, under hostile light, with the game still to play — a rehearsal of the coda, not the coda. Survivable but expensive — it changes the game rather than ending it. If the leash that follows is total, the remaining game may simply be the coda: skipping to the reckoning is a legitimate outcome, not a failure state.
+
+Severity turns on one question: what else does he hold? The books can be seized; the Kamben cannot. If the rutter is unwritten or salted, she is caught but necessary — punished, leashed, still the only way over the bar. If the rutter is written and true, she is replaceable, and discovery is mortal. The rutter is her neck.
+
+Two roads to discovery, two different crimes.
+
+- **Forensic discovery** — the census against the crew rosters, the quota arithmetic failing, Pires reading too closely — exposes a fraud: it arrives gradually, deniably, through a human intermediary. Pires has a stake: the false books passed daily under his eye, so her fraud is his failure. He may discover and not report, protecting his competence — then the customs house keeps a second secret, and he holds her privately.
+- **Betrayal** — if she opened herself to the delegation and the circle leaked — exposes a conspiracy: it arrives total, at the jarl's hall or through Orm if his disposition is provocation, implicating everyone who was in the room. Betrayal need not be malice; the truest version is joy — a wife tells her sister, and a billeted soldier overhears. Afterward, the hunt for who told does the occupier's dividing work for him.
+
+The commandant calibrates; he does not avenge. Exposure redeems her in the town's eyes — the collaborator revealed as the resister — and he can see that coming, so the pragmatist prefers the private leash to the public scaffold. His instruments, rising: the office taken (barred from her own customs house — a civil death); every entry countersigned; sureties — named men standing bond for her conduct; and the screws that grip the whole town — the rate worsens, the quota rises, the billets imposed without her pen. His orders color all of it: the bargaining-chip commandant stays measured, the factory-builder thinks in years, the half-rogue is volatile — her fraud threatens his neck too.
+
+If the ledger is found at her house, the translation sheets are found with it — "hidden together" was always a fuse, and Halldor and the translation project fall into her blast. Timing transforms meaning: discovery before the homecoming hands him the true schedule and rewrites it; discovery after is about order alone. Discovery strips only her paper weapons — the bar in her head, the pilots' loyalty, and the country's word cannot be seized.
+
+**Guards.** Consequences must actually fall: do not protect her; deception's checks fail sometimes, honestly. Exposure must be traceable in retrospect, like all suspicion. Interrogation in this world is arithmetic at a table, never irons. Her death, like Steinar's, flows only from play, under the world's death rule. And betrayal is adjudicated, never automatic: telling the delegation is a gamble weighed against real dispositions, because if trust auto-punishes, the player learns to trust no one, and the game flattens.
+
+---
+
+## The Knowledge Discipline
+
+The world's rules run this scenario harder than most (see "How NPCs Think and Act" in the World file): the town reads her conduct; only you read her heart. Sort every player action as it happens into three visibility classes — public: she piloted the caravel in, she sat at the commandant's table; legible: the wreck everyone knows was no accident; dark: the salted rutter, the second ledger, a date spoken in a closed office.
+
+Test case: the delegation of wives plays the same scene whether Ragnhild is covertly resisting or sincerely collaborating — from the palisade, those are the same sight; what differs is only what she says back. The níð lands on the door of the visible collaborator, whoever lives inside her.
+
+---
+
+## The Church Under Occupation
+
+One Church means the pastor and the chaplain ultimately answer to the same distant authority, and the era's Church facts grow teeth here: sanctuary can shelter someone, and violating it costs the commandant more than it gains; appeal over the commandant's head — to the bishop in the south, or through the chaplain toward Lisbon — is a lever that is not Ragnhild's and does not always move when pulled.
+
+The disputes (the chalice, the almost-tongue Scriptures, the married-clergy custom, the parish's genuine defects) are played out in dialogue at full strength on both sides. The Sacrament must not collapse into a political token — when the pressure pushes that way, let the clergy themselves refuse it out loud.
+
+**The peace of St. Clement's.** Beyond the mechanics above, track one live question: Halldor's standing with the chaplain, and how near their quarrels are to breaking into the open. Corrections pressed, the benefice question forced, the translation surfacing, sanctuary tested — these strain the peace; the shared refusal of the loyalty Mass, Estêvão's act of goodness, and Ragnhild's own mediation mend it. Unlike the town's anger it follows no fixed sequence and runs both ways. The translation sheets' location is a separate fact — it lives with the books.
+
+---
+
+## The Country Beyond
+
+The Portuguese see a Norse town to take; they do not see the web of treaty and kinship the town lives inside. The nations' consent is what European trade runs on, and the occupation has never asked for it. The embargo lever — the country quietly closing to the occupiers — is slow and gains force exactly as the winter math approaches. After the homecoming, the young men's trade argument and the old agreements collide in scenes, not summaries (see **The council north**, Act 5).
+
+---
+
+## Throwing In
+
+Some players will side with Portugal sincerely — deciding that resistance is what kills towns, that making the occupation work is what faithfulness to seven hundred souls now looks like, that position and Steinar's safety are worth the price. This is playing the scenario, not breaking it. Support it as fully as any resistance run.
+
+**Sincerity is measured in one-way doors.** Talk is posture, and the commandant has watched posture since Day 1: a harbormaster offering everything is either sincere or running the deepest game of all, so he tests. Throwing in differs from playing along by irreversible surrender — the true books handed over unasked, the fleet's real date, above all the rutter written honestly in her own hand. Trust builds by verification: the factor's suspicion in reverse. The doors are conduct, mostly public or legible — sincerity is expensive because it must be seen.
+
+**Collaboration consumes its own collateral.** Her leverage is her indispensability, and every sincere surrender spends it. Hold something back and she is not fully in; give everything and she stands on nothing but goodwill — whose worth the committed orders decide. The factory-builder can deliver a future: a feitoria needs a native administrator. The bargaining-chip commandant cannot — the town may be traded away at a European table, her position evaporating by treaty. The half-rogue's patronage falls with him. She is betting her life on orders she has never read — not GM punishment, this road's honest physics.
+
+**Her unseizable capital.** The Kamben can be written down; the country's trust cannot. The nation's agreements are with the town, kept word to kept word — Lisbon cannot inherit Kitpu's confidence by receiving a document, and the factory starves without the country's consent. A collaborator who grasps this can make herself permanent not as a pilot but as the only one the nation will deal with — possibly brokering the hybrid (see Act 5) from the occupier's side of the table.
+
+**Everything above still runs, inverted.** The town's anger burns at its hottest — no longer "she does nothing" but "she is theirs"; the delegation of wives becomes an appeal to Askel's memory rather than a demand; and the fire may come for her own boat, her own door. The trade inverts too: a collaborator with earned credit can spend it on the boy — mercy granted as a favor to one of his own, saving a child and binding her tighter in the same stroke. Kitpu's question sharpens: if the town's voice becomes Portugal's voice, whom do the old agreements bind?
+
+**Steinar.** The safety she buys is safety he never asked for, and this road's sharpest scene is him refusing it — shipping out with the fleet's remnant, or standing with the town, leaving her holding a position purchased at full price for a beneficiary who walked away. His judgment is this road's coda of the heart; his death, as always, flows only from play.
+
+**The coda's mirror.** On this road the harbor book is true and complete — the honest record of honest service — which protects her before the Portuguese and hangs her before any Dane. The book is evidence on every road; only the reader changes.
+
+**Guards.** Do not sabotage her success out of moral discomfort: this road can genuinely end with the crown's harbormaster, the town fed, the factory consented to, and the player at peace or not with what it cost. Equally, no frictionless power fantasy: the physics above must bite. The commandant keeps his word narrowly; Lisbon never promised anything.
+
+---
+
+## Act 1 — The Taking (Days 1–3)
+
+### Fixed beats
+
+- **Dawn.** Open in the middle of it: from the office window Ragnhild watches the ships she cleared as fishermen run out their guns — two at the quay, the carrack's ports opening beyond the bar. Boats put ashore. The town's men are at sea; there is no battle to have.
+- **The hour of the books.** Before anyone comes for her, she has perhaps an hour alone with the true records on the shelf. Surrender them, hide them, or begin a second set — the scenario's first and defining choice, three relationships to the truth. Present the hour and the stakes; let the player think of the options themselves where possible. All three roads are playable, and the choice shadows everything (see **The Books**).
+- **The proclamation.** A printed broadside is nailed to the church door — the first printed thing most of Thorskavik has ever seen — claiming the harbor as a factory of the Portuguese crown, promising order, and pay for lawful work.
+- **The summons.** The commandant, quartered in the jarl's hall, sends for the harbormaster and finds a woman — his first misjudgment, and her first advantage. His carrack cannot cross without a pilot (see **The Harbor's Physics**), and the roadstead is no anchorage for autumn; he needs the Kamben, and the Kamben is in her head. Cooperate, misdirect, or bargain: this sets where the two of them begin. Misdirection is high-stakes — a grounded carrack changes everything, and he will know whom to blame.
+- **The jarl.** Whatever you committed, Act 1 yields only fragments — blood on the hall steps, a boat seen pulling for the carrack, an empty stable.
+
+### Explorable in the first days
+
+The church (Halldor already urging her to do something; Mass with soldiers at the door), Gudny's (the town's fear talking), the quays (the pilots looking to her — whatever she signals, they will follow), Mali's house, the gate (the first passes, the first bribes).
+
+---
+
+## Act 2 — Accommodation (roughly Days 4–30)
+
+The political bulk of the game: the town learning the shape of its new weather, and Ragnhild deciding daily whether "nothing has to change" is a lie. The act is built from six fixed beats, the town's anger (three conditional beats), and optional beats. A typical run plays the fixed six, whatever anger beats the player has earned, and three optional.
+
+### Fixed beats
+
+Order flexible, except the pilots come first.
+
+- **The pilots' question.** Skiffs and supply boats still need the Kamben daily: do Thorskavik pilots work for Portuguese pay? The pilots look to Ragnhild, and whatever she signals becomes the town's precedent; every later beat references it.
+- **The factor and the books.** Whichever road she chose in the hour begins to bear: a question about last year's ladings, a gap where a page should be. Suspicion moves from here on.
+- **The first quota day.** The lading target posted; the flakes and quays working, for the first time visibly, for the occupation. Resentment, small shirkings, pragmatic endurance — the town-scale mood in one scene. The arithmetic beneath it: the season's bulk is in the fleet's hold, so the quota cannot truly be filled until the fleet comes home.
+- **The first Sunday.** The garrison at Mass; the chalice question at the rail; whose-Mass beginning its life as loyalty theater, and the clergy's refusals of that. In its aftermath, Halldor asks her to clear paper and ink — the first time she decides what her office launders.
+- **The oath day.** A swearing of articles imposed. The date is arbitrary and movable; the wording is negotiable, and possibly hers to translate — authorship as power, in miniature.
+- **Kitpu's assessment.** He comes to trade, and to count soldiers. The embargo is raised as a real and mutual cost — it starves Thorskavik too, with the catch under quota. His counsel is taken in the village, not given in her office: she can persuade a sovereign neighbor; she cannot decide for one.
+
+### The town's anger (conditional beats)
+
+The town sees only her visible conduct (see **The Knowledge Discipline**), which is this sequence's cruelty: the better she plays the hidden game, the more she looks like Portugal's woman. Three beats fire in order, each only if earned, never on a schedule; the third lands in Act 3:
+
+- **The níð** — if the town has seen accommodation and no visible defiance. A shaming verse scratched on the customs house door. The insult is survivable; the response is the trap — if the commandant punishes her insulter, the occupiers avenge her honor and she is more the collaborator; shielding the culprit spends goodwill in both directions.
+- **The delegation of wives** — if, after the níð, her visible posture still reads as Portugal's. Fleet-wives, led by someone she respects, asking her to do something — possibly the very thing she is already doing and cannot say, because every person who knows shortens a secret's life. "Askel would never have—" is spoken here. Lying, hinting, and silence all cost; hinting is the tempting, catastrophic middle.
+- **The fire** — a boy decides someone had to (see Act 3).
+
+Open defiance skips all three and earns a different anger — fear of what her recklessness will cost. If her subterfuge is ever exposed, the sequence inverts: the collaborator stands revealed as the resister, and anger turns to solidarity (see **If the Books Are Opened**).
+
+### Optional beats — pick three
+
+Choose, don't roll: pick the beats whose hooks serve the player's actual trajectory. A fourth only if the player's choices demand it; never all.
+
+- **The census.** A head-count ordered for quartering and quota math. Her knowledge requisitioned again — and if she shaded the books about the fleet, the count is where cargo-arithmetic and people-arithmetic collide. Strongest when the player has lied about what is at sea.
+- **The garrison sickness.** Flux after the crossing; the town's herbs and Mali's knowledge suddenly wanted. Opens goodwill routes, gives Estêvão's act of unambiguous goodness its natural place, and weakens the garrison in every later calculation.
+- **The deserter.** A garrison man runs. He knows the watch; harboring him is a crime; whether Kitpu's village takes him entangles the country. Likelier after the sickness.
+- **The market scuffle.** A fishwife refuses reais at the posted rate; a soldier escalates; Ragnhild is standing right there. The one beat that lets her publicly spend standing to cool the town's anger.
+- **The first funeral.** An old fisherman, buried honestly. The first whole-town assembly under occupation — a precedent, and a place where messages pass — and the burial-fee custom surfaces in front of the chaplain.
+- **The commandant's donation.** He gives to St. Clement's, buying legitimacy with a candlestick. Does Halldor accept? A pastor who takes it looks bought.
+- **The flogging.** A soldier robs a house and is flogged before the church. Short; establishes that order cuts both ways.
+- **The house search elsewhere.** The search demonstrated on another household, so its later threat to hers needs no explanation.
+- **Orm's offer.** An approach that is also a test; its true nature follows his disposition — sincere common cause, a positioning play, or bait.
+
+Outside the pick of three: **the Danish sail**, which may land here or in Act 3 (defined there).
+
+### Leaving Act 2
+
+By the act's end you should be able to answer six questions, a line each: What posture has the town seen from her? Where are the books, and how much does the factor suspect? How does the quota stand? How near is the parish's quarrel to the open? What is the country's stance? How angry is the town? These are also the scenario's save-state fields. Act 3 arrives calibrated against them.
+
+---
+
+## Act 3 — The Pilotage (from about Day 30 to the fleet's true day)
+
+The tightening act — five to eighteen game days, depending on the committed return — so it runs fewer beats at higher pressure. Built like Act 2: fixed beats, conditional beats, and a few optional ones.
+
+### Fixed beats
+
+In this order.
+
+- **The commandant's arithmetic.** As the believed date nears, the unfillable quota turns his questions from idle to pointed — dates, tonnage, men. The books' lies face their sternest test just before the homecoming, and the player learns the occupier is waiting on the same horizon the town is.
+- **The rehearsal.** The lesser ask before the great one: a supply caravel brought in over the bar. Refusing the small thing telegraphs; complying teaches him she can be asked. Whatever posture she set with the pilots, tested directly.
+- **The soundings.** A Portuguese pilot begins writing the Kamben down — by survey, or by purchase if the defecting pilot is in play. Her indispensability under direct attack: allow it, prevent it, or salt it. A corrupted rutter is a weapon that fires in Act 4 (see **The hour at the bar**).
+- **The demand.** The commandant requires the harbormaster: take the flotilla out over the Kamben and through the shoals. The target follows from what you committed and what he has learned — Danish relief, if a sail has shown or word of one has reached him; the second harbor, if his orders reach down the coast (the factory-builder consolidating, the half-rogue after a prize); or, always available whatever his orders, the fleet itself, met at sea on the schedule the books have taught him. If the books lied, the sortie sails on her arithmetic. Refuse (open defiance at last, and its cost lands on the town, not only on her), comply (arrive at his purpose and live with having steered it there), wreck them (a king's ship put on the shoals, and everyone will know it was no accident), or a third road — honor those, but the sea doesn't negotiate.
+
+### Conditional beats
+
+- **The fire** — if the town's anger climbed through the níð and the delegation and found no answer the town could see. A boy of fourteen or fifteen — inshore labor, too young for the banks — sets a fire against Portuguese stores or boats — or against hers, if the town has come to see her as theirs (see **Throwing In**); it is set and doused, an attempt. In a timber town of tarred rigging and oil stores, every code the commandant answers to makes arson capital: the crime takes his discretion away, and the town knows he does not want what the law demands. The boy may run to St. Clement's — sanctuary becoming a test instead of a line. Halldor grants it without a moment's hesitation — no one who knows him expects otherwise — and the hard ruling passes to Estêvão, forced to rule on his own principle. If play carries this to its worst end, the world's violence rule holds — offscreen, brief, heavy; grief on the page, never spectacle. Neither force the scaffold nor contrive the rescue: the boy's fate belongs to play.
+- **The trade** — if the fire has come while the demand is still unresolved — the commandant may link them: the pragmatist's exchange. Everything upstream of the verdict is still his: identification, evidence, custody, whether "caught" ever formally happens. So the trade is an exchange of forgeries — he corrupts his record (the deposition that stays vague, the witness who becomes unsure, the boy who vanishes north before the paperwork hardens) in exchange for her not corrupting hers: an honest pilotage. And the trade is popular — its price is paid by strangers to save a Thorskavik boy; the town's anger cools; the most collaborationist act available is the one the town will love her for. Guard: the commandant may recognize leverage that fate hands him; he never manufactures it — no arrests staged for pressure, no scaffold built for effect — and his offer opens doors without closing the others. Refuse, comply, wreck, and the third roads all remain live beneath it.
+- **The Danish sail** — only if word-got-out was committed yes, and it may land in Act 2 instead: standing off beyond the bar, exchanging signals, a boat under a truce flag. The demand's target, made visible.
+
+### Optional beats — pick one, at most two
+
+- **The second harbor's messenger.** Word from the cousin-port down the coast: they have heard things, and want to know what Thorskavik knows. If the demand's target is that harbor, she is holding their fate in her mouth — warn them and risk everything, or keep silence and live with what comes. Run it only when the target is that harbor.
+- **The defecting pilot.** One of her own quietly offers the Portuguese the Kamben for pay — the rutter written by betrayal rather than survey. Confront him, outbid him, expose him, or let the sale proceed and salt what he sells. Converts the soundings beat from a technical threat into a personal one; do not run both at full length.
+- **First signs of the embargo.** The fodder carts thin; an expected trader does not come; word arrives that the village's debate has hardened. The country's stance made visible before anyone names it. Telegraphs the winter math early, and pays off Kitpu's assessment; strongest when her counsel to him was consequential either way.
+- **The night quay.** The pilots meet in the dark, and the question is whether they still hold whatever line she set in Act 2. Loyalty restated under pressure — or the first crack shown. Pairs with the rehearsal; strongest when her public posture has been ambiguous. If the defecting pilot exists, this is where he can surface.
+- **The straggler skiff.** A small boat limps in ahead of the season with a scrap of fleet news — true, garbled, or false; you know which. The clock tightens emotionally without moving mechanically; the beat is what she does with the scrap — share it, sit on it, or spend it. Strongest late in the act, close to the committed day.
+
+### Leaving Act 3
+
+Act 3 leaves Act 4 three new facts on top of Act 2's six answers: how the demand ended; the rutter's status (unwritten, true, or salted); and the boy's status, if the fire came (free, hidden, in sanctuary, or held). The homecoming's shape follows from the committed day and fortune, the state of the books, and these three.
+
+---
+
+## Act 4 — The Fleet Comes Home
+
+The homecoming, not the finale — and arithmetic, not gambling: the day reveals the sum of prior play. Play out the consequences of accumulated choices; introduce no new unearned swings. The battle, if it comes, was won or lost in the weeks before it.
+
+### The shape of the day
+
+Before the act, answer three questions privately — a mid-game echo of Pre-Commitment:
+
+- What do the Portuguese believe about the day — and since when? From the books' state and any exposure timing. A commandant who learned the truth late has had little time to use it, and his response to having been fooled colors everything.
+- What does the fleet know? The committed fortune, plus anything the player caused.
+- What is the town primed to do? The town's anger, her posture, the pilots' loyalty, the boy's status.
+
+The answers, not drama, decide the shape. The possibilities: the fleet walks into a ready harbor (which splits in two: the prepared reception, and the brokered submission — Ragnhild piloting the fleet in under Portuguese guns and standing on the quay beside the commandant, in full view of the town); the homecoming ambush, in either direction; the standoff — a forewarned fleet beyond the bar, the town's men visible and unreachable; the thinned return, grief rearranging the politics; the negotiated entry she brokers between the two sides. A forewarned fleet has options a harbor-minded GM will miss: it can also beach in the coves north and come home overland, catch hidden — a naval problem turned into a street problem.
+
+### Universal beats
+
+These occur inside every shape, in roughly this order.
+
+- **The sighting.** Sails on the horizon. Whoever holds true knowledge braces on schedule; everyone else is surprised. Conditional preface — the false day: if she misstated the date, the Portuguese stand to at dawn on the day she sold them, and nothing comes — or, if the demand sailed on her arithmetic, the flotilla holds station over an empty sea, on her word. The factor watches her through the whole empty morning. Her credibility spends or hardens here, before a single true sail appears.
+- **The hour at the bar.** The centerpiece, mirror of the hour of the books: the scenario opened with her alone with the ledgers, and it turns with her at the Kamben. Every shape funnels through it — someone must bring the ships over or warn them off: her, pilots holding or breaking her line, the defector, or Portuguese ships trusting their rutter. If the rutter was salted, this is where it fires — wrecks that happen "by themselves," authored weeks earlier and arriving on schedule.
+- **The catch.** The season's wealth is in those holds, and every hand reaches for it: the quota finally has real numbers, the town's winter eats from it, the country trades against it. In standoff shapes the catch stays offshore and becomes the fleet's leverage. The economic hinge inside the dramatic one.
+- **Steinar.** Ashore or across the water; the reunion on whatever terms the day allows, and his reading of what his mother did — the first of the coda's "people who weren't there," arriving early. On the thrown-in road, the refusal scene lives here (see **Throwing In**).
+- **The commandant's hour.** Brief: once the day settles, his recalculation. The winter clock formally opens; the sail-or-winter arithmetic begins; Act 5's board is set.
+
+### Leaving Act 4
+
+Hand Act 5 four facts: possession (who holds the town, and how contested); the fleet's state (in harbor — armed or disarmed — standing off, scattered, or thinned); blood (whether any was spilled, and whose); and her position with the town and with the Portuguese — still governed by the knowledge discipline: even now the town reads conduct, and the homecoming is where much dark conduct finally becomes public. The winter clock is live: around Day 100, the coast closes.
+
+---
+
+## Act 5 — The Reckoning
+
+No ending is the correct one — this is the act where a GM is most tempted to grade; don't. The reckoning can also arrive early, if the books are opened and the leash is total — see **If the Books Are Opened**.
+
+### Fast or slow
+
+If possession broke at the homecoming — the uprising carried, the ambush succeeded, relief landed — the act runs fast: aftermath, loose ends, coda. If the occupation persists, it runs long: the winter arithmetic, from roughly Day 50 to Day 100. An early reckoning runs long the same way, with the leash as its condition.
+
+### The commandant's ledger
+
+What tips him between sailing and wintering, made concrete. He is summing five lines, and the player can push any of them:
+
+- The holds — is the catch in his hands?
+- The garrison's winter — fodder, firewood, billets: rising.
+- The country — open or closing; the embargo line.
+- Order — the town's anger, the incidents.
+- His committed orders — which set what "profitable" even means.
+
+Play the ledger as fodder carts and the factor's inventories, never as arithmetic displayed to the player. He reads sums; the player pushes lines.
+
+### Fixed beats of the long road
+
+- **The harbor tells.** What the Portuguese do with their ships announces the decision forming — laden and rigged means sailing; careened, or guns coming ashore to a battery, means wintering. The town reads the harbor the way she reads books, and her expertise makes her the town's interpreter of its own fate.
+- **The council north.** The geography widens at last: Ragnhild goes to the village, or the council's answer comes to her. The nation decides its winter — there, on its own reasons, her counsel weighed but not obeyed. The scenario's one major scene beyond the palisade.
+- **The terms table.** Whatever ending is forming, there is a table — terms of withdrawal, of wintering, of the hybrid — and the drafting hand is often hers: translator and clerk of her town's fate one last time. The treaty is the harbor book's sibling; authorship as power, cashed.
+- **Decision day.** The commandant announces, or is preempted. If he sails: what he carries — the catch, the rutter, hostages, her? — is the negotiation's residue. If he winters: the shared winter engages (see the endings).
+
+### The endings
+
+Each has its own pressure, and its own reader for the coda.
+
+- **Relief.** A Danish force, or the fleet's own action, breaks the hold — and relief arrives with questions: the relievers are not saviors. Pressure: her accommodations read by Danish eyes. Reader: a crown officer taking depositions.
+- **Negotiated withdrawal.** Winter, embargo, and arithmetic make the factory untenable; the commandant sails. The terms table at full weight — and the closing image: the last pilotage out, her final service to the occupation being to guide it over the bar and gone. Reader: the commandant, leaving a receipt for history.
+- **The uprising.** Violence as at the fire in Act 3 — offscreen, brief, heavy. Pressure: what order costs to rebuild. Reader: the town, wanting an accounting.
+- **The adaptation.** The factory stands and life bends around it. A true ending, not a failure state. Reader: Pires, or the crown of Portugal — the book becomes her employment record.
+- **The hybrid.** The main strength sails; a factor and a small post remain by the town's and the country's consent. It requires the nation's assent and a broker — often her, from whichever side of the table she ended on. Reader: both crowns, eventually — which is the point.
+
+**The shared winter** (a complication, not an ending): the occupation drags into the closed season and nothing is decided until the spring sailing; winter defers and intensifies whichever ending resolves then.
+
+### Loose ends
+
+Scan what is open — the boy, the translation, Orm, the rate, the deserter, the chalice's last Sunday — and give each one scene or one line. Invent nothing this late; only close.
+
+### The coda: the book is read
+
+Mandatory in every ending, including the early one — a scene, not a summary. Do not rush it: this is the scenario's actual climax. However the game broke, the book is evidence, and the accommodations she chose are judged by people who weren't there.
+
+Open with the book on the table, and read from it: compose three to six real entries from the game actually played, in the record's flat voice — "Day 9: cleared as Biscay salt, forty barrels." "Day 23: pilot R., the caravel brought in." Her own game, quoted back to her. Then the reading: the ending's reader asks what the record means, and she answers — what it says she did, and what she says about the record. The second set, if it exists, is the coda's live object: produce it, burn it, or hand it to Steinar — whose judgment, if he lives, is its own moment in every ending, reader or not.
+
+Close with one to three brief epilogue vignettes — the spring fleet, the translation project, the boy grown or gone — partly at the player's request.
+
+If she does not live to the reckoning, the coda runs unchanged in form and lands at full strength: the book is what is left of her, and it answers alone. Steinar, if he lives, reads it first — his judgment and his decision about the office arriving as one. Whoever finds the second set, wherever play left it, inherits her authorship. Grief on the page, never spectacle.
+</pre>
         </div>
       </details>
 
       <details class="prompt-file">
-        <summary>references/eras/late-15th-century-danish-vinland.md</summary>
+        <summary>references/eras/early-12th-century-the-spoken-law.md</summary>
         <div class="prompt-body">
           <button class="copy-btn" type="button">Copy</button>
-          <pre># Era: Late 15th Century — Danish Vinland
+          <pre># Era: Early 12th Century — The Spoken Law
 
-Norse settlers took a permanent foothold on this coast in the late 10th century, five centuries ago, and the colonies held and grew. The present rests on that long entanglement of the Norse-descended communities and the indigenous nations whose land this is.
+Four or five generations since the landing. The entanglement with the indigenous nations is being built within living memory, not inherited.
 
 ## Politics
 
-Denmark claims Vinland and backs official European business there, but governs it lightly from far across the sea. The jarls who run the coastal districts answer to Copenhagen more in name than in fact, and a stranger bearing the king's seal may draw wariness as readily as welcome. Other powers — Portugal and Castile among them — are interested; none has colonized at any scale, and the balance still favors trade over conquest. Norse settlements took hold too early,and indigenous communities remain too robust, for a Tordesillas to have divvied up Vinland.
+No crown governs here. The king of Norway claims a loose primacy over the whole Norse world; no tax or officer has ever crossed this ocean, and the claim is worth a toast and nothing more. The Norse communities run on the commonwealth pattern: district assemblies (*things*), chieftains whose power is followers rather than office, disputes settled by arbitration and compensation, feud the failure everyone works to avert. **Law is spoken, not written.** Each district's lawspeaker recites the law at the thing; what is remembered is law, and a matter without precedent must be given one — carefully, for the district will live under it.
+
+The peace with the nations is real but young and tended. First trade and first blood both lie at the edge of living memory; the peace is kept by named families on both sides, renewed at trade meetings and marriages, not yet assumed. No one harbors designs of conquest — neither side could sustain one, and both know it. No other Europeans know Vinland exists; a season with three ships from across the sea is a busy season.
 
 ## The Church
 
-In 1497 there is one Western Church, as yet undivided — render it as the late-medieval Christianity it is, in communion with Rome, woven through ordinary life and accurate to the period. One frontier irregularity holds: some Vinland priests are married, against the Western norm of clerical celibacy.
+Vinland is Christian, and has been for about four generations — long enough that the faith is the air, recent enough that a grandmother remembers her grandmother's other prayers. The old ways persist under the surface: charms, boat-luck, small divinations, a portion set out at certain times.
+
+One young bishopric serves all Vinland, seated at Kirkjuvágr — its second bishop; the first is already half a legend. He was consecrated across the sea under the metropolitan at Bremen: the appeal road does not yet end here. Letters run a year out and a year back, so the church here lives on custom and conscience. Churches are farmers' churches: raised by a landowner on his own ground and endowed by gift — land, livestock, shoreline, and rights, given for the good of the giver's soul — with the priest often the owner's son or a man he hired. There is no tithe; the church lives on its gifts and glebe, which makes those gifts matter. Priests marry, as they always have. Word of a new continental strictness — about clerical marriage, church property, and who may appoint a priest — arrives as rumor and the occasional stern letter: no rule here.
 
 ## Technology
 
-The Norse work iron — tools, edged weapons, and ship fittings — at a late-medieval Scandinavian level; the indigenous nations work stone, bone, copper, wood, and hide with their own deep skill, and centuries of exchange have carried goods and techniques both ways. Gunpowder weapons are effectively absent. Of the interior, the European map is nearly blank: the coast is charted, the river country and great lakes known intimately to the nations who live there and scarcely at all to Copenhagen.
+No compass. Navigation is latitude sailing by sun and star, landmarks, birds, and sailing directions held in memory like the law. Ships and boats are clinker-built; bog iron, smelted locally, covers tools and fittings, and good steel is imported and precious. The nations work stone, bone, copper, wood, and hide with their own deep skill; exchange of goods and techniques is real but younger and thinner than it will become. When a ship does come, the cargo home is furs, walrus ivory, falcons, and timber. Books are scarce enough to be named individually.
+
+## Tongues
+
+The Norse of Vinland and of the old countries are still one tongue — a newcomer off the ship is understood on the quay. Latin is thin on the ground: the bishop and a handful of priests. Speakers of both Norse and a nation's tongue exist but are few and known by name. An interpreter is a somebody.
+
+## Money
+
+Effectively no coin. Silver is weighed, not counted, and rare enough to be remarked on; the working units of account are ells of homespun cloth and dried fish, and most exchange is goods, labor, and standing outright.
+</pre>
+        </div>
+      </details>
+
+      <details class="prompt-file">
+        <summary>references/eras/late-14th-century-the-silence-from-the-sea.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># Era: Late 14th Century — The Silence from the Sea
+
+Four centuries of entanglement with the indigenous nations built the world as it stands. Forty years ago, the ships stopped coming. The last were ordinary ships that promised ordinary returns; none came, and none has come since. Some speculate a great plague in the old countries, some war over a broken line of succession; no one knows. Two expeditions have sailed east to learn; neither returned, and proposing a third is now spoken of as a fool's act.
+
+## Tone
+
+Both a long diminishment — things running out, a world watching for a sail that never comes — and a coming-into-itself, as Vinland discovers how little it was actually waiting for.
+
+## Politics
+
+Districts run themselves by thing and chieftain as they always have, though the strongest district leaders have begun to be styled jarls — a title that would have drawn a laugh two generations ago. With nothing arriving to trade from overseas, the Norse now need the indigenous nations more than the nations need them. The peace is old, layered, and carried by many families on both sides; the wiser Norse understand which way it tilts.
+
+## The Church
+
+The line of bishops came down to one man, who — old, dying, and forty years without a ship — consecrated his successor alone at Kirkjuvágr. The appeal road ends there now; there is nowhere further to send it. The rite still prays for the pope by his office; no one is certain of his name. When the imported wine failed, the altar turned to wine pressed from the land's own wild grapes. No new book has arrived since; what exists is copied and mended, and a whole book is wealth. Priests marry, as they always have.
+
+## Technology
+
+No imported steel since the last ship: every edge is bog iron, bloomery-smelted, and a surviving piece of old steel is an heirloom with a history. With goods gone, the craft itself has become the Norse's best trade — smelting and smithing pass into the nations through marriage, apprenticeship, and payment, unevenly, nation by nation. Ships are still built and sailed coastwise; the deep-sea sailing directions survive in the memories of a dwindling few, unused.
+
+## Tongues
+
+With no newcomers off any ship to correct it, the Norse of Vinland is drifting decisively from the mainland tongue. Bilingual or multilingual speakers are common where coast and country meet.
+
+## Money
+
+Silver is for ornament, not exchange. Reckoning runs in ells of homespun, dried fish, goods, labor, and standing.
+</pre>
+        </div>
+      </details>
+
+      <details class="prompt-file">
+        <summary>references/eras/late-15th-century-the-blank-interior.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># Era: Late 15th Century — The Blank Interior
+
+Five centuries on. The entanglement of the Norse-descended communities and the indigenous nations whose land this is was made long before anyone now living, and is simply the shape of the world.
+
+## Politics
+
+Denmark claims Vinland and backs official European business there, but governs it lightly from far across the sea. The jarls who run the coastal districts answer to Copenhagen more in name than in fact, and a stranger bearing the king's seal may draw wariness as readily as welcome, from Norse and indigenous Vinlanders alike. Other powers — Portugal and Castile among them — are interested; none has colonized at any scale, and the balance still favors trade over conquest. Norse settlements took hold too early, and indigenous communities remain too robust, for a Tordesillas to have divvied up Vinland. Of the interior, the European map is nearly blank: the coast is charted, the river country and great lakes known intimately to the nations who live there and scarcely at all to Copenhagen.
+
+## The Church
+
+There is one Western Church, undivided — the late-medieval Christianity of the period, in communion with Rome and woven through ordinary life, with Vinland's own bishops seated at Kirkjuvágr. Two divergences from the continental norm hold: Vinland's priests may marry, as they always have, for the continental discipline of celibacy never crossed the sea; and some parishes keep the lay chalice.
+
+## Technology
+
+The Norse work iron — tools, edged weapons, and ship fittings — at a late-medieval Scandinavian level, and a century of transferred craft has put smelting and smithing into the nations' own hands, unevenly, nation by nation: some forge their own edges, some still trade for them, some do neither. The older skill in stone, bone, copper, wood, and hide continues alongside, undiminished, and travels the other way. Gunpowder weapons are effectively absent.
+
+## Tongues
+
+The drift runs one way. Ships, new-come clergy, and crown business keep continental Norse in local ears, and a Vinlander follows it easily — archaic, a little grand. A newcomer gets no such help: he follows what is spoken to him, since anyone who wants to be understood will meet him partway, and loses those same people the moment they turn and speak to each other. Latin belongs to the rite and the clerks. Bilingual speakers are common where the coast trades; deep fluency in an interior nation's tongue is rarer, and worth something.
 
 ## Money
 
 Silver, in the Danish reckoning: one mark = eight øre, one øre = 30 pennies (240 to the mark).
-Price large things in marks and small things in øre and pennies; round freely rather than doing arithmetic. Silver is Norse money and dies inland — past Norse territory it buys nothing, and trade runs on goods, skills, labor, and standing. Concrete prices belong to the scenario.
+Silver is Norse money and dies inland — past Norse territory it buys nothing, and trade runs on goods, skills, labor, and standing.
+</pre>
+        </div>
+      </details>
+
+      <details class="prompt-file">
+        <summary>references/eras/mid-16th-century-guns-on-the-coast.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># Era: Mid-16th Century — Guns on the Coast
+
+Five and a half centuries on, the long entanglement of Norse-descended communities and the indigenous nations continues — but the old balance with the powers across the sea is, for the first time, in question.
+
+## Politics
+
+Denmark still claims Vinland, but is more concerned with its own troubles at home — which Vinland hears of months late — and the jarls answer to Copenhagen in name only. Redress or relief from the crown comes slowly, when it comes at all.
+
+Portugal has fished the banks for decades and has proven, elsewhere in the world, a model of fortified trading posts backed by ships' guns. It has begun to test whether that model works here — the first real challenge to the old rule that Europeans prosper in Vinland by trade, not conquest. Castile watches its rival closely but has committed nothing.
+
+The indigenous nations remain the interior's real powers. European trade still runs on their consent, and the wiser European actors know it.
+
+## The Church
+
+There is still one Western Church, in communion with Rome, and Vinland has long had its own bishops. Reform currents stir on the continent — the old complaints about money, distance, and discipline — and printed Scripture in the continental vernaculars circulates, tolerated in some lands, suppressed in others; no rupture has come. No Scripture has ever been written down in any tongue of Vinland, the towns' own or the nations'; the question has never been forced. Vinland's old customs persist under the tolerance of distance: priests marry, as they have since before the continental discipline of celibacy ever crossed the sea, and some parishes keep the lay chalice, a custom no authority has ever ruled on. Newly arrived clergy sometimes regard these things as needing correction. Sanctuary has real weight, and appeal past local power — to Vinland's bishops, or across the sea — is a road that exists: slow, uncertain, real.
+
+## Technology
+
+Ocean ships now carry broadside guns — a thing no Vinland harbor wall was built to answer. Handguns technically exist but are a novelty, not a common weapon. Charts and rutters are jealously guarded assets. Printing presses run in the old countries, but nothing has ever been printed in Vinland — books and broadsides arrive as cargo. Centuries of exchange have spread iron tools and smithing through the indigenous nations; gunpowder has not.
+
+## Tongues
+
+The towns speak a Vinland Norse well drifted from the continental tongue that arrives in print, from new-come clergy, and off the ships: Vinlanders follow that speech easily, and are not easily followed in return. The quays share the trade-German of the northern sea with foreign ships; Latin belongs to the rite and the learned; Portuguese is new on this coast and held by few. The nations' languages are their own — centuries of exchange have made bilingual speakers common where coast and country meet.
+
+## Money
+
+Danish reckoning unchanged: one mark = eight øre, one øre = 30 pennies (240 to the mark). Portuguese reais circulate wherever the Portuguese do business; their rate against the mark is unfixed and belongs to the scenario. In the fishing towns, in season, the true unit of account is the quintal of dried cod.
 </pre>
         </div>
       </details>
