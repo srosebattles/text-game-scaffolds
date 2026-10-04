@@ -26,9 +26,10 @@ the `<head>` boilerplate, header, footer, and the compatibility note are
 duplicated across pages by design (simplicity over DRY at this scale). When
 editing any of those shared blocks, update **all** HTML pages.
 
-Stylesheet and script links carry a version query (`style.css?v=2026-10-04`).
-When you change `style.css` or `main.js`, bump that date on every page so
-returning visitors don't get a stale cached copy.
+Stylesheet and script links carry a version query (`style.css?v=2026-10-04-2`).
+When you change `style.css` or `main.js`, bump it on every page (today's date,
+plus `-2`, `-3`, … for further changes that day) so returning visitors don't
+get a stale cached copy.
 
 ## Adding a game
 

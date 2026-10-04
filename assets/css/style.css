@@ -6,10 +6,17 @@
   --color-text: #2b2440;
   --color-text-soft: #5e5577;
   --color-primary: #7c3aed;
-  --color-primary-dark: #6526d9;
+  --color-primary-fill: #7c3aed;
+  --color-primary-fill-hover: #6526d9;
+  --color-on-primary: #ffffff;
   --color-accent: #c2410c;
   --color-accent-soft: #fef0d8;
   --color-border: #e8e0f5;
+  --color-code-bg: #faf7ff;
+  --color-tested-bg: #e2f6e9;
+  --color-tested-text: #1d7d44;
+  --color-beta-bg: #fce7f1;
+  --color-beta-text: #b32567;
   --radius-lg: 32px;
   --radius-md: 24px;
   --radius-sm: 16px;
@@ -19,6 +26,31 @@
   --font-display: "Fredoka", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --max-width: 960px;
+  color-scheme: light dark;
+}
+
+/* Dark theme follows the visitor's system setting. Text accents use a lighter
+   purple for contrast on dark surfaces; filled buttons keep the deeper purple
+   so their white labels stay readable. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #16131d;
+    --color-surface: #211c2b;
+    --color-surface-alt: #2a2238;
+    --color-text: #efeaf7;
+    --color-text-soft: #b9b0cc;
+    --color-primary: #b79cff;
+    --color-accent: #fb923c;
+    --color-accent-soft: #3b2414;
+    --color-border: #3a3249;
+    --color-code-bg: #1b1724;
+    --color-tested-bg: #173323;
+    --color-tested-text: #7ee2a8;
+    --color-beta-bg: #3d1a2e;
+    --color-beta-text: #f7a6cf;
+    --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
 }
 
 * {
@@ -57,8 +89,8 @@ a {
   left: 0.5rem;
   top: -3rem;
   z-index: 100;
-  background: var(--color-primary);
-  color: #fff;
+  background: var(--color-primary-fill);
+  color: var(--color-on-primary);
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-display);
@@ -168,13 +200,13 @@ a {
 }
 
 .btn-primary {
-  background: var(--color-primary);
-  color: #fff;
+  background: var(--color-primary-fill);
+  color: var(--color-on-primary);
   box-shadow: var(--shadow-card);
 }
 
 .btn-primary:hover {
-  background: var(--color-primary-dark);
+  background: var(--color-primary-fill-hover);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -421,13 +453,13 @@ a {
 }
 
 .tag-tested {
-  background: #e2f6e9;
-  color: #1d7d44;
+  background: var(--color-tested-bg);
+  color: var(--color-tested-text);
 }
 
 .tag-beta {
-  background: #fce7f1;
-  color: #b32567;
+  background: var(--color-beta-bg);
+  color: var(--color-beta-text);
 }
 
 .card-badges {
@@ -497,7 +529,7 @@ a {
   margin: 0;
   padding: 1.5rem;
   overflow-x: auto;
-  background: #faf7ff;
+  background: var(--color-code-bg);
   font-size: 0.875rem;
   line-height: 1.55;
   white-space: pre-wrap;
@@ -525,9 +557,9 @@ a {
 }
 
 .copy-btn.copied {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
+  background: var(--color-primary-fill);
+  border-color: var(--color-primary-fill);
+  color: var(--color-on-primary);
 }
 
 /* ===== History essays ===== */
