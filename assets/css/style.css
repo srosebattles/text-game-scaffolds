@@ -530,6 +530,92 @@ a {
   color: #fff;
 }
 
+/* ===== History essays ===== */
+.breadcrumb-narrow {
+  max-width: 720px;
+}
+
+.essay {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.essay h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+}
+
+.essay h2 {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+}
+
+.essay p {
+  margin: 0 0 1.1em;
+}
+
+.essay ul {
+  margin: 0 0 1.1em;
+  padding-left: 1.25rem;
+}
+
+.essay li + li {
+  margin-top: 0.5rem;
+}
+
+.essay-lead {
+  color: var(--color-text-soft);
+}
+
+.essay-toc {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.essay-toc-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.essay-toc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  columns: 2 14rem;
+  column-gap: 2rem;
+}
+
+.essay-toc li + li {
+  margin-top: 0.25rem;
+}
+
+.essay-cta {
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.essay-cta h2 {
+  margin-top: 0;
+}
+
+.essay-cta .btn {
+  margin-bottom: 1.5rem;
+}
+
+.essay-more {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   text-align: center;

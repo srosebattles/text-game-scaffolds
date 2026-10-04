@@ -11,6 +11,8 @@ Live site: https://llmtextgames.xyz/
 index.html              Home page: intro, game cards, how-it-works, FAQ
 404.html                Custom not-found page for GitHub Pages
 games/<game-slug>/      One page per game (description, downloads, full text)
+games/ecclesiastical-politics/history/<scenario>/
+                        History essays, rendered from the skill's history-for-humans/
 downloads/              .skill files (ZIP archives) served as direct downloads
 assets/css/style.css    Site styles (design tokens at the top)
 assets/js/main.js       Copy-to-clipboard buttons
