@@ -165,30 +165,23 @@
           <button class="copy-btn" type="button">Copy</button>
           <pre>---
 name: "ecclesiastical-politics"
-description: &gt;
-  Run a turn-based text adventure of ecclesiastical politics — cathedral chapters, ecumenical
-  councils, and reformation diets. Use this skill ONLY when the user explicitly asks to play
-  "ecclesiastical politics", "the church politics game", or a church-council or chapter-election
-  game, or explicitly asks to play one of its named scenarios (Council of Constance, Augsburg
-  Confession, Synod of Whitby, cathedral chapter election). Also use it when the user asks to
-  continue a previous session of this game. Do NOT trigger when church history merely comes up —
-  mentioning Hus, Melanchthon, Constance, Augsburg, or Whitby in conversation is not a request to play.
+description: "Run a turn-based text adventure of ecclesiastical politics — cathedral chapters, ecumenical councils, and reformation diets. Use this skill ONLY when the user explicitly asks to play \"ecclesiastical politics\", \"the church politics game\", a church-council or chapter-election game, or one of its named scenarios (Council of Constance, Augsburg Confession, Synod of Whitby, cathedral chapter election), or asks to continue a previous session of this game. Do NOT trigger when church history merely comes up — mentioning Hus, Melanchthon, Constance, Augsburg, or Whitby in conversation is not a request to play.\n"
 ---
 
 # Ecclesiastical Politics — Game Master Skill
 
-This file holds what every scenario shares. Each scenario lives in `references/`; its main file
-says which companion files to read, and when. `history-for-humans/` holds background written for
-people reading the skill outside a game; never open it, since it would only crowd the context.
+This file holds what every scenario shares. Each scenario lives in `references/`.
+`history-for-humans/` is background for human readers; never open it, since it only crowds the
+context.
 
 ## Starting a game
 
-1. Offer the scenarios listed at the end of this file, giving each blurb as written. Offer only
-   those whose files exist.
+1. Offer the scenarios listed at the end of this file whose files exist, giving each blurb as
+   written.
 2. Read the chosen scenario's main file, and any companions it says to read at the start.
 3. Character creation, light touch: vantage and default character (the scenario offers them), name
-   and background, eight points across the four stats (none below 1 or above 4; default 2/2/2/2),
-   and any boundaries. Offer a strong default and let the player adjust as you go. Ask in prose,
+   and background, eight points across the four stats (default 2/2/2/2), and any
+   boundaries. Offer a strong default and let the player adjust as you go. Ask in prose,
    never with buttons or forms.
 4. Pre-commit (below) and print the string.
 5. Open the scene the scenario gives for this vantage, and play turn by turn.
@@ -199,19 +192,17 @@ Literary historical fiction in close third person and present tense: theological
 without preaching, politically textured without cynicism.
 
 **Sensory writing is the core of the genre**, and the reason to play this in text at all. The
-cold of stone floors through thin shoes, the weight of vestments, tallow smoke and incense,
-watered wine at a long supper, sea-fret on a headland, a courier's horse lathered in August dust,
-the hush of a hall when a hundred men stop talking, January wind off a lake, the particular quiet
-of a cloister at Lauds. Food, weather, and silence are all texture.
+cold of stone floors through thin shoes, tallow smoke and incense, sea-fret on a headland, a
+courier's horse lathered in August dust, the hush of a hall when a hundred men stop talking,
+January wind off a lake. Food, weather, and silence are all texture.
 
-Clerical wit is dry and real, but the game is not comic: laughter belongs to the characters, not
-to narrator commentary. Callbacks to earlier scenes are strongly encouraged; the world should
-reward attention.
+Clerical wit is dry and real, but the game is not comic: laughter belongs to the characters, not the
+narrator. Callbacks to earlier scenes are strongly encouraged; the world should reward attention.
 
-**Theological care.** Theology is the period's own. Disagreements about the Eucharist, conciliar authority, justification, or the date of Easter are
-real. The player should feel something is at stake, never that factions are arguing about
-decorating choices. No indifferentism, and no twenty-first-century categories in the characters'
-heads.
+**Theological care.** Theology is the period's own, and its disputes (the Eucharist, conciliar
+authority, justification, the date of Easter) are real: the player should feel the stakes, never
+that factions are arguing about decor. No indifferentism, and no twenty-first-century categories in
+the characters' heads.
 
 **The supernatural.** Faith is real and prayer is meaningful; the communion of saints is invoked,
 not decorative. Saints live in the texture — relics, names in the calendar, invocations at
@@ -237,14 +228,14 @@ reported vision with caution and questions rather than awe.
 | **Conscience** | Moral clarity, courage under pressure, integrity; spiritual perception — both *seeing* that something is wrong and *acting* on it |
 
 Stats start between 1 and 4 and reach 5 or 6 only through growth in play. There is no health and
-no money: exhaustion and grief are conditions priced into what the player attempts, the
-institution houses and feeds them, and this world trades in favor and obligation. A purse pressed
-into a hand in a corridor is borrowing against Standing or Conscience, not spending coin.
+no money: the institution houses and feeds the player, and this world trades in favor and
+obligation. A purse pressed into a hand in a corridor is borrowing against Standing or
+Conscience, not spending coin.
 
 ## Checks
 
-Resolution is fully deterministic: no dice, nothing random. The player's uncertainty lives in
-what they cannot see — the difficulty, the ledger, the pre-committed facts — never in chance.
+Resolution is fully deterministic — no dice. The player's uncertainty lives in what they cannot see
+— the difficulty, the ledger, the pre-committed facts — never in chance.
 
 When an attempt's outcome isn't obvious, set a difficulty from 1 to 6 from the task and its
 conditions, as if you did not know who was attempting it; only then look at the stat. Meets or
@@ -255,22 +246,22 @@ of the player's office would manage simply happens.
 - **4**: real skill (turning a wavering vote; speaking well under hostile attention).
 - **6**: genuinely hard (out-arguing the most formidable canonist in the room on his own ground).
 
-1 is trivial but meaningful; 3 and 5 sit between. Read the benchmarks against the assembly at
-hand — a quarter hour of a chancellor's attention costs what a whole afternoon of a provost's
-does not — but the scale never changes.
+1 is trivial but meaningful; 3 and 5 sit between. Read the benchmarks against the assembly at hand —
+a quarter hour of a chancellor's attention costs more than an afternoon of a provost's — but the
+scale never changes.
 
 **Telegraph, never state.** Never give the number. Before the player commits, let the fiction
 show roughly how hard the thing is — the canonist's reputation, the chancellor's temper, who else
 is in the room — and afterward narrate so they see which stat mattered and how close it was.
 
-**Consistency is what makes it fair.** The same task under the same conditions has the same
-difficulty every time; try again with nothing changed and the result is the same. The player's
-real levers are *approach* and *conditions*. Arguing from the canons rather than pleading from the
-heart changes which stat applies, if it genuinely changes what is being done; prettier wording of
-the same request does not. Preparation, an ally in the room, a document in hand, a better hour, a
-private audience instead of a public one: these lower the difficulty, and building them is most of
-the game. Exhaustion, illness, grief, and fresh humiliation are conditions too. They raise the
-difficulty of a particular act and never subtract from a stat.
+**Consistency is what makes it fair.** The same task under the same conditions always has the same
+difficulty and the same result. The player's real levers are *approach* and *conditions*. Arguing
+from the canons rather than pleading from the heart changes which stat applies, if it genuinely
+changes what is being done; prettier wording of the same request does not. Preparation, an ally in
+the room, a document in hand, a better hour, a private audience instead of a public one: these lower
+the difficulty, and building them is most of the game. Exhaustion, illness, grief, and fresh
+humiliation are conditions too. They raise the difficulty of a particular act and never subtract
+from a stat.
 
 **Partial success is a complication, not a softer win**: a string attached, a witness who
 shouldn't have been there, the right outcome for the wrong reason.
@@ -278,9 +269,9 @@ shouldn't have been there, the right outcome for the wrong reason.
 **One stat decides.** A second may color the narration — Rhetoric carrying a public argument with
 Learning audible in it — but adds nothing to the result.
 
-**Perception is adjudicated silently**: give the player what their stat would catch and nothing
-it would not. Conscience governs moral perception — the "compromise wording" that actually
-concedes the point, the moment a friend stops being honest.
+**Perception is adjudicated silently**: give the player only what their stat would catch. Conscience
+governs moral perception — the "compromise wording" that actually concedes the point, the moment a
+friend stops being honest.
 
 ## Conscience and growth
 
@@ -289,18 +280,16 @@ to sign — commits the player. They cannot un-speak or un-refuse, and the conse
 across turns, often costing Standing, sometimes safety. A player who acts on Conscience and loses
 politically is not playing the game wrong.
 
-Stats move rarely, only upward, and only for sustained effort: deep reading grows Learning,
-slowly assembled allies grow Standing, and sustained moral courage, even unsuccessful, grows
-Conscience. Flag when a gain is near and announce it when it lands. Nothing else moves a stat. A
-man worn down or disgraced has not become a smaller man; the room is simply harder for him just
-now, which difficulty already handles. A scenario may author a loss at a named moment.
+Stats rise rarely, and only for sustained effort: deep reading grows Learning, slowly assembled
+allies grow Standing, and sustained moral courage, even unsuccessful, grows Conscience. Flag when a
+gain is near and announce it when it lands. Nothing else moves a stat, though a scenario may author
+a loss at a named moment.
 
 ## The ledger and factions
 
-Each scenario names the count that matters and its opening state. The ledger is never written
-down, so rebuild it honestly before every set piece: start from the opening state and move an
-entry only for something on the page that person witnessed or credibly heard. A triumph in a
-corridor moves no one unless someone carries the news.
+The ledger is never written down in play, so rebuild it honestly before every set piece: start
+from the scenario's opening state and move an entry only for something on the page that person
+witnessed or credibly heard. A triumph in a corridor moves no one unless someone carries the news.
 
 **One book, two columns.** Each entry holds a person's *warmth* toward the player and *where they
 land*, as phrases, never scores, and never assumed to agree: a man can warm to the player and
@@ -314,14 +303,14 @@ should lose the vote they forced.
 Factions, formal or informal, are tracked the same way. They disagree internally, and they shift
 in prose: "the Bohemian delegation will no longer meet your eye."
 
-**The world moves offstage.** The factions act while the player is elsewhere, and you may let the
-player feel it: someone cooler than yesterday, a rumor with a particular shape, two men at supper
-who did not sit together before. You need not know the cause when you plant a seam like that. When
-the player pulls on it, or the politics needs it, decide what happened — a letter written, a dinner held, a
-promise extracted — and move the ledger to match. The cause must fit the seam, follow from what
-those people already wanted, and honor the pre-commitments; it is never the twist the plot happens
-to need. A player who asks *what happened while I was at Vespers* is playing correctly and deserves
-a real answer.
+**The world moves offstage.** The factions act while the player is elsewhere, and the player may
+feel it: someone cooler than yesterday, a rumor with a particular shape, two men at supper who did
+not sit together before. You need not know the cause when you plant a seam like that. When the
+player pulls on it, or the politics needs it, decide what happened — a letter written, a dinner
+held, a promise extracted — and move the ledger to match. The cause must fit the seam, follow from
+what those people already wanted, and honor the pre-commitments; it is never the twist the plot
+happens to need. A player who asks *what happened while I was at Vespers* is playing correctly and
+deserves a real answer.
 
 ## Pre-commitment
 
@@ -329,10 +318,10 @@ The worst GM habit is deciding hidden facts retroactively, choosing whatever is 
 the plot forces the question. It makes politics that cannot be fairly read and reversals that
 cannot be fairly earned.
 
-Your only memory is the conversation itself. A fact decided but never written down is gone by the
-next turn, so nothing can be kept privately. Hidden truths that must hold for the whole game are
-printed in a form the player can't read; everything else hidden is rebuilt from the page when it
-matters, and whatever has been narrated is fixed from then on.
+Your only memory is the conversation: a fact decided but never written down is gone by the next
+turn. Hidden truths that must hold for the whole game are printed in a form the player can't read;
+everything else hidden is rebuilt from the page when it matters, and whatever has been narrated is
+fixed from then on.
 
 Each scenario lists numbered questions with lettered answers. After character creation, decide
 every one and print the result as a compact string — `1b 2c 3a 4c 5a 6b` — without explanation:
@@ -347,10 +336,11 @@ hesitation at the wrong moment, what someone does not say.
 
 ## What characters know and tell
 
-An NPC knows their own office and its business, what they have witnessed, and the rumor that
-travels by mouth in a body this size. They do not know what passed privately between the player
-and anyone else, nor the assembly's hidden truths. They may suspect the player is holding
-something back; they are never omniscient.
+An NPC knows their own office and its business, what they have witnessed, and the rumor that travels
+by mouth in a body this size. They do not know what passed privately between the player and anyone
+else, nor the assembly's hidden truths, though they may suspect the player is holding something
+back. The narrator keeps the same discipline: what the files know reaches the player only through
+what someone in the scene says, sees, or does, and never with hindsight of how the year ends.
 
 Disclosure is earned, and follows from what the character wants — to take the player's measure,
 to bid for their support, to be flattered into indiscretion — not from what the file records them
@@ -358,17 +348,19 @@ as knowing. A guarded character gives one thread and makes the player work for t
 frightened or guileless one says too much. The player can leave empty-handed, and what is withheld
 is tension that outlives the scene.
 
+Opponents keep their motives, since their resistance is what gives the player's choices weight:
+guard against the cast drifting toward agreement, and let a sympathetic opponent stay an opponent.
+
 ## Information and possessions
 
-Information is the real economy: who knows what and when, fragments overheard in a corridor,
-sealed letters, confidences under the seal of confession. That seal is genuine: the player never
-breaks it, and an NPC who does reveals something terrible about himself. Let the player sometimes
-choose between sharing what they know and holding it close.
+Information is the real economy: who knows what and when, fragments overheard in a corridor, sealed
+letters, confidences under the seal of confession. That seal is genuine: an NPC who breaks it
+reveals something terrible about himself. Let the player sometimes choose between sharing what they
+know and holding it close.
 
 **Provenance is part of the information.** Track what the player has seen, held, or read for
-themselves apart from what they were merely told. A sworn account of what one saw is a different
-act from repeating what one heard; NPCs weigh *I was there* differently from *it is said*; and a
-man who keeps the distinction quietly becomes someone others check their facts against.
+themselves apart from what they were merely told. NPCs weigh *I was there* differently from *it is
+said*, and a man who keeps the distinction quietly becomes someone others check their facts against.
 
 Track meaningful objects in prose: the letter that obligates, the book that was lent, the relic.
 Texture matters — the wax of a seal, the hand a letter is written in — and a letter received in
@@ -398,39 +390,58 @@ acts, and genre-breaking elements get a light touch, never a lecture: the charac
 the natural failure is narrated, or the world quietly reasserts itself. Wildly out-of-character
 acts are allowed, and the world reacts; reputation is fragile here, and people remember.
 
+**Death is possible.** The player can die, and so can invented characters; historical people die
+as the record says. Telegraph mortal danger like any difficulty — fever in the guest-house, a watch
+with orders, a river in flood, a man who has said what he will do — so that a death, when it
+comes, was foreseeable. It follows only from the player's choices and what was already in motion,
+never because the plot wants one. If the player dies, go to the coda.
+
 **History has weight.** In historical scenarios the default outcome is the real one. The player
 stands adjacent to power, never as the protagonist of the recorded history, and the ceiling is
-hard: recorded words and recorded acts belong to the recorded men. An invented person never
-replaces a historical actor in a historical act, never gives a speech the record assigns to
-someone else, and never occupies a named seat. The acta are full of unnamed hands, and each
-scenario says what that leaves open.
+hard: an invented person never replaces a historical actor in a historical act, never gives a
+speech the record assigns to someone else, and never occupies a named seat. The acta are full of
+unnamed hands, and each scenario says what that leaves open.
 
 Altering major history is possible but hard: many turns, real cost, and usually growth the
-character does not begin with. The doors tend to want Learning *and* Rhetoric *and* Standing
-together, often at Conscience's expense, and no single check hands the player the year. Let them
-feel the difficulty in advance, but promise nothing: sometimes a heroic effort changes a small
-thing and leaves the larger event intact, and sometimes it is enough.
+character does not begin with. A door's decisive act turns on one stat, but its conditions take
+others to build, some are bought at Conscience's expense, and no single check hands the player
+the year. Let them feel the difficulty in advance, but promise nothing: sometimes a heroic effort
+changes a small thing and leaves the larger event intact, and sometimes it is enough.
+
+## The coda
+
+Every game ends with a coda, even when the player has died: a scene, not a summary, with the weight
+of a set piece. First give each open thread one scene or one line, inventing nothing this late. Then
+read three to six entries from the scenario's record, composed from this run in its own flat voice;
+where it would leave the player unnamed, it does, and they know which lines are theirs. Someone who
+wasn't there asks what it means, and the player answers, or, if they have died, someone who knew
+them. Don't grade the ending: a player who wins on a side the narrator might not favor has played as
+fully as one who loses for Conscience.
 
 ## Tools during play
 
 Plain text only. From the moment a scenario is chosen, use no tools of any kind — no widgets,
 artifacts, buttons, cards, or searches of the web, images, or past chats — except reading this
-skill's own files. That includes image search for establishing shots: sensory prose is the product
-the player came for, so render the cathedral in words. If a tool fires anyway, wave it off quietly
-and move on.
+skill's own files. Image search for establishing shots counts: render the cathedral in words. If a
+tool fires anyway, wave it off quietly and move on.
 
 ## Session continuity
 
 Nothing carries between chats except the save-state block. When the player stops, or on request,
-emit it exactly as below — same framing and labels, one fenced code block — and tell them that
-pasting it back is how the game resumes. Like the string, it is a GM screen: the ledger line is
-there for the next session, not for study.
+emit it exactly as below — same framing and labels, one fenced code block — and tell them pasting it
+back resumes the game. Like the string, it is a GM screen: the ledger and scenario lines are there
+for the next session, not for study.
 
-To resume, take the block and pick up from it, inviting anything they remember beyond it — a
-phrase, a kindness, a running grievance. Decode the string by slot number: numbers are permanent,
-so a slot the save lacks is decided now and a retired slot is ignored. Established facts return
-from their own line, never re-invented. With no block, say what's needed and rebuild together;
-never invent a replacement or search past chats for one.
+The `Scenario state` line carries the fields the scenario's Save state section names, each from the
+moment it gives, as compact values rather than sentences (`proxy: Ulrich's, visited`). At each
+phase boundary, make sure every live field can be answered in a line from the page, and open the
+next phase from those answers.
+
+To resume, pick up from the block, inviting anything they remember beyond it — a phrase, a kindness,
+a running grievance. Decode the string by slot number: numbers are permanent, so a slot the save
+lacks is decided now and a retired slot is ignored. Established facts return from their own line,
+never re-invented; a save with no `Scenario state` line rebuilds it from the others. With no block,
+say what's needed and rebuild together; never invent a replacement or search past chats for one.
 
 ```
 === ECCLESIASTICAL POLITICS — SAVE STATE ===
@@ -441,10 +452,11 @@ Stats: Learning n / Rhetoric n / Standing n / Conscience n
 Pre-committed decisions: [the string, e.g. 1b 2c 3a 4c 5a 6b]
 Established facts: [open questions already fixed on the page — a phrase each]
 Factions: [each faction: one qualitative phrase]
-Ledger: [the scenario's count, compressed to one line]
+Ledger: [only entries moved from the opening state, compressed to one line]
+Scenario state: [the scenario's save fields, compact values]
 Key NPCs: [name: relationship in a phrase — introduced characters only]
 Possessions &amp; documents: [meaningful items only]
-Pending threads: [unresolved hooks, promises made, letters awaited]
+Pending threads: [unresolved hooks, promises, letters awaited — whatever Scenario state doesn't carry]
 Divergences from canon: [historical scenarios only — "none", or one terse line each]
 Recent events: [three to six terse lines]
 === END SAVE STATE ===
@@ -473,15 +485,17 @@ Every scenario's main file defines these, and the rules above lean on them:
 - **Vantages and default characters**, with an opening scene for each.
 - **Cast**: a core that appears in every run, and a bench introduced only when the politics calls.
 - **The ledger**: what is counted, and its opening state.
-- **Provenance**: this assembly's form of it — sworn testimony at a heresy trial, a true copy at a
-  diet.
+- **Provenance**: this assembly's form of it.
 - **Signature mechanic**: what this assembly does that no other scenario does, and how it plays.
 - **Fixed and open**: what cannot be contradicted, what the player can move, what the ceiling
   leaves to an invented person, and where the doors to altering the year are.
 - **Pre-commitment slots**, numbered permanently (retire a number, never reuse it). Anything that
   decides an outcome gets a slot; what is left unlettered needs only guidance for fixing it when
   it first appears.
+- **Save state**: the fields of the `Scenario state` line and the moment each starts from, always
+  including provenance.
 - **Tone notes**: only what differs from the shared tone above.
+- **The coda**: the record and its reader, by vantage where they differ.
 - **Companion files**, if any, and when to read them.
 </pre>
         </div>
@@ -497,7 +511,7 @@ Every scenario's main file defines these, and the rules above lean on them:
 **Setting:** Hochfelden, a fictional prince-bishopric in the province of Mainz.
 **Dates:** 29 October to mid-December 1220, Julian reckoning; a deadlock can run toward the
 canonical limit of 27 January 1221. About six weeks, montage-heavy between set pieces.
-**Revision:** 2026-09 — pre-commitment slot numbers are permanent: retire a number, never renumber or reuse it.
+**Revision:** 2026-10 — save fields and coda added.
 
 ## Premise
 
@@ -509,23 +523,23 @@ died on the night of the first frost.
 Eighteen canons must choose a successor who will be both shepherd and prince of the Empire, with
 ministerial knights, a mint, tolls, and the cathedral's revenues. Three names are in the air and the
 chapter is split. Pressure from outside is real but indirect: no one can impose a bishop, but anyone
-can break a fragile consensus. The election will conclude. The questions are how, and whether
-eighteen men who have sung the same offices for decades are still a community afterward.
+can break a fragile consensus. The vacancy will end. The questions are how, and whether eighteen men
+who have sung the same offices for decades are still a community afterward.
 
 ## What the GM needs
 
 Everything named Hochfelden is invented. These are the real things that shape play.
 
-- **The law of elections is five years old.** The Fourth Lateran Council (1215, canon 24) allows
-  three forms: *scrutiny*, in which three trustworthy electors collect every vote secretly and one
-  by one, write them down, and publish them, electing the man chosen by all or the greater and
-  sounder part (*maior et sanior pars*); *compromise*, the chapter unanimously entrusting the
-  choice to a few; and *quasi-inspiration*, all naming one man at once. Any other form is void, and
-  those who attempt it lose their vote for that turn. An elector canonically impeded may swear to
-  it and give his vote to a colleague present; no one else votes by proxy.
-- **Three months** (canon 23). After three months' vacancy without lawful hindrance, the right
-  passes for this turn to the immediate superior, who provides with the chapter's advice. Here:
-  Mainz, on 27 January.
+- **The law of elections is five years old.** The Fourth Lateran Council (1215, canon 24) allows three
+  forms: *scrutiny*, in which three trustworthy electors collect every vote secretly and one by one,
+  write them down, and publish them, electing the man chosen by all, or the greater or the sounder part
+  (*maior vel sanior pars*); *compromise*, the chapter unanimously entrusting the choice to a few; and
+  *quasi-inspiration*, all naming one man at once. Any other form is void, and those who attempt it
+  lose their vote for this vacancy. An elector canonically impeded may swear to it and give his vote
+  to a colleague present; no one else votes by proxy.
+- **Three months** (canon 23). After three months' vacancy without lawful hindrance, the right passes
+  for this vacancy to the immediate superior, who provides with the chapter's advice. Here: Mainz, on
+  27 January.
 - **Mainz confirms, not Rome.** The metropolitan examines the election, confirms, and consecrates,
   and answers for it if he confirms an unworthy man (canon 26); Rome enters only on appeal. The
   Third Lateran Council (1179) set the floor: thirty years old, born in wedlock, of commendable life
@@ -573,7 +587,7 @@ By a charter of Frederick Barbarossa, the chapter elects without outside nominat
 - **Deliberation** from Martinmas, daily after the morning Mass, of no fixed length.
 - **The vote** by the chapter's old custom: see The roll call.
 - **Twelve.** The chapter's statute, older than the council, requires twelve voices of eighteen and
-  forbids a man to vote for himself. Canon law asks only for the greater and sounder part, so a
+  forbids a man to vote for himself. Canon law asks only for the greater or the sounder part, so a
   side stuck at ten or eleven may argue the canon over the statute (Learning). If the Dean accepts,
   the minority contests the result before Mainz as not the sounder part, and a contested election
   outlasts the scenario.
@@ -588,8 +602,8 @@ By a charter of Frederick Barbarossa, the chapter elects without outside nominat
 ## The calendar
 
 **Play near-daily** through the burial, the summons, the opening at Martinmas, the days before any
-vote, and the vote. Montage the rest, one sensory detail and one character moment each. A swift
-election falls before Advent; a deadlock runs toward Christmas, and after it, montage to the wall.
+vote, and the vote. Montage the rest. A swift election falls before Advent; a deadlock runs toward
+Christmas, and after it, montage to the wall.
 
 **1. The nine days** — grief, first hints of politics, the player's hooks.
 - 24 Oct — Otto thrown on the road home. 27 Oct — he dies.
@@ -611,8 +625,8 @@ community's approach, ministerial pressure, the vote.
 - 16, 18, 19 Dec — Ember Days, and no bishop to ordain Berthold's ordinands.
 
 **4. After** — the chapter settling or not, the new bishop's first public act, the player's standing
-and friendships, next year's work in view, and one clean closing scene. With no election, the wall
-stands at 27 January.
+and friendships, next year's work in view, and the coda. With no election, the wall stands at
+27 January.
 
 ## The chapter
 
@@ -662,27 +676,27 @@ player / where he lands — *firm*, *leans*, or *undecided*, which the roll call
   *Enters* late; let the player catch him watching before he's named. *Guarded / leans Berthold, and
   won't say so while it's dangerous.*
 - **Reinhard von Falkenstein.** Twenty-six, the Provost's nephew, installed this year in a prebend
-  some say was held for him, and resented. *Enters* at his uncle's side. *Cool / firm for Konrad.*
+  some say was held for him, and resented for it. *Enters* at his uncle's side. *Cool / firm for
+  Konrad.*
 - **Heinrich von Reichenbach, Dean** (core). Sixty, regional noble, dean eleven years: canny, deeply
   experienced, tired. He wants it done quickly with the least damage, endorses no one, and is thought
   to favor the safest choice. He calls the names and votes last. *Correct / slot 8, unstated all
   game.*
 
 **Adjust for vantage.** Lukas: Berthold fatherly, Ulrich warm, the reform party counting him, Wigand
-seeing Berthold's creature, the Falkenstein men a shade cool. Wilhelm: Walther warm, Engelbert
+seeing him as Berthold's creature, the Falkenstein men a shade cool. Wilhelm: Walther warm, Engelbert
 friendly, Konrad and Reinhard counting him, Berthold's circle guarded. Matthäus: Gottfried warm,
-Berthold respectful, Konrad unimpressed, the undecided juniors watching him as a conscience. In the
-save state, the ledger compresses to the lines that have moved.
+Berthold respectful, Konrad unimpressed, the undecided juniors watching him as a conscience.
 
 ## The candidates
 
 **Konrad von Falkenstein**, forty-eight, of an old family risen from ministerial stock. Fifteen years
-as Provost have made the estates pay. Hard-working, astute, austere in some things and
-self-indulgent in others, faithful at the office, with competent Latin and only the theology he was
-taught: a good prince and a passable bishop. Years of favors, placed cousins, and brokered marriages
-hold him most of the noble and ministerial canons, the regional nobility, and the ministerials.
-*Said:* no time for theological adventures; a bishop must govern; no one knows Hochfelden better.
-*Unsaid:* fifteen more years of Otto's drift.
+as Provost have made the estates pay. Hard-working, astute, austere in some things and self-indulgent
+in others, faithful at the office, with competent Latin and only the theology he was taught: a good
+prince and a passable bishop. Years of favors, placed cousins, and brokered marriages secure him most
+of the noble and ministerial canons, the regional nobility, and the ministerials. *Said:* no time for
+theological adventures; a bishop must govern; no one knows Hochfelden better. *Unsaid:* fifteen more
+years of Otto's drift.
 
 **Berthold of Marburg**, fifty-five, commoner, a Paris master taught by Peter Lombard's pupils, twenty
 years master of the school, with three treatises, one cited with respect at Paris. Quiet-voiced, at
@@ -691,11 +705,11 @@ it and will not refuse. With him: the learned canons, the younger clergy, the sc
 friars, and the older commoner canons, who see one of their own gone furthest. His bishopric would
 mean sustained reform — discipline, real visitations, absentees called home, a larger school, a voice
 at the yearly provincial councils the Lateran canons now require. *Against him:* a commoner with no
-governance and no ministerial following, perhaps short of years — a scholar, not a prince.
+governance and no ministerial following, perhaps with few years left — a scholar, not a prince.
 
-**Walther von Astheim**, forty-two, minor noble, charming in chapter and fine in choir: noble but not
-Falkenstein, theologically ordinary, politically inoffensive. Not yet a candidate in his own mind, he
-may become one in a deadlock. His bishopric would be Otto's reign by other means.
+**Walther von Astheim**, forty-two, a minor noble but no Falkenstein, charming in chapter and fine in
+choir, theologically ordinary, politically inoffensive. Not yet anyone's candidate, he may become one
+in a deadlock. His bishopric would be Otto's reign by other means.
 
 ## Outside the chapter
 
@@ -718,21 +732,21 @@ Tracked like factions, each with an opening state.
 - **The Dominicans**, two friars who came in September to preach, led by young, intense **Brother
   Gerlach**. They want the bishop's license and a chapel; Otto died without answering. *For
   Berthold, loudly, which does not help him.*
-- **The Jewish community**, a small kehilla paying the customary tallage, to whom the new bishop's
-  reading of the Lateran decrees on the Jews, which Otto let lie, matters. Its leaders may approach
+- **The Jewish community**, a small kehilla paying the customary tallage, for whom much turns on how
+  the new bishop reads the Lateran decrees on the Jews, which Otto let lie. Its leaders may approach
   one sympathetic canon, and the player's response is character-defining. *Watching.*
 - **The town**: sermons, gossip, who comes to Mass. A bishop the town does not want governs poorly.
 
 ## Vantages
 
 Three canons with votes, alike in access and different in formation, temperament, and stats; any
-could back any candidate. Each spread totals eight and may be redistributed.
+could back any candidate.
 
 ### Lukas of Speyer
 
 Thirty-six, a cloth merchant's son who came to the school as a boy to study under Berthold, ordained
-at twenty-six, a canon three years. He still studies and writes careful Latin, and this is his first
-election. Berthold remains a kind of father to him, and the chapter assumes he is Berthold's man.
+at twenty-six, a canon three years. He still studies and writes careful Latin. Berthold remains a kind
+of father to him, and the chapter assumes he is Berthold's man.
 
 **Learning 3, Rhetoric 2, Standing 1, Conscience 2.** He has not decided whether he is, nor whether
 agreeing with his teacher's politics is the same as being faithful to him.
@@ -763,11 +777,10 @@ kindnesses, and slow drift. The question is what to do with what he sees.
 
 29 October, the burial. The Requiem nears its end with the communion, *Lux aeterna*; the player stands
 in his stall. Hard October light in the high windows, incense, fresh oak from the chapter house. Name
-only **the Dean**, and one other if the vantage gives a reason: Lukas finds Berthold's eyes across the
-choir, Wilhelm stands beside Walther, Matthäus kneels near Gottfried. Everyone else is bodies, breath,
-and the backs of heads. End as the Dean rises to read who will keep the psalter at the new tomb
-through the first night, names only, and the player hears, or doesn't hear, their own. Then the
-player acts.
+only **the Dean**, and one other by vantage: Lukas finds Berthold's eyes across the choir, Wilhelm
+stands beside Walther, Matthäus kneels near Gottfried. Everyone else is bodies, breath, and the backs
+of heads. End as the Dean rises to read who will keep the psalter at the new tomb through the first
+night, names only, and the player hears, or doesn't hear, their own. Then the player acts.
 
 ## The roll call
 
@@ -775,8 +788,8 @@ This scenario's signature is a vote taken aloud by name. Six weeks of work are s
 in a cold room, and the player should be able to see well beforehand how the count will fall.
 
 By custom the Dean calls each canon in order and each answers aloud from his stall. To satisfy the
-Lateran canon he means to name three scrutators and have them take the voices, still aloud. Rebuild
-the ledger honestly first; then, as each name is called:
+Lateran canon he means to name three scrutators and have them take the voices, still aloud. As each
+name is called:
 
 - **Firm:** he votes his line, and nothing said in the room moves him.
 - **Leans:** he votes his lean unless someone who has already spoken, the player included, answers
@@ -801,7 +814,7 @@ proceeds by voice, the objector has his ground for contesting the result before 
 
 ## Promises and seals
 
-Provenance here is the promise. The chapter runs on voices promised in corridors. A canon who breaks
+Provenance here is the promise: the chapter runs on voices promised in corridors. A canon who breaks
 his word given before brothers is shamed; one who denies a promise no one else heard is only
 suspected. Track who promised what to whom, and who heard it. A proxy is sworn and binds its holder.
 The electors seal the decree, and a man who refuses his seal is remembered. Lay coercion voids an
@@ -834,6 +847,28 @@ license, the school, discipline, and Marienthal.
   Konrad falters and Gertrud consents, never as Konrad's tool. Lukas needs total deadlock and a
   reputation that catches the whole diocese.
 
+## The coda
+
+The record is the chapter's decree for Mainz, with the roll call written into it, every voice by
+name, the player's among them. The reader is Mainz's examiner, who must answer for confirming an
+unworthy man, asking the player what the chapter did. If the wall stood, the record is the
+chapter's minute of its failure, read by the man Siegfried provides on his first night in the
+palace.
+
+## Save state
+
+`Scenario state` fields, from the burial:
+
+- **promises**: who promised what to whom, and who heard it. This is provenance here.
+- **proxy**: who holds Hartmann's voice, and who reached the sickbed first.
+- **stalls**: which absent canons have come, and how many will vote.
+- **hunt**: any scandal pursued, whose, and what is in hand rather than merely heard.
+- **stakes**: where the kehilla, the friars, the school, or Marienthal has moved.
+
+From Martinmas, **form**: voice or scrutiny, any objection and its fate, any compromise and who
+refused it. From the vote, **outcome**: the name and margin, a failed vote, or the wall; any
+contest before Mainz; any seal refused.
+
 ## Pre-commitment
 
 **1 — Konrad's buried truth.** What a scandal hunt finds. Fix its substance when the hunt first
@@ -843,7 +878,7 @@ a. Disqualifying if proven, and provable with sustained work.
 b. Real and embarrassing; survivable if he handles it well.
 c. Nothing. A player who digs hits clean rock.
 
-**2 — Berthold's buried truth.** The same letters, chosen independently; two honest men is a
+**2 — Berthold's buried truth.** Lettered as slot 1, chosen independently; two honest men is a
 legitimate result. For instance: Paris letters showing he shared Amalric of Bena's teaching, which the
 Lateran council condemned, or a birth out of wedlock never dispensed (a); the friendship without the
 doctrine, or a sharp page Paris later disliked (b).
@@ -861,7 +896,7 @@ d. He means to be carried in and vote himself. Whether he can is fixed on the da
 what anyone has arranged, never to rescue a count.
 
 **5 — Hartmann's instruction**, whoever carries it.
-a. Konrad. b. Berthold. c. A compromise: he names the man if asked well; otherwise the holder chooses.
+a. Konrad. b. Berthold. c. Left open: he names the man if asked well; otherwise the holder chooses.
 
 **6 — Gottfried and St. Boniface.** What the Treasurer believes he has been told: a fact about
 Gottfried, whatever else it may be.
@@ -893,8 +928,8 @@ d. Abbot Hermann, who will refuse.
 - **A community, not a cabal.** A canon who votes against a brother still sees him at Vespers that
   evening and at Matins before dawn.
 - **No villains.** Konrad believes Hochfelden needs a prince and is right about much of it. Berthold
-  is capable of pride, of preferring his learning to a brother, and of avoiding governance he dislikes.
-  The election is hard because both have a real case.
+  is capable of pride, of preferring his learning to a brother, and of avoiding governance he
+  dislikes. The election is hard because both have a real case.
 - **The office keeps time.** A vote between Sext and None is not one between Vespers and Compline.
   Put the player in choir, and describe the chant.
 - **Full treatment:** the burial, the sickbed visit, at least one meal, any fight over the form, the
@@ -913,7 +948,7 @@ d. Abbot Hermann, who will refuse.
 the Church in head and members, and judge Master Jan Hus.
 **Dates:** Late October 1414 to mid-July 1415, Julian reckoning. Long play, montage-heavy between
 set pieces.
-**Revision:** 2026-09 — pre-commitment slot numbers are permanent: retire a number, never renumber or reuse it.
+**Revision:** 2026-10 — save fields and coda added.
 
 ## Premise
 
@@ -943,11 +978,10 @@ easily got wrong.
   from the pope to Christ, which to every lawyer in Constance is contempt of all courts at once.
   *De Ecclesia* is the book his judges will read from. He came of his own will, expecting an
   open audience before learned men.
-- **What he believes.** He is not a Protestant born early. He holds the Real Presence and
-  rejects Wyclif's remanence, and keeps the Mass, the saints, and the priesthood. His quarrel is
-  over the nature of the Church, the authority of unworthy prelates, and Scripture as the rule.
-  The articles against him are some fairly quoted, some sharpened, and some he never held, and
-  that difference is the whole case.
+- **What he believes.** He holds the Real Presence and rejects Wyclif's remanence, and keeps the
+  Mass, the saints, and the priesthood. His quarrel is over the nature of the Church, the authority
+  of unworthy prelates, and Scripture as the rule. Some of the articles against him are accurate,
+  some exaggerated, and some false, and the case turns on that difference.
 - **His enemies are sincere.** They carry the articles, the dossier of the Prague wars, and an
   honest conviction that Bohemia is sliding into Wyclifism and this man is why. The council is
   not a cabal and does not think itself murdering a good man.
@@ -1072,10 +1106,10 @@ everything later will spend.
   Páleč at the cell.
 - 1 Jul — Hus's final refusal, in writing.
 - 4 Jul — Gregory XII resigns through Carlo Malatesta, with the grace the Pisan line lacked.
-- 6 Jul, a Saturday, octave of Peter and Paul — Sentence in the Münster, where Hus reminds the
-  king of his safe-conduct and Sigismund is said to blush; degradation by seven bishops; the paper crown; relaxation to the secular arm; the fire on the Brühl the same
-  morning. His ashes go into the Rhine, and by evening Bohemians are carrying away handfuls of
-  scorched earth.
+- 6 Jul, a Saturday, octave of Peter and Paul — Sentence in the Münster, where Hus reminds the king
+  of his safe-conduct and Sigismund is said to blush; degradation by seven bishops; the paper crown;
+  relaxation to the secular arm; the fire on the Brühl the same morning. His ashes go into the
+  Rhine, and by evening Bohemians are carrying away handfuls of scorched earth.
 - Mid-July — Letters go north, and Bohemia begins to answer. End here, in the quiet after, with
   the smell still in the player's clothes.
 
@@ -1112,7 +1146,7 @@ player's story holds perhaps a dozen.
   pope his own theory is now deposing. Toward Hus he is the nearest thing to a friend on the
   bench: he presses for the mildest formulae, and is the judge Hus finds hardest to disappoint.
 
-**The Bohemian circle — core for Šimon, early bench otherwise**
+**The Bohemians — core for Šimon, early bench otherwise**
 
 - **John of Chlum**, called Kepka. A middling knight, loyal past prudence: he storms at
   cardinals, posts protests under his own seal, tells the king what his word was worth, and at
@@ -1144,8 +1178,8 @@ council will one day make pope. **Carlo Malatesta**, Gregory XII's knightly prox
 
 Three invented men at three distances from the fire. For Šimon the Hus case is the spine and the
 schism is weather; for Giacomo the schism is daily desk-work and Hus a file that keeps returning;
-Anselm stands where the two cross. Each spread totals eight and may be redistributed, and each
-vantage's strongest stat is the one its natural door turns on (see The doors).
+Anselm stands where the two cross. Each vantage's strongest stat is the one its natural door turns
+on (see The doors).
 
 ### Master Anselm of Rottweil
 
@@ -1232,10 +1266,10 @@ player's own house. Each line is warmth toward the player, then where he lands. 
 - **The player's own house** (the German nation, Zabarella's household, or Chlum's) — neutral /
   on the live question of the season.
 
-Adjust for vantage: Šimon starts a shade colder in every room but Chlum's, Giacomo starts warm
-with Zabarella, and Anselm is a stranger everywhere. A player working the schism or reform
-threads adds their nation's balance on the live question: the nations scheme in February, the
-decree's wording in April. In the save state, the ledger compresses to the lines that have moved.
+**Adjust for vantage.** Šimon starts a shade colder in every room but Chlum's, Giacomo starts warm
+with Zabarella, and Anselm is a stranger everywhere. A player working the schism or reform threads
+adds their nation's balance on the live question: the nations scheme in February, the decree's
+wording in April.
 
 ## The narrowing and the doors
 
@@ -1255,11 +1289,10 @@ word to a jailer — is priced by where he is held, whatever it cost the time be
 A soft place named by slot 5 prices two lower. If slot 5 is **c**, there is none: every errand
 goes through a commissioner, priced by his line in the ledger.
 
-**The doors.** Three ways to save him, each with a window, a gate, three conditions, and a
-decisive act. The decisive act is priced at 6, less one for each condition genuinely in place.
-Without its gate, a door cannot be walked through at any price, and outside its window it is
-shut. A partial success opens it partway — a reprieve, a delay, better custody, a formula
-accepted with a string attached — never Hus walking out free and clean.
+**The doors.** Three ways to save him, each with a window, a gate, three conditions, and a decisive
+act priced at 6, less one for each condition genuinely in place. Without its gate, or outside its
+window, a door is shut. A partial success opens it partway — a reprieve, a delay, better custody, a
+formula accepted with a string attached — never Hus walking out free and clean.
 
 - **The honest formula** (Learning; Anselm's door). Every historical formula foundered on one
   rock: abjuring articles he never held is an oath to a lie. The way through is a formula he can
@@ -1277,10 +1310,10 @@ accepted with a string attached — never Hus walking out free and clean.
   Polish lords pressing under their seals; a voice of weight at his elbow, Hallam or Zabarella;
   and a private audience the player has earned. *Success* means Hus in royal custody on the road
   to Bohemia, a council furious and diminished, and a king who will want to be repaid.
-- **The river** (Conscience; Šimon's door). Before 28 November the door stands open and Hus will
-  not walk through it: he came to answer. After, it is nearly shut. *Window:* any night after the
-  arrest. *Gate:* slot 9 allows it, and a door opens (slot 5). *Conditions:* a boat and a refuge;
-  the Bohemians in the city protected or gone, or Chlum becomes a hostage; and a man on the
+- **The river** (Conscience; Šimon's door). Before 28 November the door stands open and Hus will not
+  walk through it: he came to answer. After, it is nearly shut. *Window:* any night after the
+  arrest. *Gate:* slot 9 allows it, and slot 5 names a soft place. *Conditions:* a boat and a
+  refuge; the Bohemians in the city protected or gone, or Chlum becomes a hostage; and a man on the
   inside. *Success* costs Hus the vindication he wants more than life and hands the council its
   proof of contumacy.
 
@@ -1296,12 +1329,6 @@ both acts of Conscience, and a man can be ruined by either. What the player choo
 at whatever cost, is what they can swear to for the rest of their life. Peter of Mladoňovice,
 writing everything down because someone must, is the thread made flesh and a mirror for any
 vantage.
-
-**The account given.** After the final scene, the GM may offer a short coda in which the player
-renders their account of the year to someone who wasn't there: Šimon before the Bethlehem
-congregation, Anselm before a Vienna faculty asking what exactly the nation assented to, Giacomo
-years later to a patron who asks *you were at Constance?* Honor precisely what they did and did
-not see, and pay off at least one moment where being there, or having looked away, matters.
 
 ## Fixed and open
 
@@ -1324,12 +1351,34 @@ instrument, a named intervention in a congregation, the trust of one or two of t
 epilogue that pays it off — a benefice, a chancery summons, a chair at Vienna. The ceiling: the
 player never preaches Gerson's sermon, never sits among the judges, and never reads a sentence.
 
-**Side stakes**, each able to carry sessions for the right character: the Jean Petit affair,
-Gerson's other war over tyrannicide, condemned in the same session as Hus; the cardinals' fight
-to be counted as a body; the reform committees, where idealism goes to be scheduled; Poland's case
-against the Teutonic Knights, braided with the Polish lords' protests for Hus; the town's own
-ledger of prices, quarters, and the watch, with Richental writing it down; and humanist
-secretaries planning raids on the abbey libraries while their master's world ends.
+**Side stakes**, each able to carry long stretches of play for the right character: the Jean Petit
+affair, Gerson's other war over tyrannicide, condemned in the same session as Hus; the cardinals'
+fight to be counted as a body; the reform committees, where idealism goes to be scheduled; Poland's
+case against the Teutonic Knights, braided with the Polish lords' protests for Hus; the town's own
+ledger of prices, quarters, and the watch, with Richental writing it down; and humanist secretaries
+planning raids on the abbey libraries while their master's world ends.
+
+## The coda
+
+The record, by vantage: for Anselm, the council's acta; for Giacomo, the notarial instruments he
+helped engross; for Šimon, Peter of Mladoňovice's account. The reader: a Vienna faculty asking
+Anselm what exactly the nation assented to; a patron years later asking Giacomo *you were at
+Constance?*; the Bethlehem congregation, for Šimon. Honor precisely what the player did and did not
+see, and pay off at least one moment where being there, or having looked away, matters.
+
+## Save state
+
+`Scenario state` fields, from the opening:
+
+- **witnessed**: what the player saw for themselves and could swear to, apart from report, and any
+  deposition given. This is provenance here.
+- **watched**: whether the player is suspected or followed, by whom, and for what.
+
+From the arrest:
+
+- **access**: the player's road to Hus: the soft place found or not, a jailer and his price.
+- **doors**: for each door worked, which conditions are genuinely in place
+  (`formula: account built, Zabarella`).
 
 ## Pre-commitment
 
@@ -1429,7 +1478,7 @@ confutation and compromise.
 Dr. Luther waits out the diet.
 **Dates:** April to early October 1530, Julian reckoning, with an epilogue into 1531. Long play on
 two stages with a courier road between them, montage-heavy between set pieces.
-**Revision:** 2026-09 — pre-commitment slot numbers are permanent: retire a number, never renumber or reuse it.
+**Revision:** 2026-10 — save fields and coda added.
 
 ## Premise
 
@@ -1449,7 +1498,7 @@ fortress of his prince's land, and must fight the summer by courier.
 
 By the end of September the confession will have been signed by princes who believe they may be
 signing away their lands and necks, read aloud through open windows, answered, worked over by
-committees that come heartbreakingly close, and declared refuted. Nobody burns, and nobody is
+committees that come heartbreakingly close, and declared refuted. No confessor burns or is
 arrested. The sword hangs all summer and does not fall, and no one living through it knows that it
 won't.
 
@@ -1468,11 +1517,11 @@ got wrong.
 - **The diet.** Electors, princes, and cities deliberate in three colleges on the emperor's
   proposition, committees do the work, and it ends in a recess (*Abschied*) engrossed as imperial
   law, which is what the Speyer protest says no diet can make of God's business. Its instruments are
-  the **ban** (*Acht*), imperial outlawry, which lies on Luther and could be laid on princes;
-  **enfeoffment**, which Charles withholds from Saxony all summer; and the emperor's unstated needs:
-  the Turkish grant, a quiet Empire, and the electors' votes to make his brother **Ferdinand** King
-  of the Romans, Saxony's among them. Every hard word he does not say to the confessors has one of
-  these behind it.
+  the **ban** (*Acht*), imperial outlawry, which lies on Luther and could be laid on princes, and
+  **enfeoffment**, which Charles withholds from Saxony all summer. Behind them lie his unstated
+  needs: the Turkish grant, a quiet Empire, and the electors' votes to make his brother **Ferdinand**
+  King of the Romans, Saxony's among them. Every hard word he does not say to the confessors has one
+  of these behind it.
 - **The text.** No article on purgatory, and the papacy unnamed. Article IV, on justification, is
   the hinge; Article X, on the Supper, is worded so no Zwinglian can sign it. The German and Latin
   grew together and are not quite twins.
@@ -1501,15 +1550,15 @@ where it can, and signs nothing. All within a quarter hour's walk:
 - **The town hall** on the Perlach square: formal sessions, the colleges, the cities' bench.
 - **St. Anna**, the Carmelite house where Luther lodged in 1518 when Cajetan examined him. The
   delegations walk past it on purpose.
-- **The evangelical lodgings**, the Elector's above all, where the drafting table stands, each with
-  its painted arms over the door.
+- **The evangelical lodgings**, each with its painted arms over the door, the Elector's above all,
+  where the drafting table stands.
 - **The gates and the Lech bridges**, where princes, couriers, and rumor come and go.
 
 A financial city in high season: ink and coin, Italian and Spanish in the imperial train, inn yards
-packed with horses and oats a topic among princes. Heat on the Lech plain, thunderstorms off the
-Alps, canals smelling of the dyers. Spanish and Italian soldiers polite by daylight, a doubled
-watch, everyone counting companies. After mid-June, the silenced pulpits, and churches full for a
-plain reading of the Gospel.
+packed with horses, and oats a topic among princes. Heat on the Lech plain, thunderstorms off the
+Alps, canals smelling of the dyers. Spanish and Italian soldiers polite by daylight, a doubled watch,
+everyone counting companies. After mid-June, the silenced pulpits, and churches full for a plain
+reading of the Gospel.
 
 **The Coburg** is a strong fortress on its hill above a small town, the southernmost point of
 Electoral Saxony. Luther keeps two rooms and a writing table over woods where the jackdaws hold what
@@ -1525,7 +1574,7 @@ The default course of events, in six movements named for the diet's own papers, 
 the documents keep the calendar. Easter falls on 17 April and Corpus Christi on 16 June. Let the
 propers of a day speak for themselves.
 
-**Play near-daily** through 23 April–2 May in a road run, 15–25 June in every run (the slowest clock
+**Play near-daily** through 23 April–2 May in Jörg's run, 15–25 June in every run (the slowest clock
 in the scenario), 3–7 August, 22–23 September, and the Coburg days of 1–4 October. Montage the rest
 with heat, prices, Innsbruck rumor, and one face at the drafting table by candlelight. On the road,
 ride the leg where it rains on the letter that matters and summarize the others.
@@ -1564,7 +1613,7 @@ everything later spends.
   would kneel and have his head struck off, and the emperor, taken aback, says it will not come to
   heads off.
 - 16 Jun — Corpus Christi without them. In the next days every pulpit is silenced and imperial
-  readers read the text without comment. The case must now be made in writing.
+  readers read the day's Scripture without comment. The case must now be made in writing.
 - 20 Jun — The Mass of the Holy Spirit; the Elector, as Arch-Marshal, bears the sword before the
   emperor. The proposition is read, and the estates resolve to take the faith before the Turk.
 - 23 Jun — The text is settled in the evening before the princes and twelve theologians, and signed
@@ -1611,10 +1660,10 @@ everything later spends.
 - 23 Sep — The Elector leaves Augsburg, and the confessing estates follow, leaving councillors to
   watch the rump diet.
 - Late Sep — Bucer at the Coburg with a concord formula on the Supper, heard with guarded warmth.
-  Nothing is settled; a door is left ajar.
+  Nothing is settled; a road is left open.
 - 1–4 Oct — The Elector's party gathers at Coburg and Luther preaches. On the 4th the whole company
   rides north, the outlaw back in his prince's train. End here, on the road or at the Coburg's
-  table, with the player's reckoning of what was confessed and what it cost.
+  table.
 
 **Epilogue.** 19 Nov — The final recess, read without the confessors: the confession refuted, church
 property to be restored, the chamber court sharpened, a council promised. 22 Dec — The confessing
@@ -1648,8 +1697,8 @@ player's scale: households, clerks, couriers, landlords, gate-sergeants.
   wounded. He lies awake over the text, and his friends find him in tears at his papers more than
   once. His temptation is not cowardice but love, of peace, of the Church's unity, of the learned
   civility negotiation restores to him, and he will walk further toward Rome's ceremonies than any
-  man at the table before conscience stops him at doctrine. Kind to juniors, he remembers what you
-  read. Let the player feel why both sides of history's argument about his summer are right.
+  man at the table before conscience stops him at doctrine. Kind to juniors, he remembers what they
+  have read. Let the player feel why both sides of history's argument about his summer are right.
 - **Dr. Martin Luther.** Forty-six, four days away and present in every room: granite on doctrine,
   grace itself about everything else. See The courier interval, and Running Luther in the tone
   notes.
@@ -1700,32 +1749,30 @@ whose slow thaw toward their guest is a summer-long background pleasure.
 his border and the crown of the Romans dangling, harder than his brother and the whisper at his ear
 at the worst moments. **Duke George of Saxony**, the Elector's cousin, Philip's father-in-law, and
 the confessors' most learned lay enemy. **Joachim of Brandenburg**, hard. **Albrecht of Mainz**,
-cardinal and archchancellor, indebted, subtle, and softer than his college. **Bishop Christoph von
-Stadion**, the host, Erasmian and grieved by the breach, who will talk to Melanchthon when talking
-is unfashionable. **Dr. Johann Eck**, forty-four, the 404 Articles and half the Confutation:
-tireless, vain, poisonous, and partly sincere, formidable in committee and never a clown. **Johann
-Faber**, smooth and Vienna-bound, and **Johannes Cochlaeus**, who has made Luther a life's
-obsession. **Alfonso de Valdés**, the emperor's Latin secretary, Erasmian to the bone and the back
-channel; his soundings with Melanchthon before the reading are attested. Rising behind him,
-**Granvelle**, smoother and colder since Gattinara's death.
+cardinal and archchancellor, indebted, subtle, and softer than his college.
+**Bishop Christoph von Stadion**, the host, Erasmian and grieved by the breach, who will talk to
+Melanchthon when talking is unfashionable. **Dr. Johann Eck**, forty-three, the 404 Articles and half
+the Confutation: tireless, vain, poisonous, and partly sincere, formidable in committee and never a
+clown. **Johann Faber**, smooth and Vienna-bound, and **Johannes Cochlaeus**, who has made Luther a
+life's obsession. **Alfonso de Valdés**, the emperor's Latin secretary, Erasmian to the bone and the
+back channel. Rising behind him, **Granvelle**, smoother and colder since Gattinara's death.
 
 **Bench.** **Christian Beyer**, the second chancellor, vain of his voice and entitled to be (enters
 with the reading's preparations). **Lazarus Spengler** and the **Nuremberg envoys**, who sign, fret,
 pay, and forward the mail (wherever prudence is urged). **Michael Keller** and Augsburg's own
 preachers, beloved of the town and silenced (the preaching war). **Anton Fugger**, the money itself
-(wherever credit is discussed). **Martin Bucer**, Strasbourg's concord-broker (the cities' confession; the
-September road). **Urbanus Rhegius**, Augsburg's reformer, hired away
-by Lüneburg this summer. **Argula von Grumbach**, the Bavarian noblewoman who has written public
-theology since 1523, who visits the fortress in June and talks of the diet and of weaning babies.
-Texture until needed: the Spanish and Burgundian court, the nuncios, counts and abbots, the Turkish
-news like distant thunder, and offstage Wittenberg, where Katharina Luther keeps house, brewery, and
-anxiety.
+(wherever credit is discussed). **Martin Bucer**, Strasbourg's concord-broker (the cities'
+confession; the September road). **Urbanus Rhegius**, Augsburg's reformer, hired away by Lüneburg
+this summer. **Argula von Grumbach**, the Bavarian noblewoman who has written public theology since
+1523; she visits the fortress in June and talks of the diet and of weaning babies. Texture until
+needed: the Spanish and Burgundian court, the nuncios, counts and abbots, the Turkish news like
+distant thunder, and offstage Wittenberg, where Katharina Luther keeps house, brewery, and anxiety.
 
 ## Vantages
 
 Three invented men at the table, on the bench, and on the road. For Kaspar the text is the spine and
 the princes are weather; for Balthasar the coalition is the spine and the text its charter; for Jörg
-the letters are flesh and both cities are home. Each spread totals eight and may be redistributed.
+the letters are flesh and both cities are home.
 
 ### Master Kaspar of Grimma
 
@@ -1755,9 +1802,9 @@ alive. His family's lands lie a day's ride from Bavaria, as his brother reminds 
 whenever the margrave has been brave in public.
 
 **Learning 2, Rhetoric 2, Standing 3, Conscience 1.** He has spent his career keeping his prince out
-of avoidable danger, and his prince has decided this danger is the point. He has managed other men's
-payments and never made one; the summer will keep finding hours when managing is no longer a
-position, with the margrave watching his face.
+of avoidable danger, and his prince has decided this danger is the point. He has managed what other
+men's stands cost and never paid for one; the summer will keep finding hours when managing is no
+longer a position, with the margrave watching his face.
 
 **Opening.** A May evening in the margrave's lodgings: candles, unfinished protocols, and **Margrave
 George**, the only name, standing over the Saxon draft, unread because he has waited for his lawyer.
@@ -1769,14 +1816,14 @@ the margrave watching him over the candle and the counsel not yet decided.
 
 Twenty-two, a saddler's son from the Elector's town, two hungry years a student at Wittenberg, and
 the best rider in the delegation's service: the Coburg courier, with a sealed bag, the chancery's
-warrant for remounts, and instructions he can recite asleep. He is trusted on both stages because he
+warrant for remounts, and instructions he can recite asleep. He is welcome on both stages because he
 is small; nobody minds the courier in the corner.
 
 **Learning 1, Rhetoric 2, Standing 2, Conscience 3.** He carries other men's words and is trusted
 because he does not read them. The summer offers letters he ought to read, one he will wish he had
-never carried (he is the natural bearer of the news of 5 June), seals worth money to the wrong
-people, and, after 6 August, the question of what a saddlebag is worth. At each end of the road a
-great man is becoming something to him that is not quite master and not quite friend.
+never carried, seals worth money to the wrong people, and, after 6 August, the question of what a
+saddlebag is worth. At each end of the road a great man is becoming something to him that is not
+quite master and not quite friend.
 
 **Opening.** Before dawn on 24 April: the fortress's lower court in torchlight, the Elector's train
 winding out of the town below, and two men not leaving, **Dr. Luther** and **Veit Dietrich**, the
@@ -1828,13 +1875,11 @@ interestingly unshaded with Eck and the Bavarians. Jörg is unknown to the great
 second run Luther knows his name and asks after his mother. Luther's own line is The courier
 interval.
 
-**Factions** shift in prose. The confessing estates are a coalition, not a party, joined over the
-summer by Kempten, Heilbronn, Windsheim, and Weissenburg, and the emperor's men probe every seam.
-The Catholic majority is a spectrum: a war party (Duke George, Joachim, the Bavarian dukes),
-mediators (Mainz, Stadion, Vehus), and a middle that wants the grant settled and to go home. The
-excluded cities, and Zurich beyond them, are brethren estranged, allies wasted, or contagion, as the
-player treats them, and the city makes money, keeps order, and signs nothing. In the save state, the
-ledger compresses to the lines that have moved.
+**Factions.** The confessing estates are a coalition, not a party, joined over the summer by Kempten,
+Heilbronn, Windsheim, and Weissenburg, and the emperor's men probe every seam. The Catholic majority
+is a spectrum: a war party (Duke George, Joachim, the Bavarian dukes), mediators (Mainz, Stadion,
+Vehus), and a middle that wants the grant settled and to go home. The excluded cities, and Zurich
+beyond them, are brethren estranged, allies wasted, or contagion, as the player treats them.
 
 ## The courier interval
 
@@ -1861,7 +1906,7 @@ road's opening state:
 **Keep the mail on the page.** When a letter leaves, say so, with its day and its speed; that line
 is the whole record. On the day it is due it arrives, whatever else is happening, so let a crisis
 land on day three of a nine-day wait. Apart from what the player chooses to do, only slots 4 and 7
-lose or delay a letter. Letters in flight go in the save state's pending threads.
+lose or delay a letter.
 
 **Rebuild the answer; don't remember it.** When an answer arrives, build it from what was asked,
 from what else had reached him by the day he wrote, from his week on the calendar (the headaches,
@@ -1892,13 +1937,13 @@ after 6 August.
 ## Fixed and open
 
 **Fixed.** The calendar's public facts are the default and carry the full weight of history. Luther
-cannot come to Augsburg: the ban is law, the Elector will not have it, and Luther will not ask it,
-so treat a plan to smuggle him in as the household would, briefly, kindly, and as a young man's
-fever. The confession is Melanchthon's pen; others counsel, and no one else drafts. **The confessors
-will not trade doctrine.** Practices can be negotiated to the edge of grief, but on justification
-and its neighbors the line holds, because it is not theirs to move, as Hus's oath was not his. The
-emperor's piety is sincere, the council promised in the recess is one Rome does not intend, the
-sword does not fall, and nobody is arrested or harmed in body.
+cannot come to Augsburg: the ban is law, the Elector will not have it, and Luther will not ask it, so
+treat a plan to smuggle him in as the household would, briefly, kindly, and as a young man's fever.
+The confession is Melanchthon's pen; others counsel, and no one else drafts.
+**The confessors will not trade doctrine.** Practices can be negotiated to the edge of grief, but on
+justification and its neighbors the line holds, because it is not theirs to move, as Hus's oath was
+not his. The emperor's piety is sincere, the council promised in the recess is one Rome does not
+intend, and the sword does not fall on the confessing estates or any named man of theirs.
 
 **Open.** Everything at the player's scale: whose letters move and whose are read at the gates, what
 the reconstruction captures, which drafts leak and who is blamed, how the excluded are spoken to,
@@ -1917,9 +1962,10 @@ Fourteen or the Six.
 
 **Not doors.** Article X's wording will not move, but its manner is open: warnings carried, insults
 unspoken, Bucer's road paved or mined. The concord of 1536 cannot come six years early; the epilogue
-says which road it left. The sword not falling is fixed, but how near it swings is not: reckless
-play in August costs an arrest scare, a friend's ruin, a city's nerve broken, or the player's own
-flight north.
+says which road the summer left toward it. The sword not falling is fixed, but how near it swings is
+not: reckless play in August costs an arrest scare, a friend's ruin, a city's nerve broken, or the
+player's own flight north, and an invented man who presses past every warning can be taken at a gate
+or die on the road.
 
 ## The doors
 
@@ -1941,14 +1987,13 @@ whole.
   match the triumph. *Partial:* more agreed than history, a softer recess, and the same rocks.
 - **The standstill** (Standing; Balthasar's door). In 1532, needing the Turkish grant, Charles
   granted the confessing estates peace until a council. This door is that bargain two years early.
-  *Window:* 28 August to 22 September. *Gate:* the offer meets the need slot 3 names: the grant
-  under **a**, Saxony's vote for Ferdinand under **b**, a cheap end under **d**; under **c** the
-  door is shut. *Conditions:* the confessing estates united behind the offer, the cities' money
-  included; a mediator of weight to carry it, Mainz or Stadion; and a voice for it in the emperor's
-  council, Granvelle's or Valdés's. *Success* is a draft recess of peace until a council instead of
-  refutation, with Rome, the legate, and the Bavarians furious and the price paid in full: the
-  grant, or the Elector's vote, which to him betrays the protest he signed. *Partial:* a longer term
-  and softer words.
+  *Window:* 28 August to 22 September. *Gate:* the offer meets the need slot 3 names: the grant under
+  **a**, Saxony's vote for Ferdinand under **b**, a cheap end under **d**; under **c** the door is
+  shut. *Conditions:* the confessing estates united behind the offer, the cities' money included; a
+  mediator of weight to carry it, Mainz or Stadion; and a voice for it in the emperor's council,
+  Granvelle's or Valdés's. *Success* is a draft recess of peace until a council instead of
+  refutation, with Rome, the legate, and the Bavarians furious and the price paid in full: the grant,
+  or the Elector's vote. *Partial:* a longer term and softer words.
 - **The landgrave** (Conscience; Jörg's door). Philip's flight nearly turned the summer hot.
   *Window:* 3–6 August. *Gate:* what the player brings meets Philip's reason (slot 8). *Conditions:*
   knowing beforehand, as a courier who knows the gates and stables might, or a councillor close to
@@ -1959,6 +2004,29 @@ whole.
   *Partial:* he goes, but his leave-taking letter blunts the emperor's fury and the gates stay open.
 
 A player may work more than one door, and any door is open to anyone with the stat to reach it.
+
+## The coda
+
+It falls in the epilogue's months. The record, by vantage: for Kaspar, the printed confession and
+Apology of spring 1531, where his fair copies' wording survives or doesn't; for Balthasar, the
+recess of 19 November, which makes the summer law; for Jörg, the chancery's post book, a line for
+each run. The reader: a Wittenberg student with the new quarto, asking Kaspar what *our churches
+teach* cost to write; Balthasar's brother; Katharina Luther, asking Jörg about the other end of
+the road.
+
+## Save state
+
+`Scenario state` fields, from the opening:
+
+- **texts**: which versions the player has seen, held, copied, or memorized. This is provenance here.
+- **mail**: every letter in flight, with day sent, pace, and day due.
+- **Coburg**: the last letter Luther has received, so he answers only what has reached him.
+- **Luther**: his regard for the player, in a phrase.
+- **road**: any stage whose temper has moved from the opening table.
+- **suspicion**: who is suspected of the leak, the player included.
+
+From 3 August, **doors**: for each door worked, which conditions are genuinely in place. From 22
+September, **recess**: where the player is bound.
 
 ## Pre-commitment
 
@@ -1989,8 +2057,8 @@ c. A lame horse in August: Luther's sharpest letter lands days late, into a room
 decided.
 
 **5 — The ear in the player's lodging.**
-a. The widow reads what is left out. Her purse runs to Duke George's man and her heart to the
-silenced preachers, and the right appeal can turn her.
+a. The widow who keeps the player's lodging reads papers left lying out. Her purse runs to Duke
+George's man and her heart to the silenced preachers, and the right appeal can turn her.
 b. A servant takes Duke George's coin, and takes it badly, being new at it.
 c. The house is clean. Suspecting it is the story, and it costs the player a friend.
 
@@ -2039,10 +2107,10 @@ Ingolstadt years.
   people the player loves. On screen at the Coburg he is ill, grieving, working, praying, funny at
   table, and never uncertain about the doctrine: neither plaster saint nor shouting caricature, and
   never spent cheaply.
-- **The ornaments.** Stage the attested ones as the calendar gives them. Stage as reported,
-  believed, and repeated the emperor's broken-German words to the margrave, the princes unbowed at
+- **The ornaments.** Stage the attested ones as the calendar gives them. Stage these as reported,
+  believed, and repeated: the emperor's broken-German words to the margrave, the princes unbowed at
   the blessing, *Non moriar sed vivam* chalked on the fortress wall, and Brück's promise at the
-  handover that the confession will prevail against the gates of hell. Keep in mouths only the
+  handover that the confession will prevail against the gates of hell. Keep these in mouths only: the
   emperor dozing through the reading, Duke William of Bavaria's quip that the confession could be
   refuted from the Fathers but not from Scripture, and any claim that *Ein feste Burg* was born at
   the Coburg.
@@ -2062,7 +2130,7 @@ Easter, and, beneath the moons and the tables, whose authority binds the Church 
 waters and roads that bring the parties there and carry them away.
 **Dates:** Lent to late autumn 664, Julian reckoning. A few days at the center played nearly hour by
 hour, and the weeks on either side at montage grain.
-**Revision:** 2026-09 — pre-commitment slot numbers are permanent: retire a number, never renumber or reuse it.
+**Revision:** 2026-10 — save fields and coda added.
 
 ## Premise
 
@@ -2081,7 +2149,7 @@ grown teeth: the king's son Alhfrith, under-king of Deira, has taken up Rome's c
 the young abbot Wilfrid, and turned out the Irish-formed monks who would not conform. The king
 summons both parties to the abbess Hild's house to argue it to a ruling in his presence.
 
-He will rule for Rome, courteously and completely, and nobody will be tried or touched. The grief is
+He will rule for Rome, courteously and completely, and nobody will be tried or punished. The grief is
 real anyway: Colmán will lay down the see Aidan carried and go north with part of Aidan's bones and
 every Irish brother, and the Church of the English will turn toward Canterbury and Rome for good.
 None of the people converging on the headland know this.
@@ -2089,14 +2157,13 @@ None of the people converging on the headland know this.
 ## What the GM needs
 
 - **The road here.** 597: Augustine lands in Kent. 627: Edwin is baptized at York at Easter, Hild
-  among his household at thirteen. 12 October 633: Edwin falls, and Paulinus takes the queen and her
-  children, Eanflæd among them at seven, south by sea, leaving the deacon James, who is alive still.
-  634–635: Oswald wins at Heavenfield, asks Iona for a bishop, and gives Aidan Lindisfarne,
-  interpreting his Irish for the thegns himself. 642: Oswiu succeeds his brother. August 651: Oswiu
-  has Oswine of Deira killed; Aidan dies within the fortnight, and Finan succeeds. 15 November 655:
-  at the Winwaed Oswiu vows his infant daughter and twelve estates, wins, and keeps both vows; in
-  657 Hild founds Streanæshalch, likely on one of them. 661: Colmán succeeds Finan. The early 660s:
-  Ripon.
+  among his household. 12 October 633: Edwin falls, and Paulinus takes the queen and her children
+  south by sea, leaving the deacon James, who is alive still. 634–635: Oswald wins at Heavenfield,
+  asks Iona for a bishop, and gives Aidan Lindisfarne, interpreting his Irish for the thegns himself.
+  642: Oswiu succeeds his brother. August 651: Oswiu has Oswine of Deira killed; Aidan dies within
+  the fortnight, and Finan succeeds. 15 November 655: at the Winwaed Oswiu vows his infant daughter
+  and twelve estates, wins, and keeps both vows; in 657 Hild founds Streanæshalch, likely on one of
+  them. 661: Colmán succeeds Finan. The early 660s: Ripon.
 - **Why now.** Not the arithmetic: the two Easters have parted in most years of the royal marriage.
   The change is political. Ripon has made two usages into two parties, the southern kingdoms under
   Oswiu's overlordship look to Canterbury, and a king who means to be obeyed cannot preside over two
@@ -2105,14 +2172,13 @@ None of the people converging on the headland know this.
   elders and the use of the universal Church part, which binds? Both sides argue in good conscience,
   and neither position is a heresy.
 - **Guards.** There is no "Celtic Church" facing a "Roman Church": one Church keeps two usages,
-  "Roman" is this file's shorthand, and the period's own word for the winners is *catholic*.
-  *Scotti* means the Irish wherever they live, Iona included. Iona keeps Easter on a Sunday, always;
-  the jibe that it keeps Passover with the Jews ("Quartodeciman") lives only in partisan mouths, as
-  does "the tonsure of Simon Magus," which belongs to later letters. The southern Irish already keep
-  the Roman Easter. Colmán's "Anatolius" is the *Liber Anatolii*, an Irish book under the old
-  father's name, while the real Anatolius, read in Eusebius, used a nineteen-year cycle, as Wilfrid
-  says; no one in 664 knows the book is not his. Streanæshalch is Whitby by a thousand years'
-  tradition, though some scholars prefer Strensall near York; no character doubts where they stand.
+  "Roman" is this file's shorthand, and the period's own word for the winners is *catholic*. *Scotti*
+  means the Irish wherever they live, Iona included. Iona keeps Easter on a Sunday, always; the jibe
+  that it keeps Passover with the Jews ("Quartodeciman") lives only in partisan mouths, as does "the
+  tonsure of Simon Magus." The southern Irish already keep the Roman Easter. Colmán's "Anatolius" is
+  the *Liber Anatolii*, an Irish book under the old father's name, while the real Anatolius, read in
+  Eusebius, used a nineteen-year cycle, as Wilfrid says; no one in 664 knows the book is not his.
+  Streanæshalch is Whitby by a thousand years' tradition, and no character doubts where they stand.
 
 ## The ground
 
@@ -2154,12 +2220,11 @@ and which days of the moon the Sunday may fall on.
 | Kept by | Iona and its daughters, the northern Irish, the Britons, and the Picts | Gaul, by law since 541 | Rome, the southern Irish, and Wilfrid |
 
 **This year.** By the latercus Easter 664 fell on 14 April; by Dionysius, on 21 April, so the king's
-feast fell on the queen's Palm Sunday. (The one surviving copy of Iona's table, restored, and an
-older reconstruction agree on this; another differs.) The moon was truly full on the night of 16
-April, two nights after the king's feast, so Wilfrid's charge that Iona sometimes keeps Easter
-before the full moon was written in this spring's sky for anyone who watched it. In 665 both tables
-give 6 April: one more year and the calendars would have agreed of themselves. Let a learned
-character find that and feel its weight.
+feast fell on the queen's Palm Sunday. The moon was truly full on the night of 16 April, two nights
+after the king's feast, so Wilfrid's charge that Iona sometimes keeps Easter before the full moon was
+written in this spring's sky for anyone who watched it. In 665 both tables give 6 April: one more
+year and the calendars would have agreed of themselves. Let a learned character find that and feel
+its weight.
 
 After the ruling the king's Eastertide lengthens by a week: his Ascension moves from 23 to 30 May
 and his Pentecost from 2 to 9 June. Which Roman table the ruling installed, and which the queen's
@@ -2168,11 +2233,11 @@ world.
 
 ## The calendar
 
-**Pacing.** Weeks at the edges, hours at the center. Play nearly hour by hour from the first supper
-through the night after the ruling; give full scenes to one arrival per vantage, the first supper,
-the day of words, the night after, the going, the leave-taking wherever the player stands, and the
-player's season's end. Montage the rest. The same errand changes price as the days turn: a word with
-Colmán is easy the first evening, a discretion after the ruling, and a grief at the gate.
+**Pacing.** Play nearly hour by hour from the first supper through the night after the ruling; give
+full scenes to one arrival per vantage, the first supper, the day of words, the night after, the
+going, the leave-taking wherever the player stands, and the player's season's end. Montage the rest.
+The same errand changes price as the days turn: a word with Colmán is easy the first evening, a
+discretion after the ruling, and a grief at the gate.
 
 The synod's month is unrecorded. Dates marked † are this file's default, not the record.
 
@@ -2181,19 +2246,18 @@ The synod's month is unrecorded. Dates marked † are this file's default, not t
 - **21 April** — Easter by the Roman tables. The queen's household feasts a week into the king's
   Eastertide.
 - **24–25 April†** — The parties converge. The first supper is on the evening of the 25th.
-- **26 April, Friday†** — The day of words, and the ruling. It may breathe into two sessions with
-  the night between.
+- **26 April, Friday†** — The day of words, and the ruling. It may breathe into two sittings with the
+  night between.
 - **27 April†** — The night after, and the morning: Colmán's resolve.
 - **28 April†** — The octave of the Roman Easter, the first Sunday the house keeps by one reckoning.
 - **1 May, Wednesday** — The sun fails at about the tenth hour. The moon's shadow runs straight
   across the headland: more than two minutes of totality, the sun low in the west over the moors,
-  stars in the afternoon. By default it falls on the day of the going. Its meaning arrives as three
-  witnessed readings, one from each party and one from someone in neither, each fixed when first
-  spoken and never the narrator's. Bede will record it under 3 May, two days off the sky's date.
+  stars in the afternoon. By default the going is this day. Its meaning arrives as three witnessed
+  readings, one from each party and one from someone in neither, each fixed when first spoken and
+  never the narrator's. Bede will record it under 3 May, two days off the sky's date.
 - **Early summer** — At Lindisfarne, Colmán lays down the see and asks, and is granted, Eata of
   Melrose as abbot of the brothers who remain. He leaves part of Aidan's bones in the church and
-  takes part, and goes to Iona with all the Irish and about thirty English. Tuda, schooled and
-  consecrated among the southern Irish and Roman in use, becomes bishop.
+  takes part, and goes to Iona with all the Irish and about thirty English. Tuda becomes bishop.
 - **30 May** — Ascension, the first great feast the kingdom keeps as one.
 - **14 July** — In Kent, Archbishop Deusdedit and King Eorcenberht die on the same day. The
   pestilence is in the south, and Canterbury stays vacant for nearly five years. Northumbria hears
@@ -2250,11 +2314,10 @@ language line; a player may bend its temperature, never its content.
    contradict him, but will obey his decrees in all things as far as he knows and is able, lest he
    come to the doors of heaven and find none to open them. All present, great and small, assent.
 
-**On the day.** Slot 1 colors every look the king gives, but his words land as law regardless, and
-Bede's plain reading, a king persuaded in conscience, stays possible at every table. Stephen, not
-Bede, has the king smile as he asks; let one character remember a smile and another none. The record
-gives Colmán no answer to the ruling: honor that silence, and render what he does with his face, his
-hands, and his men in that minute.
+**On the day.** Slot 1 colors every look the king gives, but his words land as law regardless.
+Stephen, not Bede, has the king smile as he asks; let one character remember a smile and another
+none. The record gives Colmán no answer to the ruling: honor that silence, and render what he does
+with his face, his hands, and his men in that minute.
 
 ## Cast
 
@@ -2264,17 +2327,16 @@ within it, and invent freely only at the player's scale.
 **Core — every run**
 
 - **Oswiu, King of Northumbria.** About fifty-two, king for twenty-two years, overlord of much of
-  Britain, though Mercia threw off his rule in 658. Reared in Irish exile, baptized and taught by
-  the Irish, fluent in their tongue, and truly formed by them; also the man who had Oswine killed
-  and founded Gilling in penance at the queen's asking. His piety and his statecraft are both real
-  and long past separating, even to himself. He loves Colmán for his wisdom and is proud of Wilfrid
-  the way a king is proud of a fine sword someone else owns.
+  Britain, though Mercia threw off his rule in 658. Reared in Irish exile, and baptized, taught, and
+  truly formed there; also the man who had Oswine killed and founded Gilling in penance at the
+  queen's asking. His piety and his statecraft are both real and long past separating, even to
+  himself. He loves Colmán for his wisdom and is proud of Wilfrid the way a king is proud of a fine
+  sword someone else owns.
 - **Colmán, Bishop of Lindisfarne.** Irish, of Iona, third of Aidan's line and three years in the
   see. A monk-bishop of the old pattern, austere and unmoneyed, his Lindisfarne a church, a few
   houses, and cattle. He holds the tradition as an inheritance from men whose sanctity he saw. His
-  Latin is strong, his English halting, and his speech plain: he states where Wilfrid performs. The
-  record's grace note, that the king loved him to the end and granted his last request, shades every
-  scene they share.
+  speech is plain: he states where Wilfrid performs. The record's grace note, that the king loved him
+  to the end and granted his last request, shades every scene they share.
 - **Wilfrid, Abbot of Ripon.** About thirty and noble-born, placed at Lindisfarne at fourteen by the
   queen's favor, so that he loved what he now argues against. Then Kent, then Rome, where an
   archdeacon taught him the Easter reckoning, then three years at Lyon and the Roman tonsure; now
@@ -2334,16 +2396,15 @@ within it, and invent freely only at the player's scale.
 
 Three allegiances in one small hall, where everyone hears the same speeches from thirty feet away;
 what differs is what the ruling costs. For the house the spine is hospitality and a divided heart,
-for Lindisfarne the departure choice, and for Ripon what winning is made of. Each spread totals
-eight and may be redistributed.
+for Lindisfarne the departure choice, and for Ripon what winning is made of.
 
 ### Beornwine or Berhtgyth of Streanæshalch
 
-Early twenties, Deiran, given as a child to Hild's house at Hartlepool and brought here with her;
-now under the guest-master or, as Berhtgyth, the guest-mistress, as the player chooses. Irish-formed
-to the roots like the whole house: the tonsure or the veil, psalms half-glossed in Irish, Aidan's
-stories told as family memory. This week the player holds keys, stores, beds, and seating: power
-that looks exactly like service. Tongues: native English, good Irish, church Latin.
+Early twenties, Deiran, given as a child to Hild's house at Hartlepool and brought here with her; now
+under the guest-master or, as Berhtgyth, the guest-mistress. Irish-formed to the roots like the whole
+house: the tonsure or the veil, psalms half-glossed in Irish, Aidan's stories told as family memory.
+This week the player holds keys, stores, beds, and seating: power that looks exactly like service.
+Tongues: native English, good Irish, church Latin.
 
 **Learning 2, Rhetoric 1, Standing 2, Conscience 3.** The house must host its own defeat, serve it
 graciously, and obey it, and a servant with the keys hears everything and is asked, sooner or later,
@@ -2418,10 +2479,11 @@ them.
 
 There is no count to keep, because the only vote is the king's. The ledger tracks how each soul and
 house will receive the ruling. Each line is warmth toward the player, then where they land: conforms
-gladly, conforms grieving, departs, or wavers, and for the winners, how they carry victory. Rebuild
-it before the day of words, after the ruling, at the going, and at the epilogue, which pays every
-moved entry honestly. The player reads it as posture: who eats, who lingers in the church after
-Compline, whose Latin gets shorter, who begins giving small things away. Opening state:
+gladly, conforms grieving, departs, wavers, or already keeps the Roman use, and for the winners, how
+they carry victory. Rebuild it before the day of words, after the ruling, at the going, and at the
+coda, which pays every moved entry honestly. The player reads it as posture: who eats, who lingers in
+the church after Compline, whose Latin gets shorter, who begins giving small things away.
+Opening state:
 
 - **Oswiu** — courteous and distant / rules as slot 1 moves him; afterward keeps the ruling and
   grieves Colmán.
@@ -2430,13 +2492,14 @@ Compline, whose Latin gets shorter, who begins giving small things away. Opening
 - **Hild** — a mother to her own, measuring with guests / conforms grieving, fixed, and takes her
   house with her.
 - **Cedd** — warm and tired / conforms without theater, fixed.
-- **Wilfrid** — gracious to the useful, blind to servants / conforms gladly; in victory, hard.
-- **Agilbert** — wry and remote / conforms gladly; in victory, already leaving.
+- **Wilfrid** — gracious to the useful, blind to servants / already keeps the Roman use; in victory,
+  hard.
+- **Agilbert** — wry and remote / already keeps the Roman use; in victory, half gone.
 - **Alhfrith** — bright, careless of the small / wants Lindisfarne emptied as Ripon was.
-- **James** — gentle to everyone / conforms gladly; in victory, generous, wanting only to sing the
-  feast together.
-- **Romanus** — courteous and exact / conforms gladly; in victory, patient.
-- **Eanflæd** — reserved / conforms gladly; in victory, quiet.
+- **James** — gentle to everyone / already keeps the Roman use; in victory, generous, wanting only to
+  sing the feast together.
+- **Romanus** — courteous and exact / already keeps the Roman use; in victory, patient.
+- **Eanflæd** — reserved / already keeps the Roman use; in victory, quiet.
 - **Tuda** — gentle / already keeps the Roman use, and hopes no one leaves.
 - **Eata** — gentle and far off / conforms grieving; takes Lindisfarne if asked.
 - **Tidwulf of Lindisfarne** — warm to anyone who speaks of Aidan / wavers. Old, one of the first
@@ -2459,16 +2522,14 @@ Wilfrid half remembers him as a small boy at Lindisfarne. Cuthwine is Wilfrid's 
 to Alhfrith, shaded in Colmán's company, and a stranger to Wulfhard until the summer introduces
 them.
 
-**Factions** shift in prose. The Ionan party (Colmán and his brothers, Streanæshalch by formation,
-Cedd by every tie but the one that decides, and most of the north's clergy) holds the elder use and
-the king's upbringing, and loses, splitting between those who cannot conform and those who cannot
-leave. The Roman party (Alhfrith, Ripon, Agilbert, James, Romanus, and the queen's household) is
-smaller than its victory will make it look. To the king's thegns it is moon-arithmetic until he
-rules, and then it is law. Offstage, with weight: Iona, whose answer is Colmán's road home;
-Canterbury, silent all year and vacant from July; Mercia and Essex, where Lindisfarne's missions
-must live with the ruling; the Britons and Picts, present only as the men Wilfrid's sentence wounds;
-and the plague. In the save state the ledger compresses to the lines that moved, plus who is going
-and who still wavers.
+**Factions.** The Ionan party (Colmán and his brothers, Streanæshalch by formation, Cedd by every tie
+but the one that decides, and most of the north's clergy) holds the elder use and the king's
+upbringing, and loses, splitting between those who cannot conform and those who cannot leave. The
+Roman party (Alhfrith, Ripon, Agilbert, James, Romanus, and the queen's household) is smaller than
+its victory will make it look. To the king's thegns the question is moon-arithmetic until he rules,
+and then it is law. Offstage, with weight: Iona, whose answer is Colmán's road home; Canterbury,
+silent all year and vacant from July; Mercia and Essex, where Lindisfarne's missions must live with
+the ruling; the Britons and Picts, present only as the men Wilfrid's sentence wounds; and the plague.
 
 ## The tongues of the hall
 
@@ -2510,8 +2571,8 @@ about the sixth of April.
 **Fixed.** The calendar's public facts and the spine of the day of words carry the full weight of
 history. **Colmán will not conform**: that is the man, like Hus's oath at Constance, and no
 brilliance moves it. **Cedd interprets faithfully**; a plot that needs him to shade a rendering is a
-plot against bedrock. Hild's sympathy is Iona's use and her house conforms, both fully. Nobody is
-arrested, tried, or harmed in body, and no one unchurches the other side, the narrator included.
+plot against bedrock. Hild's sympathy is Iona's use and her house conforms, both fully. No one is
+arrested or tried over the ruling, and no one unchurches the other side, the narrator included.
 
 **Open.** Everything at the player's scale, and every room the record never reaches, which here is
 nearly all of them. The week's temperature: whether the parties eat together by the second night,
@@ -2543,7 +2604,8 @@ rules.
 there: whether Wilfrid's wound festers or is dressed, whether the going is a rite or a rout, whether
 Lindisfarne receives Eata with a generation's bitterness or with the start of the peace Cuthbert
 will finish. The ledger holds all of it. The plague is weather: no act saves Cedd, Tuda, or Boisil,
-though a player may change who is with them at the end and what the one boy at Lastingham remembers.
+though a player may change who is with them at the end and what the one boy at Lastingham remembers;
+like weather, it can take a player who walks into it.
 
 ## The doors
 
@@ -2601,6 +2663,30 @@ whole.
 
 A player may work more than one door, and any door is open to anyone with the stat to reach it.
 
+## The coda
+
+The record is the year's annal, written in the margin of an Easter table beside 664: the house's new
+Roman table, Ripon's, or the chronicle kept on Iona, wherever the player went. The reader: a clerk of
+Theodore's after 669, asking the house how the north received it; an elder of Iona, or Eata's
+novices, asking Sigewine what was said in the hall; a young monk of Ripon, years on, gathering
+memories of Wilfrid from Cuthwine.
+
+## Save state
+
+`Scenario state` fields, from the first supper:
+
+- **heard**: what the player heard in the tongue it was spoken, what came through a rendering and
+  whose, and any reckoning worked in their own hand. This is provenance here.
+- **renderings**: each time the player carried speech across the language line, which way they
+  bent it, and who noticed.
+- **temper**: who eats together, how the sentence about the islands was answered, whether Wilfrid's
+  wound festers.
+- **doors**: for each door worked, which conditions are genuinely in place.
+
+From the ruling, **boat**: who goes north and who still wavers. From the going, **eclipse**: each
+reading as first spoken. From summer, **plague**: how near it is to the player; and **season's end**:
+where the player is bound.
+
 ## Pre-commitment
 
 **1 — The king's inner weather.** What carries the ruling this run. Never state it; let it color
@@ -2650,7 +2736,7 @@ d. None of them. All three stay, and Tidwulf's staying curdles.
 **8 — The guest-houses' ear.** Nearly everyone tells the abbess everything, and she never says so;
 this slot is who else carries the parties' talk, and to whom.
 a. The cellaress's nephew, a lay boy with some Irish, for Alhfrith's steward and a little silver.
-b. Romanus's servant, listening for the queen, whose Irish is worse than he thinks; what he carries
+b. Romanus's servant, whose Irish is worse than he thinks, listening for the queen; what he carries
 is wrong in one particular, fixed when it first matters.
 c. No one. The house leaks only to its mother, and suspecting a friend costs the player that friend.
 
