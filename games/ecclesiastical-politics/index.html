@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#fdf8f2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#16131d" media="(prefers-color-scheme: dark)">
   <title>Ecclesiastical Politics — A Church History Text Adventure</title>
-  <meta name="description" content="A free church-politics text adventure for AI chatbots: a bishop's election, Jan Hus at Constance, Luther and the Augsburg Confession, and the Synod of Whitby.">
+  <meta name="description" content="A free church-politics text adventure for AI chatbots: a snowbound priory, a bishop's election, Jan Hus, Luther at Augsburg, and the Synod of Whitby.">
   <meta property="og:title" content="Ecclesiastical Politics — A Church History Text Adventure">
-  <meta property="og:description" content="A free church-politics text adventure for AI chatbots: a bishop's election, Jan Hus at Constance, Luther and the Augsburg Confession, and the Synod of Whitby.">
+  <meta property="og:description" content="A free church-politics text adventure for AI chatbots: a snowbound priory, a bishop's election, Jan Hus, Luther at Augsburg, and the Synod of Whitby.">
   <meta property="og:type" content="article">
   <link rel="canonical" href="https://llmtextgames.xyz/games/ecclesiastical-politics/">
   <meta property="og:url" content="https://llmtextgames.xyz/games/ecclesiastical-politics/">
@@ -19,7 +19,7 @@
     "@type": "Game",
     "name": "Ecclesiastical Politics",
     "url": "https://llmtextgames.xyz/games/ecclesiastical-politics/",
-    "description": "A literary text adventure of medieval and early-modern church politics (cathedral chapters, ecumenical councils, synods, and imperial diets), run by an AI game master. A world-plus-scenarios skill with four scenarios, from the Synod of Whitby (664) to the Augsburg Confession (1530).",
+    "description": "A literary text adventure of medieval and early-modern church politics (priory and cathedral chapters, ecumenical councils, synods, and imperial diets), run by an AI game master. A world-plus-scenarios skill with five scenarios, from the Synod of Whitby (664) to the Augsburg Confession (1530).",
     "genre": [
         "Interactive fiction",
         "Text adventure",
@@ -67,16 +67,20 @@
       </div>
       <p>
         A literary text adventure set inside medieval and early-modern church assemblies:
-        cathedral chapters, ecumenical councils, synods, and imperial diets. Work through
+        priory and cathedral chapters, ecumenical councils, synods, and imperial diets. Work through
         elections, theological disputes, and factional politics with Learning, Rhetoric,
         Standing, and Conscience. The tone is theologically serious and politically
         textured, set in a world of stone and incense and winter light.
       </p>
       <p>
-        Built as a shared rules layer plus scenarios, each with three starting
-        characters to choose from. Four scenarios so far:
+        Built as a shared rules layer plus scenarios, most with three starting
+        characters to choose from. Five scenarios so far:
       </p>
       <ul>
+        <li><strong>The Gatehouse</strong> (fictional, 1240) — snow shuts seven
+          canons, a bishop's official, and a dead man inside a Pennine priory for three
+          days, with one question: whether a lord who died excommunicate may be absolved
+          and buried in hallowed ground. The shortest scenario, and a good first game.</li>
         <li><strong>The Chapter House</strong> (fictional, about 1220) — eighteen canons
           elect a new bishop for a German prince-bishopric, in one cloister, over one
           winter, by a vote taken aloud by name.</li>
@@ -90,7 +94,7 @@
           who must choose between them in a single afternoon, then a season of living
           with what he chose.</li>
       </ul>
-      <p class="game-length"><strong>Session length:</strong> Multi-session. Each scenario covers weeks to months of in-game time and will likely span several sittings (and possibly multiple chat windows, depending on how well your LLM handles long context).</p>
+      <p class="game-length"><strong>Session length:</strong> Multi-session. Most scenarios cover weeks to months of in-game time and will likely span several sittings (and possibly multiple chat windows, depending on how well your LLM handles long context). The Gatehouse covers three days and is the shortest.</p>
       <div class="download-row">
         <a class="btn btn-primary" href="../../downloads/ecclesiastical-politics.skill" download>Download skill file</a>
         <a class="btn btn-secondary" href="#full-text">View full text</a>
@@ -111,6 +115,11 @@
         before, during, or after you play. They're in the download, too.
       </p>
       <div class="card-grid">
+        <div class="game-card">
+          <h3 class="game-card-title"><a href="history/gatehouse/">The Gatehouse</a></h3>
+          <p>Austin canons, excommunication, and burial for a man who died under the sentence.</p>
+          <span class="game-card-cta" aria-hidden="true">Read the history →</span>
+        </div>
         <div class="game-card">
           <h3 class="game-card-title"><a href="history/cathedral-chapter/">The Chapter House</a></h3>
           <p>Cathedral chapters, prince-bishops, and how a bishop was elected in 1220.</p>
@@ -150,11 +159,13 @@
       <div class="file-tree" tabindex="0" role="region" aria-label="Files in this skill">ecclesiastical-politics/
 ├── SKILL.md
 ├── references/
+│   ├── gatehouse.md
 │   ├── cathedral-chapter.md
 │   ├── council-of-constance.md
 │   ├── augsburg-confession.md
 │   └── synod-of-whitby.md
 └── history-for-humans/
+    ├── gatehouse.md
     ├── cathedral-chapter.md
     ├── council-of-constance.md
     ├── augsburg-confession.md
@@ -166,7 +177,7 @@
           <button class="copy-btn" type="button">Copy</button>
           <pre>---
 name: "ecclesiastical-politics"
-description: "Run a turn-based text adventure of ecclesiastical politics — cathedral chapters, ecumenical councils, and reformation diets. Use this skill ONLY when the user explicitly asks to play \"ecclesiastical politics\", \"the church politics game\", a church-council or chapter-election game, or one of its named scenarios (Council of Constance, Augsburg Confession, Synod of Whitby, cathedral chapter election), or asks to continue a previous session of this game. Do NOT trigger when church history merely comes up — mentioning Hus, Melanchthon, Constance, Augsburg, or Whitby in conversation is not a request to play.\n"
+description: "Run a turn-based text adventure of ecclesiastical politics — priory and cathedral chapters, ecumenical councils, and reformation diets. Use this skill ONLY when the user explicitly asks to play \"ecclesiastical politics\", \"the church politics game\", a church-council or chapter-election game, or one of its named scenarios (The Gatehouse, Council of Constance, Augsburg Confession, Synod of Whitby, cathedral chapter election), or asks to continue a previous session of this game. Do NOT trigger when church history merely comes up — mentioning Hus, Melanchthon, Constance, Augsburg, or Whitby in conversation is not a request to play.\n"
 ---
 
 # Ecclesiastical Politics — Game Master Skill
@@ -326,7 +337,8 @@ fixed from then on.
 Each scenario lists numbered questions with lettered answers. After character creation, decide
 every one and print the result as a compact string — `1b 2c 3a 4c 5a 6b` — without explanation:
 a paper GM screen the player has agreed not to study. Whatever the scenario leaves unlettered is
-fixed, within its guidance, the first time it reaches the page.
+fixed, within its guidance, the first time it reaches the page. A scenario may also mark a truth
+as never decided: no slot holds it, nothing in play reveals it, and the narrator never hints at it.
 
 The most dramatic answer is never the default, and neither is the first one listed. A committed
 fact does not move — not when the player theorizes cleverly and wrongly, not when the truth
@@ -464,6 +476,10 @@ Recent events: [three to six terse lines]
 
 ## Scenarios
 
+- **The Gatehouse** (fictional, 1240) — `gatehouse.md`. Snow has shut seven canons, a bishop's
+  official, and a dead man inside a Pennine priory. Three days and one question: whether a lord
+  who died excommunicate may be absolved and laid in hallowed ground. The shortest scenario, and a
+  good first game.
 - **The Chapter House** (fictional, about 1220) — `cathedral-chapter.md`. The bishop is dead, and
   eighteen men who have prayed together for thirty years must choose his successor. A German
   prince-bishopric, one cloister, one winter, and a vote taken aloud by name.
@@ -488,7 +504,8 @@ Every scenario's main file defines these, and the rules above lean on them:
 - **Provenance**: this assembly's form of it.
 - **Signature mechanic**: what this assembly does that no other scenario does, and how it plays.
 - **Fixed and open**: what cannot be contradicted, what the player can move, what the ceiling
-  leaves to an invented person, and where the doors to altering the year are.
+  leaves to an invented person, where the doors to altering the year are, and anything never
+  decided.
 - **Pre-commitment slots**, numbered permanently (retire a number, never reuse it). Anything that
   decides an outcome gets a slot; what is left unlettered needs only guidance for fixing it when
   it first appears.
@@ -497,6 +514,400 @@ Every scenario's main file defines these, and the rules above lean on them:
 - **Tone notes**: only what differs from the shared tone above.
 - **The coda**: the record and its reader, by vantage where they differ.
 - **Companion files**, if any, and when to read them.
+</pre>
+        </div>
+      </details>
+
+      <details class="prompt-file">
+        <summary>references/gatehouse.md</summary>
+        <div class="prompt-body">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre># The Gatehouse
+
+**Scenario:** A lord who died excommunicate lies in a priory's gatehouse while a snowbound chapter
+decides whether to petition for his absolution.
+**Setting:** The priory of St. Mary at Hollinbeck, a fictional house of Augustinian canons on the
+Pennine fells above the Eden valley, in the diocese of Carlisle.
+**Dates:** 11 to 15 December 1240, Julian reckoning. Three days of snow and the morning of the
+thaw, played near-hourly. The shortest scenario, and a good first game.
+**Revision:** 2026-10 — first draft; Ralph's heart left undecided; half proof added.
+
+## Premise
+
+Two years ago Sir Ralph of Askholme took back the mill his grandfather gave the priory, saying the
+gift had been for the old man's life only. The priory sued, the bishop's court ordered the mill
+restored, Ralph refused, and eighteen months ago the bishop excommunicated him at the priory's own
+petition. The sentence has been read with bell and candle in every church of the deanery since.
+
+On the second day of a blizzard, Adam the shepherd finds Ralph in a drift a mile below the gate,
+alive for a little while, and dead by the time Adam's hay sledge reaches the gatehouse. An
+excommunicate may not be carried into the church or laid in hallowed ground. But the law allows a
+man who showed signs of contrition before he died to be absolved after death, and the one man in
+the county who can do it is snowbound in the prior's lodging: the bishop's official, caught on his
+way home from a visitation.
+
+He will hear the case only if the chapter petitions, since the house is the injured party. Seven
+canons must decide whether to ask. They are judging a quarrel they began themselves, the only
+witness is a shepherd, and the dead man's brother is offering to give back the mill.
+
+## What the GM needs
+
+Hollinbeck, the Askholmes, and everyone in the house are invented. These are the real things that
+shape play.
+
+- **The law.** Gregory IX's Decretals (1234) are in force. The official carries a canonist's
+  summary of them, and the priory owns no copy. Innocent III's ruling on absolution after death
+  (X 5.39.28) is the hinge: an excommunicate may be absolved after death if his repentance while
+  living is shown by evident signs, his heirs making satisfaction for him, and only by whoever could
+  have absolved him living, here the bishop or the official under his commission. Buried in hallowed
+  ground without it, his bones are to be dug up if they can be told from the faithful (X 3.28.12).
+  The official rules on signs, never on the heart (What no one knows).
+- **Half a proof.** Church courts want two credible witnesses for full proof. One makes half a proof,
+  which a document, a second witness, or a strong presumption can complete, and an interested
+  witness is discounted. Adam is the only witness to Ralph's last hour, so his oath is half the case
+  at best, and finding the other half is the work before the vote. The bounded sources in What no
+  one knows are the only places it can come from: the bags (slot 1), or the Prior if he will speak
+  of last Lent (slot 5c). Gilbert, as heir, is an interested witness, and saw nothing.
+- **Satisfaction and simony.** Restitution was always the condition of Ralph's absolution, and the
+  law expects his heir to make it. The difference between satisfaction and simony lies in whether the
+  mill is satisfaction offered or the price of a grave, and every canon knows it.
+- **The writ.** At Michaelmas the bishop signified Ralph to Chancery. The sheriff holds the writ for
+  his arrest and has not yet moved against a neighbor, and Ralph knew it was out. So any sign of
+  peace from him in December reads two ways, as repentance or as a man settling before he was taken,
+  and nothing in the house can tell them apart. The official knows of the signification for certain,
+  and Gilbert knows it; the canons have it only as rumor.
+- **Lay confession.** In necessity the schools commend confessing to a layman: not the sacrament, but
+  a sign of contrition. Whether the hearer is bound to silence, they dispute.
+- **Founder's kin.** Ralph's grandfather, Sir Uhtred of Askholme, founded the house about 1165 and
+  lies before the high altar. The foundation charter grants his heirs burial in the church, so an
+  absolved Ralph lies beside him by right, unless the chapter's petition asks otherwise and Gilbert
+  accepts it. Uhtred's anniversary in the necrology falls on 13 December.
+- **The bishop.** Walter Mauclerk of Carlisle is often away in the king's service, and his official
+  acts for him. The Advent Ember Days fall on 19, 21, and 22 December, and the official means to be
+  at Carlisle for the ordinations.
+- **Guards.** Canons are "Brother" to one another; "Father" as a priest's title is modern. Gilbert
+  and the official deal in French, the fells speak English, and the choir sings Latin. The official
+  is a southerner, schooled at Oxford and Bologna, whose ear for Cumbrian English is poor.
+
+## The ground
+
+The priory sits on a shelf of the fell where the Hollin Beck comes down off the tops toward the
+Eden. It has a small aisleless church of red sandstone, a cloister barely wider than a cart's
+turning circle, the chapter house on the east walk, the refectory on the south, the dorter above,
+and the warming room, whose hearth is the only fire the canons may sit by. The **gatehouse** stands
+across the outer court: a vaulted passage with the porter's room on one side and, on the other, a
+stone-floored chamber where carts are unloaded. Ralph lies there on two trestles under his own
+cloak, neither inside the precinct nor out of it.
+
+Snow drifts to the sills. The beck is silent under ice except where it falls. The Helm Wind roars
+off Cross Fell for a day at a time, then drops into a stillness that rings. Peat smoke, tallow, wet
+wool, and the sour cold of stone. Oat bread, beans, cheese, and thin ale; it is Advent and no fish
+can be had. Lauds and Vespers both fall in darkness, with seven gray hours between. Ravens work the
+midden. The mill stands at the foot of the beck, a mile below and out of sight.
+
+At table the reader is in the fourth book of St. Gregory's Dialogues, at the monk Justus and his
+thirty Masses. Let the canons notice; the narrator doesn't.
+
+The house holds seven canons, a handful of servants, and the porter. Ralph's lame bay is in the
+stable with its saddle and bags hung on the peg. Adam, who cannot get home, sleeps in the guest
+hall.
+
+## The days
+
+Play near-hourly. Each day keeps its bells: Matins and Lauds in the dark, Prime at first light and
+chapter after it, Mass, the midday meal, Vespers at dusk, and Compline. The weather is fixed: snow
+and wind through Thursday night, then a southwest wind and rain, and the road down is passable by
+Saturday.
+
+- **Mon 10 Dec.** The official arrives from his visitation; the snow begins after Compline.
+  Before play.
+- **Tue 11 Dec, Vespers.** The sledge at the gate: the opening scene.
+- **Wed 12 Dec.** A lull at midday brings Gilbert of Askholme up the valley with two men,
+  half-frozen, and the snow closes behind him. He makes his offer. The official agrees to hear the
+  case at the next morning's chapter if the canons petition. At night, someone sits with the body.
+- **Thu 13 Dec, St. Lucy.** The shortest day. The player reads the founder's name at chapter after
+  Prime, then the examination and the vote. The official rules before the midday meal. At Vespers,
+  burial or none. Rain in the night.
+- **Fri 14 Dec.** The thaw. The Prior may adjourn a failed or unfinished chapter to this morning
+  once; the official will sit again then, but not after.
+- **Sat 15 Dec.** The road opens. The official leaves at first light, and his authority goes with
+  him. If Ralph is unabsolved, Gilbert takes him down the hill. Then the coda.
+
+## The chapter
+
+Seven stalls, the Prior presiding. By the house's custom the youngest speaks first, so no one can
+shelter behind his elders. Four voices carry the petition, whether or not all seven vote. Each line
+ends with the opening ledger: warmth toward the player / where he lands on petitioning — *firm*,
+*leans*, or *undecided*.
+
+- **Brother Edmund** (bench). Twenty-four, professed last year, and the son of Ralph and Gilbert's
+  sister: the dead man is his uncle. Grieving, and ashamed of grieving. *Enters* in the gatehouse.
+  *Warm / for, by blood, but abstaining.* The Prior has asked him not to vote in his own family's
+  cause; it is a request, not an order, and Edmund will vote only if someone he trusts gives him
+  leave of conscience or the request is challenged in chapter. His abstention costs the petition a
+  voice.
+- **The player**, second to speak. See Vantage.
+- **Brother Nicholas, Precentor** (bench). Thirty-eight, gentle, the best voice in a small choir, and
+  sick at quarrels. *Enters* in choir. *Friendly / undecided;* he needs a reason he can sing with.
+- **Brother Gervase, Cellarer** (core). Forty-five, practical, and honest about money, which is his
+  office. Without the mill, the priory's tenants grind at Askholme's, and the house buys flour on
+  credit from a merchant of Appleby. He wants the mill back before Lent and knows how that looks.
+  *Enters* at the stable or the gate. *Brisk / leans for, and will say his reason aloud, which hurts
+  the cause.*
+- **Brother Osbert, Sacrist** (core). Fifty-eight, keeper of the church, the relics, and the
+  cemetery: austere, devout in a hard way, and tender with the sick. The ground is hallowed, not for
+  sale, and a man who dies under the Church's sentence dies under it. *Enters* at Vespers. *Cool /
+  leans against;* answered only by the law's own provision or by proof of signs.
+- **Brother Ivo, Subprior** (bench). Seventy, the eldest and half-deaf. He remembers Sir Uhtred, and
+  Ralph as a boy serving at the altar. *Enters* in the warming room. *Fond / leans against, by
+  reverence for the sentence;* memory is the reason that can answer him.
+- **Prior Elias** (core). Sixty-six, prior for twenty years: careful, devout, tired, and unused to
+  hardness. The excommunication was the one hard thing he ever did. His reason is slot 5, and he
+  will not give it plainly. *Enters* in the opening scene. *Fatherly / leans against.*
+
+**The default count.** If the player votes to petition and has done no work, it fails three to
+three, with Edmund silent. The petition is one voice short, and the player can see from the first
+evening which voices could be the fourth: Edmund freed to vote, Ivo's memory, Osbert's law, or the
+Prior's reason. A player who votes against carries Nicholas with him, and the petition fails heavily.
+
+## Outside the chapter
+
+- **Master Simon of Wickham, the bishop's official** (core). Fifty, dry, exact, fair, perpetually
+  cold, with a canonist's pleasure in a hard case. He judges by signs and says so when pressed: the
+  Church does not judge hidden things, what Ralph meant is God's to know, and his own business is
+  what was seen and sworn. He will hear the case only on the chapter's petition, and how he rules
+  is slot 4. *Enters* at Compline on the first night. *Courteous / unreadable.*
+- **Gilbert of Askholme** (core). Forty-one, Ralph's younger brother and heir: proud, quick, and raw
+  with grief. He knows only that Ralph rode out alone that morning without a word, though he will
+  speak as if he knows why. His offer is slot 3. *Enters* at the midday lull on the 12th, searching.
+  *Wary / for, wholly.*
+- **Adam the shepherd** (core). About forty, the priory's tenant, with ewes on the fell above
+  Hollinbeck. He speaks English only and uses few words. A good man, frightened of the relics, of
+  his landlords, and of the lord's brother. What he heard is slot 2. *Enters* in the opening scene.
+  *Deferential / he will tell what he heard as he understood it, and fear can bend the telling.*
+- **The porter**, an old servant who unsaddled the horse and hung its gear. Texture, until someone
+  asks him what he saw.
+- **Gilbert's two men**, texture, unless one is needed.
+
+## Vantage
+
+One vantage, with a default character the player may reshape. If they do (a knight's younger son,
+a former parish priest), move one stat point and one relationship, no more.
+
+### Brother Martin of Alston
+
+Thirty-one, a lead miner's son from Alston Moor, taken into the priory school for his quick mind and
+professed five years. Each morning at chapter he reads the martyrology and the necrology, and he
+keeps the book: the house's dead, its founders, its benefactors, and its brothers in confraternity,
+each on his day. Ivo taught him his letters, Edmund is his friend, Osbert thinks him soft, and the
+Prior trusts him with the book and with little else yet. He knew Ralph only as the name read out in
+church under the sentence, and as a horseman who threw him a penny on the road when he was nine.
+
+**Learning 3, Rhetoric 2, Standing 1, Conscience 2.** He has the house's best Latin after the
+Prior's, and its best English, so he is the one the official will ask to render the shepherd's
+words.
+
+### Opening
+
+11 December, Vespers. The canons are in choir by rushlight when the porter's bell goes, and keeps
+going, which no one does at Vespers. The Prior sends the player. Snow comes sideways through the
+gate arch. A fell pony steams in the traces of a hay sledge, a lame bay stands behind it, and a man
+in a sheepskin will not let go of the sledge rope. On the sledge, under a cloak, is a face the
+player has seen on horseback. Name only **Adam** and, when he comes down with a lantern, **the
+Prior**. End when the Prior understands whose body it is and says, very quietly, where it may not
+be carried. Then the player acts.
+
+## The examination
+
+This scenario's signature is a single witness under oath. One man was there, everyone else has
+hearsay, and the whole case turns on what the shepherd heard and how it reaches the record.
+
+On the morning of the 13th, before the vote, the official examines Adam in chapter. Adam's oath is
+half a proof at most (What the GM needs), and the official will ask what completes it; a chapter
+that hasn't found an answer beforehand will have to find one in the room.
+
+- **The oath.** Adam swears on the house's relic, a scrap of St. Cuthbert's shroud in a copper box.
+  Once he has sworn, no one speaks to him except to question him.
+- **The rendering.** Adam speaks English and the official records in Latin, so he asks the player to
+  render. Each sentence passes from the shepherd's mouth through the player's into the official's
+  notes. Rendering faithfully is Learning, harder where Adam's words are thin or strange. Any canon
+  who knows both tongues may challenge a rendering, and Osbert and Ivo will. A player who shades
+  the meaning has committed as surely as one who speaks out, because the Latin is the record.
+- **The questions.** Each canon may put one question, youngest first; the official asks as many as he
+  likes, last. A question is a check like any other: Learning to frame it on the law's own test,
+  Rhetoric to draw a frightened man out, Conscience to notice what he isn't saying. Adam answers
+  truly to what he understands (slot 2). His fear raises the difficulty of every question, and the
+  conditions are built beforehand: who has sat with him, who has pressed him, and whether he trusts
+  the hand on the relic box.
+- **Beforehand.** Anyone may talk to Adam before he swears. The first to hear his account in his own
+  words has it at first hand; everyone after hears a man who has told it before, and a story told
+  twice changes. Gilbert will try to see him, and so may Gervase.
+
+## The vote
+
+After the examination, the Prior puts the question: will the chapter petition the official to absolve
+Sir Ralph? Voices are given aloud, youngest first.
+
+- **Firm:** he votes his line.
+- **Leans:** he votes his lean unless someone who has already spoken answers his reason. That is a
+  check for the speaker, cheaper where the work was done in private beforehand.
+- **Undecided:** he goes with the side leading when he is called; if they are level, with whoever he
+  is warmest toward among those who have spoken.
+- A voice may carry a sentence. Most don't; the player's is its own scene.
+
+Four voices carry it. The petition may name terms, such as burial in the cemetery rather than the
+choir, or restitution made into the bishop's hands rather than the house's, and drafting them is a
+fight of its own before the vote. If the petition carries, the official rules on the signs as he
+finds them (slot 4) before the midday meal. If it fails, nothing more happens unless the Prior
+adjourns to Friday.
+
+## Testimony and the bags
+
+Provenance here is testimony: who heard Ralph, who heard Adam first, and who has *seen* what is in
+the saddlebags rather than been told. The official weighs only what was seen and sworn. A canon who
+repeats what Adam told him privately is offering hearsay, and the official will say so, drily.
+
+The bags hang in the stable from the first night, and the porter hung them there. Whoever opens them
+first knows what they hold, and whoever opens them before witnesses can prove it. Gilbert will think
+of them by the evening of the 12th. Whatever papers they hold were written for Ralph by a clerk
+Gilbert doesn't know, and he has never seen them.
+
+## What no one knows
+
+Ralph's heart is not in this file and is never decided: not why he rode up the fell, not what he
+meant by anything he carried, not whether he was contrite when he died. The GM holds the evidence,
+which is fixed and can be found. Reading it belongs to the characters and the player, as it belonged
+to the chapter.
+
+- **Never fixed.** The shared rule that an open question is fixed the first time it reaches the page
+  does not apply here. When a player asks what Ralph meant, the answer is what the evidence shows
+  and who believes what about it. Several characters will speak as if they are sure, and none of
+  them is right by the file's say-so.
+- **The evidence is bounded.** It comes from these sources and no others: the saddlebags (slot 1);
+  what Adam heard (slot 2); the Prior's private meeting with Ralph last Lent, if it happened (slot
+  5); the signification, and the rumor of it; and the place he was found. The track to the gate and
+  the old road over to the next dale share their first mile up from the valley, Ralph lay on that
+  shared mile, and the snow has taken his tracks, so his heading proves nothing. He rode out from
+  Askholme alone in a lull on the morning of the 11th and told no one where he was going. No priest
+  has heard his confession in eighteen months, because none could. There is no second traveler, no
+  letter on the road, and no servant who knew his mind, and the GM adds none.
+- **The body gives nothing.** Frost has set his face, and it looks like any man's who died in the
+  snow. Don't narrate peace or anguish in it.
+- **No sign answers it.** A canon may pray for Ralph alone in the night, and may dream; what he
+  dreams concerns himself, never where Ralph's soul is. No miracle touches the case.
+- **The narrator doesn't hint**, not in the weather, not in the light on the gatehouse, and not in
+  the coda. Whichever way the player votes, they judged on the evidence the chapter had.
+
+## Fixed and open
+
+**Fixed.** Ralph's death, the excommunication and its cause, the signification, the law, seven
+stalls and four voices, the weather, and the official's departure on Saturday.
+
+**Open.** Whether the chapter petitions, on what terms, and how the official rules; where Ralph
+lies; whether the mill comes back, and to whom; what becomes of Adam, who has sworn before lords;
+and how seven men who must sing Compline together afterward stand with one another.
+
+**Never decided.** What Ralph meant, and the state of his soul. See What no one knows.
+
+**The long shots**, never volunteered by the GM and always respected when played toward:
+
+- **The night burial.** Burying Ralph in the cemetery without absolution. Frozen ground makes it a
+  long, loud job that needs hands and leaves witnesses. If it is discovered, the law orders him dug
+  up and the house risks interdict. It is a Conscience act, and it commits.
+- **The official without a petition.** The law does not strictly require the injured party's
+  petition; the official's practice does. Arguing a Bologna man out of his practice on his own
+  ground is the hardest check in the scenario, and the chapter will not quickly forgive a canon who
+  goes around it.
+- **Taking the price off the table.** A chapter that petitions while refusing the mill, or that asks
+  for it to go to the poor or into the bishop's hands, removes the bargain from the question. It may
+  win the official (slot 4c), and Gervase will not easily forgive it.
+
+## The coda
+
+The record is the house's own: the official's act of absolution or refusal, the chapter's petition
+or the minute of its failure, a line in the cellarer's account roll for the mill, and the necrology
+under 11 December, where Ralph's name is entered for the community's prayers, in the player's hand,
+or is not. The reader is a novice ten years on, reading the day's names at chapter for the first
+time, who finds the entry or the blank and asks the player who Ralph of Askholme was. If the player
+has died, the novice asks Edmund. No line of the record says what Ralph meant, and the coda
+doesn't either: the answer is what the player saw and what they chose.
+
+## Save state
+
+`Scenario state` fields, from the sledge:
+
+- **witness**: who has heard Adam's account, in what order, and who has pressed him and how. This is
+  provenance here.
+- **bags**: where the saddlebags are, whether they've been opened, by whom, and before whom.
+- **offer**: Gilbert's terms as he has stated them, and who heard.
+- **edmund**: voting or abstaining, and who has spoken to him about it.
+- **vigil**: who has sat with the body, and who was seen there.
+- **writ**: who has learned of the signification, and whether from rumor or from the official.
+
+From the examination, **record**: what the Latin says, and any rendering challenged. From the vote,
+**outcome**: the count, any terms, the official's ruling, where Ralph lies, and the mill.
+
+## Pre-commitment
+
+**1 — What the saddlebags hold.** Each answer fixes only what is in the bags. None says what Ralph
+meant, and the GM never decides it (What no one knows).
+a. A quitclaim of the mill to the priory, sealed with Ralph's seal and undelivered: repentance, or
+a settlement made before the sheriff came for him.
+b. A draft appeal to the archbishop of York against the sentence, unsealed, in a clerk's hand:
+defiance, or a lever for better terms.
+c. Both together, the quitclaim and the appeal. He may have meant to offer one and threaten with
+the other, or he had not chosen.
+d. Nothing bearing on the priory: silver, a change of linen, a letter about wool from his steward.
+The road below the gate runs on over the fell, and he may have been passing.
+
+**2 — What Adam heard.**
+a. Plain words. Ralph asked for a priest, and asked to be carried to the priory.
+b. Words that could be prayer or curse: "prior" and "mill," and something between them the wind
+took.
+c. Little or nothing intelligible. Adam has told it the way a Christian man ought to have spoken,
+because he wants it true. The right question under oath brings that out, and his shame with it.
+d. A confession. Ralph confessed his sins to him, as men do when no priest can be had. Adam believes
+he must keep it and will say only that the lord "made his confession," which sounds like evasion
+until someone with Learning explains what he is protecting.
+
+**3 — Gilbert's offer.**
+a. Unconditional. He will restore the mill whatever the chapter does. He speaks it as a bargain
+because he is angry, and says so plainly if asked alone.
+b. A price. Refused, he keeps the mill, and the house pays for every sack ground there.
+c. Guilt. He urged Ralph to take the mill in the first place, means to restore it either way, and
+cannot bear his brother refused burial for a sin half his own. He has told no one.
+
+**4 — The official's mind.**
+a. Strict. He wants full proof: Adam's half completed by a document or a second witness. Doubt is
+not enough.
+b. Merciful. In doubt he leans toward the dead man and lets presumption complete the proof. Given a
+petition, Adam's half will do unless it collapses under questioning.
+c. Wary of the bargain. He suspects the house of selling and absolves only if the satisfaction is
+plainly separated from the petition. He never says so, though Learning or Conscience may read it.
+d. Doubtful of his commission. He holds that his power to absolve the living does not reach the
+dead, and will refuse with courtesy unless someone shows him the decretal's own words, which his
+summary lacks.
+
+**5 — The Prior's reason.**
+a. Pride. The sentence was his one hard act, and he will not see it unmade on a shepherd's word.
+b. Fear. He is sure the house will be said to have sold a grave.
+c. Guilt. Ralph came to him privately last Lent offering terms, and the Prior refused them in
+anger. He believes he is why Ralph died under the sentence, and he cannot be the one to lift it.
+
+## Tone notes
+
+- **Seven men, one fire.** Everyone eats together, sings together, and warms his hands at the same
+  hearth. A quarrel at chapter sits beside you at supper.
+- **Cold is a condition.** Night errands, a vigil in the gatehouse, and anything past the walls
+  raise the difficulty. Past the walls in the storm the danger is mortal, and the fell gives plain
+  warning.
+- **No villains.** Ralph claimed the grant was for life, and the charter's wording gave him room.
+  The canons are not greedy; the mill feeds the house and its tenants. Everyone's case is real.
+- **The silence in choir.** The house may not sing the Office of the Dead for Ralph or name him at
+  Mass; what a man prays alone in the night is his own. Let the omission be felt each day where the
+  dead are remembered, and let the player notice who is missing from the dorter after Compline.
+- **Full treatment:** the sledge at the gate, Gilbert's arrival, at least one meal, the
+  examination, the vote, and Vespers either way.
 </pre>
         </div>
       </details>
